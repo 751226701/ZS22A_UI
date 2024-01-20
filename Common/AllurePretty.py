@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-@author: 刘涛
-@time: 2024/1/15 10:05 
-@file: AllurePretty.py
-@project: ZS22A_UI
-"""
+# @author: 刘涛
+# @time: 2024/1/15 10:05
+# @file: AllurePretty.py
+# @project: ZS22A_UI
 
 import os.path, allure, pytest, functools
 from Config.Config import Config

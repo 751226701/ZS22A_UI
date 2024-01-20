@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-@author: 刘涛
-@time: 2024/1/15 20:17 
-@file: SendEmail.py
-@project: ZS22A_UI
-"""
+# @author: 刘涛
+# @time: 2024/1/15 20:17
+# @file: SendEmail.py
+# @project: ZS22A_UI
+
 import os
 import shutil
 import smtplib

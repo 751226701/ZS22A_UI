@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-@author: 刘涛
-@time: 2024/1/16 16:56 
-@file: test_case_11_.py
-@project: ZS22A_UI
-"""
+# @author: 刘涛
+# @time: 2024/1/16 16:56
+# @file: test_case_11_.py
+# @project: ZS22A_UI
+
 import os
 import allure
 import pytest

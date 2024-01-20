@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-@author: 刘涛
-@time: 2024/1/15 11:16 
-@file: test_case_1_10.py
-@project: ZS22A_UI
-"""
+# @author: 刘涛
+# @time: 2024/1/15 11:16
+# @file: test_case_1_10.py
+# @project: ZS22A_UI
+
 import os
 import pytest
 from time import sleep

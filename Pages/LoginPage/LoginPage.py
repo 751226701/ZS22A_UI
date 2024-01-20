@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-@author: 刘涛
-@time: 2024/1/15 10:46 
-@file: LoginPage.py
-@project: ZS22A_UI
-"""
+# @author: 刘涛
+# @time: 2024/1/15 10:46
+# @file: LoginPage.py
+# @project: ZS22A_UI
+
 import os.path
 import allure
 from time import sleep
 from Common.Common import Common
 from Config.Config import Config
-from Common.CompareImage import are_images_equal,download_image
+from Common.CompareImage import are_images_equal, download_image
 from playwright.sync_api import expect
+
 
 class LoginPage(Common):
     # 元素定位器
@@ -21,7 +21,7 @@ class LoginPage(Common):
     __remember_password = '.el-checkbox__input'
     __login_button = 'button:has-text("登录")'
     __switch_button = "请选择"
-    __switch_english = ("li","English")
+    __switch_english = ("li", "English")
     __switch_chinese = "简体中文"
     __password_visible = "form i"
 
@@ -58,11 +58,11 @@ class LoginPage(Common):
         self._click(self.__remember_password)
 
     @allure.step("断言记住密码未勾选")
-    def assert_remember_password_off(self,value):
+    def assert_remember_password_off(self, value):
         expect(self.page.locator(value).nth(1)).not_to_be_checked()
 
     @allure.step("断言记住密码已勾选")
-    def assert_remember_password_on(self,value):
+    def assert_remember_password_on(self, value):
         expect(self.page.locator(value).nth(1)).to_be_checked()
 
     @allure.step("点击登录按钮")
@@ -87,7 +87,7 @@ class LoginPage(Common):
         self.page.get_by_text(self.__switch_chinese).click()
 
     @allure.step("断言是否切换成功")
-    def assert_switch_language(self,value):
+    def assert_switch_language(self, value):
         expect(self.page.get_by_placeholder(value[0])).to_have_value(value[1])
 
     @allure.step("断言是否为高德质感logo")
@@ -101,4 +101,3 @@ class LoginPage(Common):
 
     def browser_operation(self, reload=True, forward=False, back=False):
         self._browser_operation(reload=reload, forward=forward, back=back)
-

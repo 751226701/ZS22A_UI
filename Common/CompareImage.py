@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-@author: 刘涛
-@time: 2024/1/16 11:02 
-@file: CompareImage
-@project: ZS22A_UI
-"""
+# @author: 刘涛
+# @time: 2024/1/16 11:02
+# @file: CompareImage
+# @project: ZS22A_UI
+
 import cv2
 import requests
 import numpy as np

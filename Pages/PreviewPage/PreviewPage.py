@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-@author: 刘涛
-@time: 2024/1/17 9:57 
-@file: PreviewPage.py
-@project: ZS22A_UI
-"""
+# @author: 刘涛
+# @time: 2024/1/17 9:57
+# @file: PreviewPage.py
+# @project: ZS22A_UI
+
 import os.path
 import allure
 from time import sleep
 from Common.Common import Common
 from Config.Config import Config
-from Common.CompareImage import are_images_equal,download_image
+from Common.CompareImage import are_images_equal, download_image
 from playwright.sync_api import expect
+
 
 class PreviewPage(Common):
     __video_start = ".el-tooltip"

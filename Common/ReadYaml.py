@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-@author: 刘涛
-@time: 2024/1/15 11:11 
-@file: ReadYaml.py
-@project: ZS22A_UI
-"""
+# @author: 刘涛
+# @time: 2024/1/15 11:11
+# @file: ReadYaml.py
+# @project: ZS22A_UI
+
 import yaml, os
 from Config.Config import Config
 

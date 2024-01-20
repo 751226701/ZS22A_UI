@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-@author: 刘涛
-@time: 2024/1/15 13:09 
-@file: debug.py
-@project: ZS22A_UI
-"""
+# @author: 刘涛
+# @time: 2024/1/15 13:09
+# @file: debug.py
+# @project: ZS22A_UI
+
 from time import sleep
 from playwright.sync_api import Playwright, sync_playwright, expect
 import requests

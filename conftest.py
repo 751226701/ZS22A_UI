@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
-@author: 刘涛
-@time: 2024/1/15 10:07 
-@file: conftest.py
-@project: ZS22A_UI
-"""
+# @author: 刘涛
+# @time: 2024/1/15 10:07
+# @file: conftest.py
+# @project: ZS22A_UI
+
 import os
 import allure
 import pytest
