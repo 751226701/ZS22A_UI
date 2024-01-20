@@ -1,0 +1,121 @@
+[ {
+  "uid" : "5d60de08ee4fd883",
+  "name" : "test_case_10_是否为高德质感logo",
+  "time" : {
+    "start" : 1705718466047,
+    "stop" : 1705718467450,
+    "duration" : 1403
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "f319a12633b01fd4",
+  "name" : "test_case_03_user用户登录",
+  "time" : {
+    "start" : 1705718443980,
+    "stop" : 1705718454252,
+    "duration" : 10272
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "64df0047f30b169d",
+  "name" : "test_case_02_admin用户登录",
+  "time" : {
+    "start" : 1705718433735,
+    "stop" : 1705718443978,
+    "duration" : 10243
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "d3bfc7f4ad15d956",
+  "name" : "test_case_11_暂停视频播放",
+  "time" : {
+    "start" : 1705718415807,
+    "stop" : 1705718417736,
+    "duration" : 1929
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "986eaa4221cbaaae",
+  "name" : "test_case_12_开始视频播放",
+  "time" : {
+    "start" : 1705718417738,
+    "stop" : 1705718418642,
+    "duration" : 904
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "18971e23b07b5395",
+  "name" : "test_case_05_切换到中文版",
+  "time" : {
+    "start" : 1705718456825,
+    "stop" : 1705718459317,
+    "duration" : 2492
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "d11c04b927012dbe",
+  "name" : "test_case_08_记住密码未勾选",
+  "time" : {
+    "start" : 1705718462687,
+    "stop" : 1705718464064,
+    "duration" : 1377
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "263d69575015f144",
+  "name" : "test_case_07_密码输入框明文显示",
+  "time" : {
+    "start" : 1705718460717,
+    "stop" : 1705718462685,
+    "duration" : 1968
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "241acf7a910c1828",
+  "name" : "test_case_06_密码输入框密文显示",
+  "time" : {
+    "start" : 1705718459320,
+    "stop" : 1705718460715,
+    "duration" : 1395
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "3aa9e2590ffc4a2b",
+  "name" : "test_case_04_切换到英文版",
+  "time" : {
+    "start" : 1705718454254,
+    "stop" : 1705718456822,
+    "duration" : 2568
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "a82521f6505ab6c7",
+  "name" : "test_case_01_root用户登录",
+  "time" : {
+    "start" : 1705718422341,
+    "stop" : 1705718433732,
+    "duration" : 11391
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "466242f04baf1da4",
+  "name" : "test_case_09_记住密码已勾选",
+  "time" : {
+    "start" : 1705718464067,
+    "stop" : 1705718466045,
+    "duration" : 1978
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
