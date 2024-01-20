@@ -4,8 +4,7 @@
 # @Time : 2024/1/20 14:55
 # @File :log.py
 # @Software : PyCharm
-# !/usr/bin/env python
-# -*- coding:utf-8 -*-
+
 
 import os
 import logging
@@ -120,6 +119,6 @@ if __name__ == "__main__":
     log = Logger()
     log.debug(11111)
     log.info(222222)
-    log.warning('不好')
+    log.warning(333)
     log.error(44444)
     log.critical(55)

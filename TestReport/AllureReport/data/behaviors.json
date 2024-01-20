@@ -7,26 +7,26 @@
       "name" : "01 视频播放",
       "children" : [ {
         "name" : "test_case_11_暂停视频播放",
-        "uid" : "d6b46efa0661b9af",
+        "uid" : "9c960e637d8ecafa",
         "parentUid" : "c9535356e1fd05dfd53481385fd8843c",
         "status" : "passed",
         "time" : {
-          "start" : 1705722540138,
-          "stop" : 1705722542054,
-          "duration" : 1916
+          "start" : 1705733452080,
+          "stop" : 1705733454342,
+          "duration" : 2262
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "{'用例编号': 'test_case_11', '模块': '02 实时预览', '功能': '01 视频播放', '优先级': 'critical', '是否执行': 'Y', '用例标题': '暂停视频播放', '账号': 'root', '密码': 'guide123', 'url地址': 'http://192.168.21.153/#/login', '断言元素定位': '.title-logo'}" ]
       }, {
         "name" : "test_case_12_开始视频播放",
-        "uid" : "c2eceef61f4ba54e",
+        "uid" : "13fc9b0cfdb26d72",
         "parentUid" : "c9535356e1fd05dfd53481385fd8843c",
         "status" : "passed",
         "time" : {
-          "start" : 1705722542056,
-          "stop" : 1705722542911,
-          "duration" : 855
+          "start" : 1705733454360,
+          "stop" : 1705733455677,
+          "duration" : 1317
         },
         "flaky" : false,
         "newFailed" : false,
@@ -41,39 +41,39 @@
       "name" : "01 登录",
       "children" : [ {
         "name" : "test_case_01_root用户登录",
-        "uid" : "41150718139fd01e",
+        "uid" : "67008388739aa94d",
         "parentUid" : "50dd08affd3028c2752f4f59c0822c6a",
         "status" : "passed",
         "time" : {
-          "start" : 1705722546263,
-          "stop" : 1705722557543,
-          "duration" : 11280
+          "start" : 1705733459959,
+          "stop" : 1705733472205,
+          "duration" : 12246
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "{'用例编号': 'test_case_01', '模块': '01 用户管理', '功能': '01 登录', '优先级': 'blocker', '是否执行': 'Y', '用例标题': 'root用户登录', '账号': 'root', '密码': 'guide123', 'url地址': 'http://192.168.21.153/#/login', '断言元素定位': '.el-dropdown-selfdefine'}" ]
       }, {
         "name" : "test_case_02_admin用户登录",
-        "uid" : "a196192ee63a172b",
+        "uid" : "eb007f1b59db2742",
         "parentUid" : "50dd08affd3028c2752f4f59c0822c6a",
         "status" : "passed",
         "time" : {
-          "start" : 1705722557545,
-          "stop" : 1705722567876,
-          "duration" : 10331
+          "start" : 1705733472224,
+          "stop" : 1705733483280,
+          "duration" : 11056
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "{'用例编号': 'test_case_02', '模块': '01 用户管理', '功能': '01 登录', '优先级': 'blocker', '是否执行': 'Y', '用例标题': 'admin用户登录', '账号': 'admin', '密码': 'admin123', 'url地址': 'http://192.168.21.153/#/login', '断言元素定位': '.el-dropdown-selfdefine'}" ]
       }, {
         "name" : "test_case_03_user用户登录",
-        "uid" : "de03dec82ca4b06c",
+        "uid" : "f5a73b48bb0df057",
         "parentUid" : "50dd08affd3028c2752f4f59c0822c6a",
         "status" : "passed",
         "time" : {
-          "start" : 1705722567878,
-          "stop" : 1705722578090,
-          "duration" : 10212
+          "start" : 1705733483299,
+          "stop" : 1705733494414,
+          "duration" : 11115
         },
         "flaky" : false,
         "newFailed" : false,
@@ -84,26 +84,26 @@
       "name" : "02 多语言",
       "children" : [ {
         "name" : "test_case_04_切换到英文版",
-        "uid" : "15b29d4e2bed3a1f",
+        "uid" : "39fcd597df825bc8",
         "parentUid" : "c476d6d951766c25b39975c8d19bce1f",
         "status" : "passed",
         "time" : {
-          "start" : 1705722578092,
-          "stop" : 1705722580623,
-          "duration" : 2531
+          "start" : 1705733494443,
+          "stop" : 1705733497458,
+          "duration" : 3015
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "{'用例编号': 'test_case_04', '模块': '01 用户管理', '功能': '02 多语言', '优先级': 'critical', '是否执行': 'Y', '用例标题': '切换到英文版', '账号': 'root', '密码': 'guide123', 'url地址': 'http://192.168.21.153/#/login', '断言元素定位': ['Select', 'English']}" ]
       }, {
         "name" : "test_case_05_切换到中文版",
-        "uid" : "b9c78f385e57f840",
+        "uid" : "46e28f2165eb9e8f",
         "parentUid" : "c476d6d951766c25b39975c8d19bce1f",
         "status" : "passed",
         "time" : {
-          "start" : 1705722580626,
-          "stop" : 1705722583119,
-          "duration" : 2493
+          "start" : 1705733497474,
+          "stop" : 1705733500336,
+          "duration" : 2862
         },
         "flaky" : false,
         "newFailed" : false,
@@ -114,26 +114,26 @@
       "name" : "03 密码显示类型",
       "children" : [ {
         "name" : "test_case_06_密码输入框密文显示",
-        "uid" : "8136c174a93b60e8",
+        "uid" : "7ad1b669990c0c2e",
         "parentUid" : "7a2c53acaf8cec7e5cc45b1a9535f04a",
         "status" : "passed",
         "time" : {
-          "start" : 1705722583121,
-          "stop" : 1705722584526,
-          "duration" : 1405
+          "start" : 1705733500351,
+          "stop" : 1705733501994,
+          "duration" : 1643
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "{'用例编号': 'test_case_06', '模块': '01 用户管理', '功能': '03 密码显示类型', '优先级': 'critical', '是否执行': 'Y', '用例标题': '密码输入框密文显示', '账号': 'root', '密码': 'guide123', 'url地址': 'http://192.168.21.153/#/login', '断言元素定位': 'password'}" ]
       }, {
         "name" : "test_case_07_密码输入框明文显示",
-        "uid" : "8a1ded55c8b83539",
+        "uid" : "49c65ce8300e145a",
         "parentUid" : "7a2c53acaf8cec7e5cc45b1a9535f04a",
         "status" : "passed",
         "time" : {
-          "start" : 1705722584528,
-          "stop" : 1705722586470,
-          "duration" : 1942
+          "start" : 1705733502007,
+          "stop" : 1705733504252,
+          "duration" : 2245
         },
         "flaky" : false,
         "newFailed" : false,
@@ -144,26 +144,26 @@
       "name" : "04 记住密码",
       "children" : [ {
         "name" : "test_case_08_记住密码未勾选",
-        "uid" : "6362b353a2d6ffb",
+        "uid" : "c352fbc8bc64868e",
         "parentUid" : "4bcc4d39ad3758953900759478091fef",
         "status" : "passed",
         "time" : {
-          "start" : 1705722586472,
-          "stop" : 1705722587859,
-          "duration" : 1387
+          "start" : 1705733504266,
+          "stop" : 1705733505922,
+          "duration" : 1656
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "{'用例编号': 'test_case_08', '模块': '01 用户管理', '功能': '04 记住密码', '优先级': 'normal', '是否执行': 'Y', '用例标题': '记住密码未勾选', '账号': 'root', '密码': 'guide123', 'url地址': 'http://192.168.21.153/#/login', '断言元素定位': 'label span'}" ]
       }, {
         "name" : "test_case_09_记住密码已勾选",
-        "uid" : "fc51d96f82e71df9",
+        "uid" : "6a6e290538241737",
         "parentUid" : "4bcc4d39ad3758953900759478091fef",
         "status" : "passed",
         "time" : {
-          "start" : 1705722587862,
-          "stop" : 1705722589832,
-          "duration" : 1970
+          "start" : 1705733505937,
+          "stop" : 1705733508195,
+          "duration" : 2258
         },
         "flaky" : false,
         "newFailed" : false,
@@ -174,13 +174,13 @@
       "name" : "05 logo",
       "children" : [ {
         "name" : "test_case_10_是否为高德质感logo",
-        "uid" : "e913a99b510ccada",
+        "uid" : "30a2ce27977e0b97",
         "parentUid" : "abf753db908498b20a8f6e268575e008",
         "status" : "passed",
         "time" : {
-          "start" : 1705722589834,
-          "stop" : 1705722591244,
-          "duration" : 1410
+          "start" : 1705733508210,
+          "stop" : 1705733509992,
+          "duration" : 1782
         },
         "flaky" : false,
         "newFailed" : false,
