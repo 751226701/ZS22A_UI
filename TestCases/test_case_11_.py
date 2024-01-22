@@ -70,6 +70,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_video_stop()
 
+
     """开始视频播放"""
 
     @PrettyAllure.PrettyAllureWarpper
@@ -77,3 +78,35 @@ class TestPreview:
     def test_case_12(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_video_start()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
