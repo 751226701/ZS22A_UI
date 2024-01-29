@@ -28,5 +28,5 @@ class ReadYaml(object):
 
 if __name__ == '__main__':
     pass
-    yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_1_10.yaml")).read()
+    yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml")).read()
     print([yaml_data[3]])

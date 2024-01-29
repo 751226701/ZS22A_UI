@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # @author: 刘涛
 # @time: 2024/1/15 11:16
-# @file: test_case_1_10.py
+# @file: test_case_01.py
 # @project: ZS22A_UI
 
 import os
@@ -18,7 +18,7 @@ from Config.Config import Config
 
 class TestLogin():
     """root/admin/user用户登录"""
-    yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_1_10.yaml")).read()
+    yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml")).read()
 
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.smoking
