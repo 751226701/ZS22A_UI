@@ -1,120 +1,210 @@
 [ {
-  "uid" : "9c960e637d8ecafa",
-  "name" : "test_case_11_暂停视频播放",
-  "time" : {
-    "start" : 1705733452080,
-    "stop" : 1705733454342,
-    "duration" : 2262
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "f5a73b48bb0df057",
-  "name" : "test_case_03_user用户登录",
-  "time" : {
-    "start" : 1705733483299,
-    "stop" : 1705733494414,
-    "duration" : 11115
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "7ad1b669990c0c2e",
-  "name" : "test_case_06_密码输入框密文显示",
-  "time" : {
-    "start" : 1705733500351,
-    "stop" : 1705733501994,
-    "duration" : 1643
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "c352fbc8bc64868e",
-  "name" : "test_case_08_记住密码未勾选",
-  "time" : {
-    "start" : 1705733504266,
-    "stop" : 1705733505922,
-    "duration" : 1656
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "30a2ce27977e0b97",
-  "name" : "test_case_10_是否为高德质感logo",
-  "time" : {
-    "start" : 1705733508210,
-    "stop" : 1705733509992,
-    "duration" : 1782
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "eb007f1b59db2742",
-  "name" : "test_case_02_admin用户登录",
-  "time" : {
-    "start" : 1705733472224,
-    "stop" : 1705733483280,
-    "duration" : 11056
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "6a6e290538241737",
-  "name" : "test_case_09_记住密码已勾选",
-  "time" : {
-    "start" : 1705733505937,
-    "stop" : 1705733508195,
-    "duration" : 2258
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "46e28f2165eb9e8f",
-  "name" : "test_case_05_切换到中文版",
-  "time" : {
-    "start" : 1705733497474,
-    "stop" : 1705733500336,
-    "duration" : 2862
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "13fc9b0cfdb26d72",
+  "uid" : "87c64d01daa2b76c",
   "name" : "test_case_12_开始视频播放",
   "time" : {
-    "start" : 1705733454360,
-    "stop" : 1705733455677,
-    "duration" : 1317
+    "start" : 1706494327156,
+    "stop" : 1706494327948,
+    "duration" : 792
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "67008388739aa94d",
-  "name" : "test_case_01_root用户登录",
+  "uid" : "e8c08309d6089c60",
+  "name" : "test_case_21_电子变倍1X",
   "time" : {
-    "start" : 1705733459959,
-    "stop" : 1705733472205,
-    "duration" : 12246
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "49c65ce8300e145a",
-  "name" : "test_case_07_密码输入框明文显示",
-  "time" : {
-    "start" : 1705733502007,
-    "stop" : 1705733504252,
-    "duration" : 2245
+    "start" : 1706494345558,
+    "stop" : 1706494346970,
+    "duration" : 1412
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "39fcd597df825bc8",
-  "name" : "test_case_04_切换到英文版",
+  "uid" : "a0dc5aec8af93ae0",
+  "name" : "test_case_27_近24小时最高温",
   "time" : {
-    "start" : 1705733494443,
-    "stop" : 1705733497458,
-    "duration" : 3015
+    "start" : 1706494353240,
+    "stop" : 1706494354592,
+    "duration" : 1352
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "ab30ce6bf2832d9a",
+  "name" : "test_case_23_近4小时最低温",
+  "time" : {
+    "start" : 1706494347791,
+    "stop" : 1706494349126,
+    "duration" : 1335
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "e289663426391b10",
+  "name" : "test_case_14_关闭抓图弹窗",
+  "time" : {
+    "start" : 1706494328812,
+    "stop" : 1706494329633,
+    "duration" : 821
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "5bae2acfd434c1ef",
+  "name" : "test_case_30_近72小时平均温",
+  "time" : {
+    "start" : 1706494357403,
+    "stop" : 1706494358746,
+    "duration" : 1343
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "9b00ba0f280aeb5",
+  "name" : "test_case_22_开启温度曲线(近4小时最高温)",
+  "time" : {
+    "start" : 1706494346973,
+    "stop" : 1706494347779,
+    "duration" : 806
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "d300c1169eca4c3",
+  "name" : "test_case_26_近24小时最低温",
+  "time" : {
+    "start" : 1706494351869,
+    "stop" : 1706494353237,
+    "duration" : 1368
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "3089e238f3981c35",
+  "name" : "test_case_31_关闭实时温度曲线",
+  "time" : {
+    "start" : 1706494358755,
+    "stop" : 1706494359543,
+    "duration" : 788
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "de59bc185f1249a4",
+  "name" : "test_case_29_近72小时最低温",
+  "time" : {
+    "start" : 1706494356025,
+    "stop" : 1706494357393,
+    "duration" : 1368
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "fe5bae27d931fc32",
+  "name" : "test_case_25_近24小时平均温",
+  "time" : {
+    "start" : 1706494350509,
+    "stop" : 1706494351866,
+    "duration" : 1357
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "c5efae3a5f3db491",
+  "name" : "test_case_24_近4小时平均温",
+  "time" : {
+    "start" : 1706494349133,
+    "stop" : 1706494350505,
+    "duration" : 1372
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "d8a56b15950990e0",
+  "name" : "test_case_20_电子变倍2X",
+  "time" : {
+    "start" : 1706494344188,
+    "stop" : 1706494345554,
+    "duration" : 1366
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "10f7283e895a395d",
+  "name" : "test_case_16_停止录像",
+  "time" : {
+    "start" : 1706494335490,
+    "stop" : 1706494336317,
+    "duration" : 827
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "7d2b790f2ddc584b",
+  "name" : "test_case_13_抓图",
+  "time" : {
+    "start" : 1706494327954,
+    "stop" : 1706494328804,
+    "duration" : 850
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "9f27526b23c1422",
+  "name" : "test_case_17_连续抓图",
+  "time" : {
+    "start" : 1706494336320,
+    "stop" : 1706494340054,
+    "duration" : 3734
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "428b9a8b71f571eb",
+  "name" : "test_case_19_电子变倍3X",
+  "time" : {
+    "start" : 1706494342784,
+    "stop" : 1706494344184,
+    "duration" : 1400
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "a8f5d11635b531e",
+  "name" : "test_case_11_暂停视频播放",
+  "time" : {
+    "start" : 1706494325294,
+    "stop" : 1706494327153,
+    "duration" : 1859
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "b0c0009811c5a615",
+  "name" : "test_case_18_自动聚焦",
+  "time" : {
+    "start" : 1706494340057,
+    "stop" : 1706494342777,
+    "duration" : 2720
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "140adeb27c21488c",
+  "name" : "test_case_15_开始录像",
+  "time" : {
+    "start" : 1706494329636,
+    "stop" : 1706494335487,
+    "duration" : 5851
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "ac3900a064dc7a21",
+  "name" : "test_case_28_近72小时最高温",
+  "time" : {
+    "start" : 1706494354599,
+    "stop" : 1706494356020,
+    "duration" : 1421
   },
   "status" : "passed",
   "severity" : "critical"

@@ -14,7 +14,7 @@ def run(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
-    page.goto("http://192.168.21.153/#/login")
+    page.goto("http://192.168.21.82/#/login")
 
     page.locator('.el-input__inner[placeholder="请输入用户名"]').fill("root")
     page.locator('input[type="password"].el-input__inner').fill("guide123")
@@ -22,8 +22,8 @@ def run(playwright: Playwright) -> None:
     sleep(4)
     page.locator('button:has-text("登录")').click()
     page.locator("i:nth-child(2)").click()
-    sleep(2)
     page.locator(".el-icon-circle-close").click()
+    expect(page.locator(".el-icon-circle-close")).to_be_hidden()
 
     # ---------------------
     sleep(3)
