@@ -36,6 +36,9 @@ class PreviewPage(Common):
     __time_range_24H = "近24小时"
     __time_range_72H = "近72小时"
     __time_range_4H = "近4小时"
+    __fill_or_adapt = "li:nth-child(4) > .el-tooltip"
+    __full_screen = "li:nth-child(5) > .el-tooltip"
+    __full_screen_exit = ".video-wrap > canvas"
 
     @allure.step("点击暂停播放")
     def click_video_stop(self):
@@ -126,15 +129,15 @@ class PreviewPage(Common):
 
     @allure.step("断言电子变倍成功")
     def assert_electronic_amplification(self, value):
-        expect(self.page.get_by_role("textbox", name="请选择")).to_have_value(value);
+        expect(self.page.get_by_role("textbox", name="请选择")).to_have_value(value)
 
     @allure.step("点击实时温度曲线")
     def click_real_time_temp_curve(self):
         self._click(self.__real_time_temp_curve)
 
     @allure.step("断言打开实时温度曲线成功")
-    def assert_real_time_temp_curve(self, value):
-        pass
+    def assert_real_time_temp_curve_start(self, value):
+        expect(self.page.locator(value)).to_be_visible()
 
     @allure.step("点击选择对象温度")
     def click_object_temp_select(self):
@@ -152,6 +155,10 @@ class PreviewPage(Common):
     def select_object_temp_avg(self):
         self.page.get_by_text(self.__object_temp_avg).click()
 
+    @allure.step("断言选择对象温度成功")
+    def assert_select_object_temp_success(self, value):
+        expect(self.page.get_by_placeholder("请选择").nth(1)).to_have_value(value)
+
     @allure.step("点击选择时间范围")
     def click_time_range_select(self):
         self.page.get_by_placeholder(self.__time_range_select).first.click()
@@ -168,14 +175,29 @@ class PreviewPage(Common):
     def select_time_range_72H(self):
         self.page.get_by_text(self.__time_range_72H).click()
 
+    @allure.step("断言选择时间范围切换成功")
+    def assert_select_time_range_success(self, value):
+        expect(self.page.get_by_placeholder("请选择").first).to_have_value(value)
 
+    @allure.step("断言关闭实时温度曲线成功")
+    def assert_real_time_temp_curve_stop(self, value):
+        expect(self.page.locator(value)).to_be_hidden()
 
+    @allure.step("点击填充或适应")
+    def click_fill_or_adapt(self):
+        self._click(self.__fill_or_adapt)
 
+    @allure.step("断言填充或适应成功")
+    def assert_fill_or_adapt(self, value):
+        expect(self.page.get_by_text(value)).to_be_visible()
 
+    @allure.step("全屏显示")
+    def click_full_screen(self):
+        self._click(self.__full_screen)
 
-
-
-
+    @allure.step("退出全屏显示")
+    def click_full_screen_exit(self):
+        self.page.locator(self.__full_screen_exit).dblclick()
 
 
 

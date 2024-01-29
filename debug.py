@@ -8,11 +8,25 @@
 from time import sleep
 from playwright.sync_api import Playwright, sync_playwright, expect
 import requests
+import re
+import os
+import allure
+import pytest
+from time import sleep
+from playwright.sync_api import sync_playwright
+from Pages.PreviewPage.PreviewPage import PreviewPage
+from Common.ReadYaml import ReadYaml
+from Common.AllurePretty import PrettyAllure
+from Config.Config import Config
 
 
 def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False)
-    context = browser.new_context()
+    browser = playwright.chromium.launch(
+        headless=False,
+        channel=Config.browser,
+        args=['--start-maximized'],
+        slow_mo=500)
+    context = browser.new_context(no_viewport=True)
     page = context.new_page()
     page.goto("http://192.168.21.82/#/login")
 
@@ -21,9 +35,14 @@ def run(playwright: Playwright) -> None:
     page.locator('.el-checkbox__input').click()
     sleep(4)
     page.locator('button:has-text("登录")').click()
-    page.locator("i:nth-child(2)").click()
-    page.locator(".el-icon-circle-close").click()
-    expect(page.locator(".el-icon-circle-close")).to_be_hidden()
+    sleep(2)
+    page.locator("li:nth-child(5) > .el-tooltip").click()
+    expect(page.locator("li:nth-child(5) > .el-tooltip")).to_be_hidden()
+
+    # page.locator(".video-wrap > canvas").dblclick()
+    # expect(page.locator("li:nth-child(5) > .el-tooltip")).to_be_visible()
+
+
 
     # ---------------------
     sleep(3)
