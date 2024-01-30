@@ -39,6 +39,9 @@ class PreviewPage(Common):
     __fill_or_adapt = "li:nth-child(4) > .el-tooltip"
     __full_screen = "li:nth-child(5) > .el-tooltip"
     __full_screen_exit = ".video-wrap > canvas"
+    __root = ("button", "root")
+    __logout = "退出登录"
+    __confirm_exit = ("button", "确认退出")
 
     @allure.step("点击暂停播放")
     def click_video_stop(self):
@@ -199,57 +202,19 @@ class PreviewPage(Common):
     def click_full_screen_exit(self):
         self.page.locator(self.__full_screen_exit).dblclick()
 
+    @allure.step("点击root用户")
+    def click_root(self):
+        self.page.get_by_role("button", name="root").click()
 
+    @allure.step("退出登录")
+    def click_logout(self):
+        self.page.get_by_text(self.__logout).click()
 
+    @allure.step("确认退出")
+    def click_confirm_exit(self):
+        self.page.get_by_role("button", name="确认退出").click()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @allure.step("断言退出登录成功")
+    def assert_logout_success(self, value):
+        expect(self.page.get_by_placeholder(value)).to_be_visible()
 

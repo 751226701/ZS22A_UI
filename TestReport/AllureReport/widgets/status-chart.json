@@ -1,350 +1,350 @@
 [ {
-  "uid" : "c27ba1886b036236",
-  "name" : "test_case_20_近72小时平均温",
-  "time" : {
-    "start" : 1706519126381,
-    "stop" : 1706519127785,
-    "duration" : 1404
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "5f67670c12d86254",
-  "name" : "test_case_06_停止录像",
-  "time" : {
-    "start" : 1706519103953,
-    "stop" : 1706519104886,
-    "duration" : 933
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "ec1a1a74acc7bfdd",
-  "name" : "test_case_10_是否为高德质感logo",
-  "time" : {
-    "start" : 1706519080787,
-    "stop" : 1706519082256,
-    "duration" : 1469
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "838d51413e174299",
-  "name" : "test_case_04_切换到英文版",
-  "time" : {
-    "start" : 1706519068822,
-    "stop" : 1706519071395,
-    "duration" : 2573
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "f21e6a5ae0b06bcb",
-  "name" : "test_case_17_近24小时最高温",
-  "time" : {
-    "start" : 1706519122180,
-    "stop" : 1706519123557,
-    "duration" : 1377
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "631488fdc04ca4c1",
+  "uid" : "d6bd191a35f537be",
   "name" : "test_case_09_电子变倍3X",
   "time" : {
-    "start" : 1706519111402,
-    "stop" : 1706519112824,
-    "duration" : 1422
+    "start" : 1706576880294,
+    "stop" : 1706576881669,
+    "duration" : 1375
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "d7890b0e1766ddf5",
-  "name" : "test_case_18_近72小时最高温",
+  "uid" : "17d2bdbebd89e311",
+  "name" : "test_case_20_近72小时平均温",
   "time" : {
-    "start" : 1706519123561,
-    "stop" : 1706519124955,
-    "duration" : 1394
+    "start" : 1706576895353,
+    "stop" : 1706576896729,
+    "duration" : 1376
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "62e6aae3385e476d",
-  "name" : "test_case_03_抓图",
+  "uid" : "67b9488df51061b0",
+  "name" : "test_case_02_admin用户登录",
   "time" : {
-    "start" : 1706519096155,
-    "stop" : 1706519097142,
-    "duration" : 987
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "23e93bf42f5fe68a",
-  "name" : "test_case_14_近4小时平均温",
-  "time" : {
-    "start" : 1706519117994,
-    "stop" : 1706519119388,
-    "duration" : 1394
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "406f833ce95e6daa",
-  "name" : "test_case_03_user用户登录",
-  "time" : {
-    "start" : 1706519058676,
-    "stop" : 1706519068813,
-    "duration" : 10137
+    "start" : 1706576817080,
+    "stop" : 1706576827174,
+    "duration" : 10094
   },
   "status" : "passed",
   "severity" : "blocker"
 }, {
-  "uid" : "8c7f31ab41b1d4cb",
-  "name" : "test_case_08_记住密码未勾选",
+  "uid" : "3692d7921212af8c",
+  "name" : "test_case_18_近72小时最高温",
   "time" : {
-    "start" : 1706519077371,
-    "stop" : 1706519078777,
-    "duration" : 1406
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b951212d620242c4",
-  "name" : "test_case_09_记住密码已勾选",
-  "time" : {
-    "start" : 1706519078780,
-    "stop" : 1706519080784,
-    "duration" : 2004
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "a3ea9fee6b92cb09",
-  "name" : "test_case_22_窗口填充",
-  "time" : {
-    "start" : 1706519128605,
-    "stop" : 1706519129426,
-    "duration" : 821
+    "start" : 1706576892577,
+    "stop" : 1706576893967,
+    "duration" : 1390
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "77b66bd8bc64fdc4",
-  "name" : "test_case_05_开始录像",
-  "time" : {
-    "start" : 1706519098043,
-    "stop" : 1706519103950,
-    "duration" : 5907
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "2620aa99067b9ef2",
+  "uid" : "cb95fdd03d364127",
   "name" : "test_case_11_电子变倍1X",
   "time" : {
-    "start" : 1706519114261,
-    "stop" : 1706519115712,
+    "start" : 1706576883070,
+    "stop" : 1706576884440,
+    "duration" : 1370
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "f0ee380c9c27f67e",
+  "name" : "test_case_10_是否为高德质感logo",
+  "time" : {
+    "start" : 1706576848900,
+    "stop" : 1706576850351,
     "duration" : 1451
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "4edb8a31b06d2f7d",
-  "name" : "test_case_16_近24小时最低温",
+  "uid" : "4821e86a423ce89b",
+  "name" : "test_case_21_关闭实时温度曲线",
   "time" : {
-    "start" : 1706519120791,
-    "stop" : 1706519122177,
-    "duration" : 1386
+    "start" : 1706576896735,
+    "stop" : 1706576897551,
+    "duration" : 816
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "77e89b9331aee1a0",
+  "uid" : "8e6f77497ca27b59",
+  "name" : "test_case_07_密码输入框明文显示",
+  "time" : {
+    "start" : 1706576843576,
+    "stop" : 1706576845521,
+    "duration" : 1945
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "fa396776b15a1843",
+  "name" : "test_case_08_自动聚焦",
+  "time" : {
+    "start" : 1706576876605,
+    "stop" : 1706576880287,
+    "duration" : 3682
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "dcbc3b911e6ee434",
   "name" : "test_case_04_关闭抓图弹窗",
   "time" : {
-    "start" : 1706519097146,
-    "stop" : 1706519098040,
-    "duration" : 894
+    "start" : 1706576865265,
+    "stop" : 1706576866128,
+    "duration" : 863
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "d51b08bafacdd542",
-  "name" : "test_case_15_近24小时平均温",
-  "time" : {
-    "start" : 1706519119392,
-    "stop" : 1706519120783,
-    "duration" : 1391
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "f9978d0da6cc88ad",
+  "uid" : "a908ddba4c63397d",
   "name" : "test_case_23_窗口适应",
   "time" : {
-    "start" : 1706519129429,
-    "stop" : 1706519130254,
-    "duration" : 825
+    "start" : 1706576898380,
+    "stop" : 1706576899230,
+    "duration" : 850
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "77f1cb8ccc8763b2",
+  "uid" : "e18f11de79dbe0b",
+  "name" : "test_case_19_近72小时最低温",
+  "time" : {
+    "start" : 1706576893982,
+    "stop" : 1706576895349,
+    "duration" : 1367
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "430d5d71c569ef",
+  "name" : "test_case_04_切换到英文版",
+  "time" : {
+    "start" : 1706576837227,
+    "stop" : 1706576839724,
+    "duration" : 2497
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "6e8cdeb8fbf79cd0",
+  "name" : "test_case_22_窗口填充",
+  "time" : {
+    "start" : 1706576897555,
+    "stop" : 1706576898373,
+    "duration" : 818
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "5dc085348c236690",
+  "name" : "test_case_06_停止录像",
+  "time" : {
+    "start" : 1706576872065,
+    "stop" : 1706576872897,
+    "duration" : 832
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "361e784cf48dc83e",
+  "name" : "test_case_25_退出全屏显示",
+  "time" : {
+    "start" : 1706576900025,
+    "stop" : 1706576900813,
+    "duration" : 788
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "1a1979c256d7c10",
+  "name" : "test_case_02_开始视频播放",
+  "time" : {
+    "start" : 1706576863499,
+    "stop" : 1706576864301,
+    "duration" : 802
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "7c4395a6a1d0d947",
+  "name" : "test_case_05_切换到中文版",
+  "time" : {
+    "start" : 1706576839727,
+    "stop" : 1706576842209,
+    "duration" : 2482
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "e1879c81e6335ff3",
   "name" : "test_case_01_暂停视频播放",
   "time" : {
-    "start" : 1706519093387,
-    "stop" : 1706519095334,
+    "start" : 1706576861674,
+    "stop" : 1706576863496,
+    "duration" : 1822
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "44a3d8d8c10d4646",
+  "name" : "test_case_14_近4小时平均温",
+  "time" : {
+    "start" : 1706576886730,
+    "stop" : 1706576888113,
+    "duration" : 1383
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "b6d51de2ea1a6434",
+  "name" : "test_case_03_抓图",
+  "time" : {
+    "start" : 1706576864306,
+    "stop" : 1706576865251,
+    "duration" : 945
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "16b79c9b1d3c6c5d",
+  "name" : "test_case_03_user用户登录",
+  "time" : {
+    "start" : 1706576827180,
+    "stop" : 1706576837220,
+    "duration" : 10040
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "1f95f07df5035815",
+  "name" : "test_case_13_近4小时最低温",
+  "time" : {
+    "start" : 1706576885356,
+    "stop" : 1706576886727,
+    "duration" : 1371
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "6856dd8077ff53a9",
+  "name" : "test_case_06_密码输入框密文显示",
+  "time" : {
+    "start" : 1706576842213,
+    "stop" : 1706576843573,
+    "duration" : 1360
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "f4ef66af3337219c",
+  "name" : "test_case_24_全屏显示",
+  "time" : {
+    "start" : 1706576899234,
+    "stop" : 1706576900021,
+    "duration" : 787
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "c300fc76fcb1749e",
+  "name" : "test_case_09_记住密码已勾选",
+  "time" : {
+    "start" : 1706576846950,
+    "stop" : 1706576848897,
     "duration" : 1947
   },
   "status" : "passed",
-  "severity" : "critical"
+  "severity" : "normal"
 }, {
-  "uid" : "c8ed93bc25fd5cbe",
-  "name" : "test_case_13_近4小时最低温",
+  "uid" : "ac8a89f43b56bd2f",
+  "name" : "test_case_15_近24小时平均温",
   "time" : {
-    "start" : 1706519116557,
-    "stop" : 1706519117986,
-    "duration" : 1429
+    "start" : 1706576888116,
+    "stop" : 1706576889499,
+    "duration" : 1383
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "ed1457c308e71f4a",
-  "name" : "test_case_25_退出全屏显示",
-  "time" : {
-    "start" : 1706519131029,
-    "stop" : 1706519131878,
-    "duration" : 849
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "8ee59f345fff52e9",
-  "name" : "test_case_21_关闭实时温度曲线",
-  "time" : {
-    "start" : 1706519127792,
-    "stop" : 1706519128597,
-    "duration" : 805
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "3a5ca2d0cbdc227a",
-  "name" : "test_case_02_admin用户登录",
-  "time" : {
-    "start" : 1706519048486,
-    "stop" : 1706519058673,
-    "duration" : 10187
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "3e5d503bb88c0674",
-  "name" : "test_case_12_开启温度曲线(近4小时最高温)",
-  "time" : {
-    "start" : 1706519115715,
-    "stop" : 1706519116541,
-    "duration" : 826
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "fbac8fd85e3c10c5",
-  "name" : "test_case_10_电子变倍2X",
-  "time" : {
-    "start" : 1706519112828,
-    "stop" : 1706519114257,
-    "duration" : 1429
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "40cb1f13664e18a3",
-  "name" : "test_case_02_开始视频播放",
-  "time" : {
-    "start" : 1706519095337,
-    "stop" : 1706519096148,
-    "duration" : 811
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "d2f7e73516483672",
-  "name" : "test_case_07_密码输入框明文显示",
-  "time" : {
-    "start" : 1706519075370,
-    "stop" : 1706519077368,
-    "duration" : 1998
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "b5281f4c95d6f8e9",
-  "name" : "test_case_24_全屏显示",
-  "time" : {
-    "start" : 1706519130257,
-    "stop" : 1706519131026,
-    "duration" : 769
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "520938b6a3dca159",
-  "name" : "test_case_19_近72小时最低温",
-  "time" : {
-    "start" : 1706519124959,
-    "stop" : 1706519126378,
-    "duration" : 1419
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "516283b9214ace25",
+  "uid" : "2ee9592c28e4487f",
   "name" : "test_case_01_root用户登录",
   "time" : {
-    "start" : 1706519036688,
-    "stop" : 1706519048478,
-    "duration" : 11790
+    "start" : 1706576805418,
+    "stop" : 1706576817077,
+    "duration" : 11659
   },
   "status" : "passed",
   "severity" : "blocker"
 }, {
-  "uid" : "f5431f999e3842bd",
+  "uid" : "240f15a1c3c5fcc3",
   "name" : "test_case_07_连续抓图",
   "time" : {
-    "start" : 1706519104896,
-    "stop" : 1706519108668,
-    "duration" : 3772
+    "start" : 1706576872901,
+    "stop" : 1706576876600,
+    "duration" : 3699
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "cb4c0bbfc4e4b93b",
-  "name" : "test_case_05_切换到中文版",
+  "uid" : "56cbbd7b9c135b97",
+  "name" : "test_case_10_电子变倍2X",
   "time" : {
-    "start" : 1706519071398,
-    "stop" : 1706519073928,
-    "duration" : 2530
+    "start" : 1706576881677,
+    "stop" : 1706576883066,
+    "duration" : 1389
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "1984f16a1770ad9c",
-  "name" : "test_case_06_密码输入框密文显示",
+  "uid" : "4554c0edf6131d6e",
+  "name" : "test_case_05_开始录像",
   "time" : {
-    "start" : 1706519073934,
-    "stop" : 1706519075368,
-    "duration" : 1434
+    "start" : 1706576866135,
+    "stop" : 1706576872061,
+    "duration" : 5926
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "853b512743472148",
-  "name" : "test_case_08_自动聚焦",
+  "uid" : "d419b67f47190263",
+  "name" : "test_case_16_近24小时最低温",
   "time" : {
-    "start" : 1706519108673,
-    "stop" : 1706519111396,
-    "duration" : 2723
+    "start" : 1706576889502,
+    "stop" : 1706576891048,
+    "duration" : 1546
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "144eebfc1dce51b3",
+  "name" : "test_case_08_记住密码未勾选",
+  "time" : {
+    "start" : 1706576845529,
+    "stop" : 1706576846946,
+    "duration" : 1417
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e9479ed20dc2c645",
+  "name" : "test_case_17_近24小时最高温",
+  "time" : {
+    "start" : 1706576891052,
+    "stop" : 1706576892570,
+    "duration" : 1518
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "31f9a47b633922e5",
+  "name" : "test_case_12_开启温度曲线(近4小时最高温)",
+  "time" : {
+    "start" : 1706576884451,
+    "stop" : 1706576885351,
+    "duration" : 900
   },
   "status" : "passed",
   "severity" : "critical"

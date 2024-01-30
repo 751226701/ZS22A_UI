@@ -16,7 +16,7 @@ from Config.Config import Config
 """执行登录模块测试"""
 
 
-class TestLogin():
+class TestLogin:
     """root/admin/user用户登录"""
     yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml")).read()
 

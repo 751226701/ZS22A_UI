@@ -258,18 +258,26 @@ class TestPreview:
         page.click_fill_or_adapt()
         page.assert_fill_or_adapt(yaml_data[23]["断言元素定位"])
 
-    """窗口填充"""
+    """全屏显示"""
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[24]])
     def test_case_24(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_full_screen()
 
-    """退出窗口填充"""
+    """退出全屏显示"""
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[25]])
     def test_case_25(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_full_screen_exit()
 
-
+    """退出登录"""
+    @PrettyAllure.PrettyAllureWarpper
+    @pytest.mark.parametrize("CaseData", [yaml_data[26]])
+    def test_case_26(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_root()
+        page.click_logout()
+        page.click_confirm_exit()
+        page.assert_logout_success(yaml_data[26]["断言元素定位"])
