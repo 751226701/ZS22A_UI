@@ -74,6 +74,7 @@ def pytest_runtest_makereport(item, call):
         # 添加allure报告截图
         if hasattr(pageobject, "screenshot"):
             with allure.step('添加失败截图...'):
-                path = Config.test_screenshot_dir + os.path.sep + item.funcargs["CaseData"].get("用例编号") + "失败截图.png"
-                file = pageobject.screenshot(path=path)
-                allure.attach.file(file, "失败截图", allure.attachment_type.PNG)
+                filename = Config.test_screenshot_dir + os.path.sep + item.funcargs["CaseData"].get("用例编号") + "_失败截图.png"
+                pageobject.screenshot(path=filename)
+                allure.attach.file(source=filename, name="失败截图", attachment_type=allure.attachment_type.PNG)
+

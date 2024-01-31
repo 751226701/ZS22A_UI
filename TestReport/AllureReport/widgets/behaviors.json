@@ -4,21 +4,21 @@
     "uid" : "27973847c8d252d838687143975d01c1",
     "name" : "02 实时预览",
     "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
+      "failed" : 1,
+      "broken" : 7,
       "skipped" : 0,
-      "passed" : 9,
+      "passed" : 2,
       "unknown" : 0,
-      "total" : 9
+      "total" : 10
     }
   }, {
     "uid" : "3750765cc013100fb66edc796bfb615d",
     "name" : "01 用户管理",
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 5,
+      "passed" : 4,
       "unknown" : 0,
       "total" : 5
     }

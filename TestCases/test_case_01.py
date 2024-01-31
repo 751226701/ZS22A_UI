@@ -99,7 +99,7 @@ class TestLogin:
         page.click_remember_password()
         page.assert_remember_password_on(CaseData["断言元素定位"])
 
-    """质感logo"""
+    """高德logo"""
 
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[9]])
