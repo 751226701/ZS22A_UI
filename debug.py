@@ -6,6 +6,8 @@
 # @project: ZS22A_UI
 
 from time import sleep
+
+import yaml
 from playwright.sync_api import Playwright, sync_playwright, expect
 import requests
 import re
@@ -42,8 +44,6 @@ def run(playwright: Playwright) -> None:
     # page.locator(".video-wrap > canvas").dblclick()
     # expect(page.locator("li:nth-child(5) > .el-tooltip")).to_be_visible()
 
-
-
     # ---------------------
     sleep(3)
     context.close()
@@ -52,3 +52,6 @@ def run(playwright: Playwright) -> None:
 
 with sync_playwright() as playwright:
     run(playwright)
+
+
+
