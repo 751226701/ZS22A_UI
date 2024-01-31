@@ -1,261 +1,261 @@
 [ {
-  "uid" : "81da4d6206757755",
-  "name" : "test_case_05_开始录像",
+  "uid" : "bda440ef322da722",
+  "name" : "test_case_15[CaseData0]",
   "time" : {
-    "start" : 1706686119449,
-    "stop" : 1706686125351,
-    "duration" : 5902
+    "start" : 1706686843854,
+    "stop" : 1706686843854,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "ffa96a3407d403c",
-  "name" : "test_case_12_开启温度曲线(近4小时最高温)",
+  "uid" : "c6491ce1d14d370b",
+  "name" : "test_case_18[CaseData0]",
   "time" : {
-    "start" : 1706686137933,
-    "stop" : 1706686138716,
-    "duration" : 783
+    "start" : 1706686844256,
+    "stop" : 1706686844256,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "fb499ae8ea3c2214",
-  "name" : "test_case_11_电子变倍1X",
+  "uid" : "c7c1d89146b97307",
+  "name" : "test_case_10[CaseData0]",
   "time" : {
-    "start" : 1706686136461,
-    "stop" : 1706686137930,
-    "duration" : 1469
+    "start" : 1706686843120,
+    "stop" : 1706686843120,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "93525fdc115f3946",
-  "name" : "test_case_14_近4小时平均温",
+  "uid" : "f4064ff93443bae4",
+  "name" : "test_case_07[CaseData0]",
   "time" : {
-    "start" : 1706686141602,
-    "stop" : 1706686144404,
-    "duration" : 2802
+    "start" : 1706686842667,
+    "stop" : 1706686842667,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "dd224a595cda846e",
-  "name" : "test_case_15_近24小时平均温",
+  "uid" : "1ba700d978bfa0c8",
+  "name" : "test_case_02[CaseData0]",
   "time" : {
-    "start" : 1706686144409,
-    "stop" : 1706686146685,
-    "duration" : 2276
+    "start" : 1706686841908,
+    "stop" : 1706686841908,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "be02c30aa63fd065",
-  "name" : "test_case_19_近72小时最低温",
+  "uid" : "7c02413bbf0cefe3",
+  "name" : "test_case_05[CaseData0]",
   "time" : {
-    "start" : 1706686160052,
-    "stop" : 1706686162892,
-    "duration" : 2840
+    "start" : 1706686842387,
+    "stop" : 1706686842387,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "3caf69bb4bc064ac",
-  "name" : "test_case_20_近72小时平均温",
+  "uid" : "2357c26a0e321a77",
+  "name" : "test_case_09[CaseData0]",
   "time" : {
-    "start" : 1706686162895,
-    "stop" : 1706686165777,
-    "duration" : 2882
+    "start" : 1706686842966,
+    "stop" : 1706686842966,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "610349581bc0b215",
-  "name" : "test_case_10_电子变倍2X",
+  "uid" : "4ab8473d4d9988e2",
+  "name" : "test_case_23[CaseData0]",
   "time" : {
-    "start" : 1706686135096,
-    "stop" : 1706686136459,
-    "duration" : 1363
+    "start" : 1706686844973,
+    "stop" : 1706686844973,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "282854e5661e270b",
-  "name" : "test_case_07_连续抓图",
+  "uid" : "6b26db46deb92d27",
+  "name" : "test_case_26[CaseData0]",
   "time" : {
-    "start" : 1706686126245,
-    "stop" : 1706686129986,
-    "duration" : 3741
+    "start" : 1706686845424,
+    "stop" : 1706686845424,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "8bf66499fa479a1f",
-  "name" : "test_case_26_退出登录",
+  "uid" : "7db7d6c1e1957ee5",
+  "name" : "test_case_01[CaseData0]",
   "time" : {
-    "start" : 1706686171371,
-    "stop" : 1706686173347,
-    "duration" : 1976
+    "start" : 1706686829754,
+    "stop" : 1706686829754,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "5c17c419a091f624",
-  "name" : "test_case_09_电子变倍3X",
+  "uid" : "411cd42dd4629fa4",
+  "name" : "test_case_13[CaseData0]",
   "time" : {
-    "start" : 1706686133750,
-    "stop" : 1706686135094,
-    "duration" : 1344
+    "start" : 1706686843528,
+    "stop" : 1706686843528,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "44090fc21ca687c9",
-  "name" : "test_case_25_退出全屏显示",
+  "uid" : "a2f1483dc0cef8ea",
+  "name" : "test_case_22[CaseData0]",
   "time" : {
-    "start" : 1706686170521,
-    "stop" : 1706686171355,
-    "duration" : 834
+    "start" : 1706686844826,
+    "stop" : 1706686844826,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "24693f9de5e1bd98",
-  "name" : "test_case_16_近24小时最低温",
+  "uid" : "f4b0647ed4c52840",
+  "name" : "test_case_17[CaseData0]",
   "time" : {
-    "start" : 1706686146695,
-    "stop" : 1706686151160,
-    "duration" : 4465
+    "start" : 1706686844115,
+    "stop" : 1706686844115,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "63fc880f856fb158",
-  "name" : "test_case_04_关闭抓图弹窗",
+  "uid" : "40dd7a691ef8a237",
+  "name" : "test_case_08[CaseData0]",
   "time" : {
-    "start" : 1706686118573,
-    "stop" : 1706686119447,
-    "duration" : 874
+    "start" : 1706686842823,
+    "stop" : 1706686842823,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "851e2bd4e178a668",
-  "name" : "test_case_22_窗口填充",
+  "uid" : "626cbb325ab4d821",
+  "name" : "test_case_04[CaseData0]",
   "time" : {
-    "start" : 1706686168049,
-    "stop" : 1706686168894,
-    "duration" : 845
+    "start" : 1706686842217,
+    "stop" : 1706686842217,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "e4dfb85dc35522ab",
-  "name" : "test_case_08_自动聚焦",
+  "uid" : "138ed1711b3d50b6",
+  "name" : "test_case_24[CaseData0]",
   "time" : {
-    "start" : 1706686129990,
-    "stop" : 1706686133747,
-    "duration" : 3757
+    "start" : 1706686845123,
+    "stop" : 1706686845123,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "a9a8f4620ff0c2ac",
-  "name" : "test_case_17_近24小时最高温",
+  "uid" : "c8ba7818fd43e0ae",
+  "name" : "test_case_12[CaseData0]",
   "time" : {
-    "start" : 1706686151171,
-    "stop" : 1706686155632,
-    "duration" : 4461
+    "start" : 1706686843379,
+    "stop" : 1706686843379,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "abcef505093fdb88",
-  "name" : "test_case_02_开始视频播放",
+  "uid" : "42d050e74e98c02",
+  "name" : "test_case_25[CaseData0]",
   "time" : {
-    "start" : 1706686116908,
-    "stop" : 1706686117720,
-    "duration" : 812
+    "start" : 1706686845275,
+    "stop" : 1706686845275,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "7d11f58cec4e90f7",
-  "name" : "test_case_01_暂停视频播放",
+  "uid" : "13ffe6b7f737090d",
+  "name" : "test_case_03[CaseData0]",
   "time" : {
-    "start" : 1706686115009,
-    "stop" : 1706686116905,
-    "duration" : 1896
+    "start" : 1706686842051,
+    "stop" : 1706686842051,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "ebb4c50ac26c4e9a",
-  "name" : "test_case_06_停止录像",
+  "uid" : "97b8b6846144d6dc",
+  "name" : "test_case_20[CaseData0]",
   "time" : {
-    "start" : 1706686125354,
-    "stop" : 1706686126234,
-    "duration" : 880
+    "start" : 1706686844540,
+    "stop" : 1706686844540,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "e21baf46bae1afbd",
-  "name" : "test_case_23_窗口适应",
+  "uid" : "2eaa49076d54ad1e",
+  "name" : "test_case_06[CaseData0]",
   "time" : {
-    "start" : 1706686168897,
-    "stop" : 1706686169724,
-    "duration" : 827
+    "start" : 1706686842520,
+    "stop" : 1706686842520,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "bf3dcce178a3c57c",
-  "name" : "test_case_24_全屏显示",
+  "uid" : "bc028d70985dad21",
+  "name" : "test_case_19[CaseData0]",
   "time" : {
-    "start" : 1706686169726,
-    "stop" : 1706686170518,
-    "duration" : 792
+    "start" : 1706686844391,
+    "stop" : 1706686844391,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "ef43a20d5a54089a",
-  "name" : "test_case_03_抓图",
+  "uid" : "309655e15cd4fc38",
+  "name" : "test_case_21[CaseData0]",
   "time" : {
-    "start" : 1706686117725,
-    "stop" : 1706686118564,
-    "duration" : 839
+    "start" : 1706686844706,
+    "stop" : 1706686844706,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "744fc188e7b5037d",
-  "name" : "test_case_13_近4小时最低温",
+  "uid" : "a24b71816f4afe69",
+  "name" : "test_case_16[CaseData0]",
   "time" : {
-    "start" : 1706686138725,
-    "stop" : 1706686141598,
-    "duration" : 2873
+    "start" : 1706686844005,
+    "stop" : 1706686844005,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "717d290969dae00c",
-  "name" : "test_case_18_近72小时最高温",
+  "uid" : "42be3250e86b6fd7",
+  "name" : "test_case_14[CaseData0]",
   "time" : {
-    "start" : 1706686155640,
-    "stop" : 1706686160048,
-    "duration" : 4408
+    "start" : 1706686843708,
+    "stop" : 1706686843708,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 }, {
-  "uid" : "9167f78417587fe5",
-  "name" : "test_case_21_关闭实时温度曲线",
+  "uid" : "91f242190161c65b",
+  "name" : "test_case_11[CaseData0]",
   "time" : {
-    "start" : 1706686165783,
-    "stop" : 1706686168046,
-    "duration" : 2263
+    "start" : 1706686843240,
+    "stop" : 1706686843240,
+    "duration" : 0
   },
-  "status" : "passed",
-  "severity" : "critical"
+  "status" : "broken",
+  "severity" : "normal"
 } ]

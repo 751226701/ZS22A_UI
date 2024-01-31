@@ -1,5 +1,351 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
+      "children" : [ {
+        "name" : "test_case_01[CaseData0]",
+        "uid" : "7db7d6c1e1957ee5",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686829754,
+          "stop" : 1706686829754,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_01', '模块': '02 实时预览', '功能': '01 视频播放', '优先级': 'critical', '是否执行': 'Y', '用例标题': '暂停视频播放', '断言元素定位': ['.el-tooltip__popper.is-light', '播放']}" ]
+      }, {
+        "name" : "test_case_02[CaseData0]",
+        "uid" : "1ba700d978bfa0c8",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686841908,
+          "stop" : 1706686841908,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_02', '模块': '02 实时预览', '功能': '01 视频播放', '优先级': 'critical', '是否执行': 'Y', '用例标题': '开始视频播放', '断言元素定位': ['.el-tooltip__popper.is-light', '暂停']}" ]
+      }, {
+        "name" : "test_case_03[CaseData0]",
+        "uid" : "13ffe6b7f737090d",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686842051,
+          "stop" : 1706686842051,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_03', '模块': '02 实时预览', '功能': '02 抓图', '优先级': 'critical', '是否执行': 'Y', '用例标题': '抓图', '断言元素定位': '.el-icon-circle-close'}" ]
+      }, {
+        "name" : "test_case_04[CaseData0]",
+        "uid" : "626cbb325ab4d821",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686842217,
+          "stop" : 1706686842217,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_04', '模块': '02 实时预览', '功能': '02 抓图', '优先级': 'critical', '是否执行': 'Y', '用例标题': '关闭抓图弹窗', '断言元素定位': '.el-icon-circle-close'}" ]
+      }, {
+        "name" : "test_case_05[CaseData0]",
+        "uid" : "7c02413bbf0cefe3",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686842387,
+          "stop" : 1706686842387,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_05', '模块': '02 实时预览', '功能': '03 录像', '优先级': 'critical', '是否执行': 'Y', '用例标题': '开始录像', '断言元素定位': '.right-box > canvas:nth-child(2)'}" ]
+      }, {
+        "name" : "test_case_06[CaseData0]",
+        "uid" : "2eaa49076d54ad1e",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686842520,
+          "stop" : 1706686842520,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_06', '模块': '02 实时预览', '功能': '03 录像', '优先级': 'critical', '是否执行': 'Y', '用例标题': '停止录像', '断言元素定位': '录像完成！'}" ]
+      }, {
+        "name" : "test_case_07[CaseData0]",
+        "uid" : "f4064ff93443bae4",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686842667,
+          "stop" : 1706686842667,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_07', '模块': '02 实时预览', '功能': '04 连续抓图', '优先级': 'critical', '是否执行': 'Y', '用例标题': '连续抓图', '断言元素定位': '连续抓图完成！'}" ]
+      }, {
+        "name" : "test_case_08[CaseData0]",
+        "uid" : "40dd7a691ef8a237",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686842823,
+          "stop" : 1706686842823,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_08', '模块': '02 实时预览', '功能': '05 调焦', '优先级': 'critical', '是否执行': 'Y', '用例标题': '自动聚焦', '断言元素定位': '聚焦完成'}" ]
+      }, {
+        "name" : "test_case_09[CaseData0]",
+        "uid" : "2357c26a0e321a77",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686842966,
+          "stop" : 1706686842966,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_09', '模块': '02 实时预览', '功能': '06 电子变倍', '优先级': 'critical', '是否执行': 'Y', '用例标题': '电子变倍3X', '断言元素定位': '3X'}" ]
+      }, {
+        "name" : "test_case_10[CaseData0]",
+        "uid" : "c7c1d89146b97307",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686843120,
+          "stop" : 1706686843120,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_10', '模块': '02 实时预览', '功能': '06 电子变倍', '优先级': 'critical', '是否执行': 'Y', '用例标题': '电子变倍2X', '断言元素定位': '2X'}" ]
+      }, {
+        "name" : "test_case_11[CaseData0]",
+        "uid" : "91f242190161c65b",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686843240,
+          "stop" : 1706686843240,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_11', '模块': '02 实时预览', '功能': '06 电子变倍', '优先级': 'critical', '是否执行': 'Y', '用例标题': '电子变倍1X', '断言元素定位': '1X'}" ]
+      }, {
+        "name" : "test_case_12[CaseData0]",
+        "uid" : "c8ba7818fd43e0ae",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686843379,
+          "stop" : 1706686843379,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_12', '模块': '02 实时预览', '功能': '07 实时温度曲线', '优先级': 'critical', '是否执行': 'Y', '用例标题': '开启温度曲线(近4小时最高温)', '断言元素定位': '.echarts > div > canvas'}" ]
+      }, {
+        "name" : "test_case_13[CaseData0]",
+        "uid" : "411cd42dd4629fa4",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686843528,
+          "stop" : 1706686843528,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_13', '模块': '02 实时预览', '功能': '07 实时温度曲线', '优先级': 'critical', '是否执行': 'Y', '用例标题': '近4小时最低温', '断言元素定位': '最低温'}" ]
+      }, {
+        "name" : "test_case_14[CaseData0]",
+        "uid" : "42be3250e86b6fd7",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686843708,
+          "stop" : 1706686843708,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_14', '模块': '02 实时预览', '功能': '07 实时温度曲线', '优先级': 'critical', '是否执行': 'Y', '用例标题': '近4小时平均温', '断言元素定位': '平均温'}" ]
+      }, {
+        "name" : "test_case_15[CaseData0]",
+        "uid" : "bda440ef322da722",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686843854,
+          "stop" : 1706686843854,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_15', '模块': '02 实时预览', '功能': '07 实时温度曲线', '优先级': 'critical', '是否执行': 'Y', '用例标题': '近24小时平均温', '断言元素定位': '近24小时'}" ]
+      }, {
+        "name" : "test_case_16[CaseData0]",
+        "uid" : "a24b71816f4afe69",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686844005,
+          "stop" : 1706686844005,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_16', '模块': '02 实时预览', '功能': '07 实时温度曲线', '优先级': 'critical', '是否执行': 'Y', '用例标题': '近24小时最低温', '断言元素定位': '最低温'}" ]
+      }, {
+        "name" : "test_case_17[CaseData0]",
+        "uid" : "f4b0647ed4c52840",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686844115,
+          "stop" : 1706686844115,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_17', '模块': '02 实时预览', '功能': '07 实时温度曲线', '优先级': 'critical', '是否执行': 'Y', '用例标题': '近24小时最高温', '断言元素定位': '最高温'}" ]
+      }, {
+        "name" : "test_case_18[CaseData0]",
+        "uid" : "c6491ce1d14d370b",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686844256,
+          "stop" : 1706686844256,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_18', '模块': '02 实时预览', '功能': '07 实时温度曲线', '优先级': 'critical', '是否执行': 'Y', '用例标题': '近72小时最高温', '断言元素定位': '近72小时'}" ]
+      }, {
+        "name" : "test_case_19[CaseData0]",
+        "uid" : "bc028d70985dad21",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686844391,
+          "stop" : 1706686844391,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_19', '模块': '02 实时预览', '功能': '07 实时温度曲线', '优先级': 'critical', '是否执行': 'Y', '用例标题': '近72小时最低温', '断言元素定位': '最低温'}" ]
+      }, {
+        "name" : "test_case_20[CaseData0]",
+        "uid" : "97b8b6846144d6dc",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686844540,
+          "stop" : 1706686844540,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_20', '模块': '02 实时预览', '功能': '07 实时温度曲线', '优先级': 'critical', '是否执行': 'Y', '用例标题': '近72小时平均温', '断言元素定位': '平均温'}" ]
+      }, {
+        "name" : "test_case_21[CaseData0]",
+        "uid" : "309655e15cd4fc38",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686844706,
+          "stop" : 1706686844706,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_21', '模块': '02 实时预览', '功能': '07 实时温度曲线', '优先级': 'critical', '是否执行': 'Y', '用例标题': '关闭实时温度曲线', '断言元素定位': '.echarts > div > canvas'}" ]
+      }, {
+        "name" : "test_case_22[CaseData0]",
+        "uid" : "a2f1483dc0cef8ea",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686844826,
+          "stop" : 1706686844826,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_22', '模块': '02 实时预览', '功能': '08 窗口填充适应', '优先级': 'critical', '是否执行': 'Y', '用例标题': '窗口填充', '断言元素定位': '窗口适应'}" ]
+      }, {
+        "name" : "test_case_23[CaseData0]",
+        "uid" : "4ab8473d4d9988e2",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686844973,
+          "stop" : 1706686844973,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_23', '模块': '02 实时预览', '功能': '08 窗口填充适应', '优先级': 'critical', '是否执行': 'Y', '用例标题': '窗口适应', '断言元素定位': '窗口填充'}" ]
+      }, {
+        "name" : "test_case_24[CaseData0]",
+        "uid" : "138ed1711b3d50b6",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686845123,
+          "stop" : 1706686845123,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_24', '模块': '02 实时预览', '功能': '09 全屏', '优先级': 'critical', '是否执行': 'Y', '用例标题': '全屏显示', '断言元素定位': None}" ]
+      }, {
+        "name" : "test_case_25[CaseData0]",
+        "uid" : "42d050e74e98c02",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686845275,
+          "stop" : 1706686845275,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_25', '模块': '02 实时预览', '功能': '09 全屏', '优先级': 'critical', '是否执行': 'Y', '用例标题': '退出全屏显示', '断言元素定位': None}" ]
+      }, {
+        "name" : "test_case_26[CaseData0]",
+        "uid" : "6b26db46deb92d27",
+        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
+        "status" : "broken",
+        "time" : {
+          "start" : 1706686845424,
+          "stop" : 1706686845424,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_26', '模块': '02 实时预览', '功能': '10 用户', '优先级': 'critical', '是否执行': 'Y', '用例标题': '退出登录', '断言元素定位': '请输入用户名'}" ]
+      } ],
+      "uid" : "d6ff2d591af41f585fcb13f82092dbba"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
 }

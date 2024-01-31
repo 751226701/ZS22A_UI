@@ -2,494 +2,520 @@
   "6a7f4d58702d4949f42c21a63563b59d" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "7d11f58cec4e90f7",
-      "status" : "passed",
+      "uid" : "7db7d6c1e1957ee5",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686115009,
-        "stop" : 1706686116905,
-        "duration" : 1896
+        "start" : 1706686829754,
+        "stop" : 1706686829754,
+        "duration" : 0
       }
     } ]
   },
   "0f0e3d252c4628fce21404279c624d87" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "744fc188e7b5037d",
-      "status" : "passed",
+      "uid" : "411cd42dd4629fa4",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686138725,
-        "stop" : 1706686141598,
-        "duration" : 2873
+        "start" : 1706686843528,
+        "stop" : 1706686843528,
+        "duration" : 0
       }
     } ]
   },
   "1ecd2a896486b9fe763d37cf349684f9" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "ef43a20d5a54089a",
-      "status" : "passed",
+      "uid" : "13ffe6b7f737090d",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686117725,
-        "stop" : 1706686118564,
-        "duration" : 839
+        "start" : 1706686842051,
+        "stop" : 1706686842051,
+        "duration" : 0
       }
     } ]
   },
   "06c5a342927006291edb62129b1a77f4" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "8bf66499fa479a1f",
-      "status" : "passed",
+      "uid" : "6b26db46deb92d27",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686171371,
-        "stop" : 1706686173347,
-        "duration" : 1976
+        "start" : 1706686845424,
+        "stop" : 1706686845424,
+        "duration" : 0
       }
     } ]
   },
   "921f86ff4ca8e5af50f4674480583bd1" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "be02c30aa63fd065",
-      "status" : "passed",
+      "uid" : "bc028d70985dad21",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686160052,
-        "stop" : 1706686162892,
-        "duration" : 2840
+        "start" : 1706686844391,
+        "stop" : 1706686844391,
+        "duration" : 0
       }
     } ]
   },
   "784587b772586f772a7df08745835f90" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "9167f78417587fe5",
-      "status" : "passed",
+      "uid" : "309655e15cd4fc38",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686165783,
-        "stop" : 1706686168046,
-        "duration" : 2263
+        "start" : 1706686844706,
+        "stop" : 1706686844706,
+        "duration" : 0
       }
     } ]
   },
   "b01ce41dda62c14d1e6b9535d1db17b5" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "93525fdc115f3946",
-      "status" : "passed",
+      "uid" : "42be3250e86b6fd7",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686141602,
-        "stop" : 1706686144404,
-        "duration" : 2802
-      }
-    } ]
-  },
-  "a436d8ce5a7ac464095adfe8216d1e2a" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "5c17c419a091f624",
-      "status" : "passed",
-      "time" : {
-        "start" : 1706686133750,
-        "stop" : 1706686135094,
-        "duration" : 1344
+        "start" : 1706686843708,
+        "stop" : 1706686843708,
+        "duration" : 0
       }
     } ]
   },
   "4a870fee4213b9c694d7725814101fdb" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "fb499ae8ea3c2214",
-      "status" : "passed",
+      "uid" : "91f242190161c65b",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686136461,
-        "stop" : 1706686137930,
-        "duration" : 1469
+        "start" : 1706686843240,
+        "stop" : 1706686843240,
+        "duration" : 0
       }
     } ]
   },
   "d8eef1979cdec45b13103713dd70d905" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "610349581bc0b215",
-      "status" : "passed",
+      "uid" : "c7c1d89146b97307",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686135096,
-        "stop" : 1706686136459,
-        "duration" : 1363
+        "start" : 1706686843120,
+        "stop" : 1706686843120,
+        "duration" : 0
+      }
+    } ]
+  },
+  "a436d8ce5a7ac464095adfe8216d1e2a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2357c26a0e321a77",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
+      "time" : {
+        "start" : 1706686842966,
+        "stop" : 1706686842966,
+        "duration" : 0
       }
     } ]
   },
   "d985a802866b1d69707f9484bb2385a2" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "bf3dcce178a3c57c",
-      "status" : "passed",
+      "uid" : "138ed1711b3d50b6",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686169726,
-        "stop" : 1706686170518,
-        "duration" : 792
+        "start" : 1706686845123,
+        "stop" : 1706686845123,
+        "duration" : 0
       }
     } ]
   },
   "7e1ec221f13d1ffe719633f2616ea1b5" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "24693f9de5e1bd98",
-      "status" : "passed",
+      "uid" : "a24b71816f4afe69",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686146695,
-        "stop" : 1706686151160,
-        "duration" : 4465
+        "start" : 1706686844005,
+        "stop" : 1706686844005,
+        "duration" : 0
       }
     } ]
   },
   "3725f7d55bd836cc1a498746f2e8e087" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "44090fc21ca687c9",
-      "status" : "passed",
+      "uid" : "42d050e74e98c02",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686170521,
-        "stop" : 1706686171355,
-        "duration" : 834
-      }
-    } ]
-  },
-  "1ed5b06d79f44b0b36146a09425997d7" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "a9a8f4620ff0c2ac",
-      "status" : "passed",
-      "time" : {
-        "start" : 1706686151171,
-        "stop" : 1706686155632,
-        "duration" : 4461
+        "start" : 1706686845275,
+        "stop" : 1706686845275,
+        "duration" : 0
       }
     } ]
   },
   "206a51f547dec663b1a6e9862be3ea1f" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "abcef505093fdb88",
-      "status" : "passed",
+      "uid" : "1ba700d978bfa0c8",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686116908,
-        "stop" : 1706686117720,
-        "duration" : 812
+        "start" : 1706686841908,
+        "stop" : 1706686841908,
+        "duration" : 0
+      }
+    } ]
+  },
+  "1ed5b06d79f44b0b36146a09425997d7" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f4b0647ed4c52840",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
+      "time" : {
+        "start" : 1706686844115,
+        "stop" : 1706686844115,
+        "duration" : 0
       }
     } ]
   },
   "52e9017016a4fa31e79e4c1f930ba6a8" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "ffa96a3407d403c",
-      "status" : "passed",
+      "uid" : "c8ba7818fd43e0ae",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686137933,
-        "stop" : 1706686138716,
-        "duration" : 783
+        "start" : 1706686843379,
+        "stop" : 1706686843379,
+        "duration" : 0
       }
     } ]
   },
   "aaf80e7fac7a1fe1c67a0dfba596ea14" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "e21baf46bae1afbd",
-      "status" : "passed",
+      "uid" : "4ab8473d4d9988e2",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686168897,
-        "stop" : 1706686169724,
-        "duration" : 827
+        "start" : 1706686844973,
+        "stop" : 1706686844973,
+        "duration" : 0
       }
     } ]
   },
   "6ee67a541c813bd45a02f50846b61617" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "ebb4c50ac26c4e9a",
-      "status" : "passed",
+      "uid" : "2eaa49076d54ad1e",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686125354,
-        "stop" : 1706686126234,
-        "duration" : 880
+        "start" : 1706686842520,
+        "stop" : 1706686842520,
+        "duration" : 0
       }
     } ]
   },
   "876c3e93a05a375681fd22d7e4282764" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "851e2bd4e178a668",
-      "status" : "passed",
+      "uid" : "a2f1483dc0cef8ea",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686168049,
-        "stop" : 1706686168894,
-        "duration" : 845
+        "start" : 1706686844826,
+        "stop" : 1706686844826,
+        "duration" : 0
       }
     } ]
   },
   "906fabbd64ee23b2c6b7093bb5c7c9e6" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "717d290969dae00c",
-      "status" : "passed",
+      "uid" : "c6491ce1d14d370b",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686155640,
-        "stop" : 1706686160048,
-        "duration" : 4408
+        "start" : 1706686844256,
+        "stop" : 1706686844256,
+        "duration" : 0
       }
     } ]
   },
   "dc59bb11bbe8d448180756df8ce018a5" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "282854e5661e270b",
-      "status" : "passed",
+      "uid" : "f4064ff93443bae4",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686126245,
-        "stop" : 1706686129986,
-        "duration" : 3741
+        "start" : 1706686842667,
+        "stop" : 1706686842667,
+        "duration" : 0
       }
     } ]
   },
   "4eeac67c9479993cac6e8e49e3a492a0" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "63fc880f856fb158",
-      "status" : "passed",
+      "uid" : "626cbb325ab4d821",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686118573,
-        "stop" : 1706686119447,
-        "duration" : 874
+        "start" : 1706686842217,
+        "stop" : 1706686842217,
+        "duration" : 0
       }
     } ]
   },
   "79bccc4862ebde3333a6f12386f64fc9" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "dd224a595cda846e",
-      "status" : "passed",
+      "uid" : "bda440ef322da722",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686144409,
-        "stop" : 1706686146685,
-        "duration" : 2276
+        "start" : 1706686843854,
+        "stop" : 1706686843854,
+        "duration" : 0
       }
     } ]
   },
   "152de39469acb4d18080fad312b0d12d" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "3caf69bb4bc064ac",
-      "status" : "passed",
+      "uid" : "97b8b6846144d6dc",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686162895,
-        "stop" : 1706686165777,
-        "duration" : 2882
+        "start" : 1706686844540,
+        "stop" : 1706686844540,
+        "duration" : 0
       }
     } ]
   },
   "7a29fa1b1502bddf37ba3733f7305adc" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "e4dfb85dc35522ab",
-      "status" : "passed",
+      "uid" : "40dd7a691ef8a237",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686129990,
-        "stop" : 1706686133747,
-        "duration" : 3757
+        "start" : 1706686842823,
+        "stop" : 1706686842823,
+        "duration" : 0
       }
     } ]
   },
   "5fe010b4873ddd108ced76007468870a" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "81da4d6206757755",
-      "status" : "passed",
+      "uid" : "7c02413bbf0cefe3",
+      "status" : "broken",
+      "statusDetails" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
       "time" : {
-        "start" : 1706686119449,
-        "stop" : 1706686125351,
-        "duration" : 5902
+        "start" : 1706686842387,
+        "stop" : 1706686842387,
+        "duration" : 0
       }
     } ]
   }
