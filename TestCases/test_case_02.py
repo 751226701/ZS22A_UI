@@ -102,7 +102,7 @@ class TestPreview:
         page.click_start_record()
         page.assert_start_record(yaml_data[5]["断言元素定位"])
         sleep(5)
-
+    
     """停止录像"""
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[6]])
