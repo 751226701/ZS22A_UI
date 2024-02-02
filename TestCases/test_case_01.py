@@ -108,3 +108,4 @@ class TestLogin:
         page.browser_operation()
         page.goto_login(CaseData["url地址"])
         page.assert_images_equal(CaseData["断言元素定位"])
+

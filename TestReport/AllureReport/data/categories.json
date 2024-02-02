@@ -1,26 +1,5 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ {
-    "name" : "Test defects",
-    "children" : [ {
-      "name" : "playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed",
-      "children" : [ {
-        "name" : "test_case_30_退出登录",
-        "uid" : "4147a0ed2a1fafba",
-        "parentUid" : "d6ff2d591af41f585fcb13f82092dbba",
-        "status" : "broken",
-        "time" : {
-          "start" : 1706787228186,
-          "stop" : 1706787232740,
-          "duration" : 4554
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "{'用例编号': 'test_case_30', '模块': '02 实时预览', '功能': '10 用户', '优先级': 'critical', '是否执行': 'Y', '用例标题': '退出登录', '断言元素定位': '请输入用户名'}" ]
-      } ],
-      "uid" : "d6ff2d591af41f585fcb13f82092dbba"
-    } ],
-    "uid" : "bdbf199525818fae7a8651db9eafe741"
-  } ]
+  "children" : [ ]
 }

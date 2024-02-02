@@ -7,6 +7,10 @@
 
 import os
 import allure
+import base64
+import requests
+from PIL import Image
+from io import BytesIO
 from playwright.sync_api import expect, Page
 from Config.Config import Config
 
@@ -137,8 +141,21 @@ class Common:
         self.page.screenshot(path=path, full_page=full_page)
         return path
 
+    @staticmethod
     def savescreenshot(page, CaseData):
         """保存截图到固定路径，以用例标题命名"""
         filename = os.path.join(Config.test_screenshot_dir, f"{CaseData.get('用例标题')}.png")
         page.screenshot(path=filename)
         allure.attach.file(source=filename, name=CaseData.get('用例标题'), attachment_type=allure.attachment_type.PNG)
+
+    @staticmethod
+    def download_image(image_url, save_path):
+        if image_url.startswith('data:image'):
+            _, image_data = image_url.split(',', 1)
+            image_bytes = base64.b64decode(image_data)
+            with open(save_path, 'wb') as f:
+                f.write(image_bytes)
+        else:
+            response = requests.get(image_url)
+            with open(save_path, 'wb') as f:
+                f.write(response.content)
