@@ -10,7 +10,7 @@ import os
 
 class Config:
     # 项目地址
-    url = "http://192.168.21.115/#/login"
+    url = "http://192.168.21.171/#/login"
 
     # 项目根目录
     root_dir = os.path.split(os.path.split(__file__)[0])[0]
@@ -20,6 +20,7 @@ class Config:
     test_report_dir = root_dir + os.path.sep + "TestReport" + os.path.sep + "AllureReport"
     test_result_dir = root_dir + os.path.sep + "TestReport" + os.path.sep + "AllureResult"
     test_screenshot_dir = root_dir + os.path.sep + "TestReport" + os.path.sep + "Screenshot"
+    test_download_dir = root_dir + os.path.sep + "TestReport" + os.path.sep + "Download\\"
     logs = root_dir + os.path.sep + "Logs"
 
     # 使用的浏览器
@@ -50,4 +51,5 @@ class Config:
 if __name__ == '__main__':
     print(Config.root_dir)
     print(Config.test_cases_dir)
-    print(Config.allure_report_path)
+    print(Config.test_download_dir)
+

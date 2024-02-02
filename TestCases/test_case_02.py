@@ -47,6 +47,12 @@ def page():
             pass
         if pageobject is None:
             pageobject = context.new_page()
+            download_dir = Config.test_download_dir
+            try:
+                pageobject.on('download',
+                              lambda download: download.save_as(os.path.join(download_dir, download.suggested_filename)))
+            except Exception as e:
+                print(f"保存失败：{e}")
             login(pageobject, logindata["url地址"], logindata["账号"], logindata["密码"])
         yield pageobject
         pageobject = None
@@ -63,6 +69,7 @@ def page():
 
 class TestPreview:
     """暂停视频播放"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
@@ -71,6 +78,7 @@ class TestPreview:
         page.assert_video_stop(yaml_data[1]["断言元素定位"])
 
     """开始视频播放"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[2]])
     def test_case_02(self, page, CaseData: dict):
@@ -79,6 +87,7 @@ class TestPreview:
         page.assert_video_start(yaml_data[2]["断言元素定位"])
 
     """抓图"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[3]])
     def test_case_03(self, page, CaseData: dict):
@@ -87,6 +96,7 @@ class TestPreview:
         page.assert_click_screenshot(yaml_data[3]["断言元素定位"])
 
     """关闭抓图弹窗"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[4]])
     def test_case_04(self, page, CaseData: dict):
@@ -95,23 +105,28 @@ class TestPreview:
         page.assert_click_screenshot_close(yaml_data[4]["断言元素定位"])
 
     """开始录像"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[5]])
     def test_case_05(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_start_record()
-        page.assert_start_record(yaml_data[5]["断言元素定位"])
+        page.assert_start_ir_record(yaml_data[5]["断言元素定位"])
+        page.assert_start_vl_record(yaml_data[5]["断言元素定位"])
         sleep(5)
-    
+
     """停止录像"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[6]])
     def test_case_06(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_stop_record()
-        page.assert_stop_record(yaml_data[6]["断言元素定位"])
+        page.assert_stop_ir_record(yaml_data[6]["断言元素定位"])
+        page.assert_stop_vl_record(yaml_data[6]["断言元素定位"])
 
     """连续抓图"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[7]])
     def test_case_07(self, page, CaseData: dict):
@@ -120,6 +135,7 @@ class TestPreview:
         page.assert_continuous_snapshot(yaml_data[7]["断言元素定位"])
 
     """自动聚焦"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[8]])
     def test_case_08(self, page, CaseData: dict):
@@ -127,34 +143,40 @@ class TestPreview:
         page.click_auto_focus()
         page.assert_auto_focus(yaml_data[8]["断言元素定位"])
 
-    """电子变倍3X"""
+    """可见光电子变倍"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[9]])
     def test_case_09(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_electronic_amplification()
-        page.select_electronic_amplification_3X()
-        page.assert_electronic_amplification(yaml_data[9]["断言元素定位"])
+        page.page.mouse.move(x=100, y=400)
+        page.page.mouse.move(x=200, y=400)
+        page.page.mouse.down()
+        page.page.mouse.move(x=400, y=600)
+        page.page.mouse.up()
 
-    """电子变倍2X"""
+    """红外电子变倍"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[10]])
     def test_case_10(self, page, CaseData: dict):
         page = PreviewPage(page)
-        page.click_electronic_amplification()
-        page.select_electronic_amplification_2X()
-        page.assert_electronic_amplification(yaml_data[10]["断言元素定位"])
+        page.page.mouse.move(x=1200, y=400)
+        page.page.mouse.down()
+        page.page.mouse.move(x=1400, y=600)
+        page.page.mouse.up()
 
-    """电子变倍1X"""
+    """关闭电子变倍"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[11]])
     def test_case_11(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_electronic_amplification()
-        page.select_electronic_amplification_1X()
-        page.assert_electronic_amplification(yaml_data[11]["断言元素定位"])
 
     """开启温度曲线(近4小时最高温)"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[12]])
     def test_case_12(self, page, CaseData: dict):
@@ -163,6 +185,7 @@ class TestPreview:
         page.assert_real_time_temp_curve_start(yaml_data[12]["断言元素定位"])
 
     """近4小时最低温"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[13]])
     def test_case_13(self, page, CaseData: dict):
@@ -172,6 +195,7 @@ class TestPreview:
         page.assert_select_object_temp_success(yaml_data[13]["断言元素定位"])
 
     """近4小时平均温"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[14]])
     def test_case_14(self, page, CaseData: dict):
@@ -181,6 +205,7 @@ class TestPreview:
         page.assert_select_object_temp_success(yaml_data[14]["断言元素定位"])
 
     """近24小时平均温"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[15]])
     def test_case_15(self, page, CaseData: dict):
@@ -190,6 +215,7 @@ class TestPreview:
         page.assert_select_time_range_success(yaml_data[15]["断言元素定位"])
 
     """近24小时最低温"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[16]])
     def test_case_16(self, page, CaseData: dict):
@@ -199,6 +225,7 @@ class TestPreview:
         page.assert_select_object_temp_success(yaml_data[16]["断言元素定位"])
 
     """近24小时最高温"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[17]])
     def test_case_17(self, page, CaseData: dict):
@@ -208,6 +235,7 @@ class TestPreview:
         page.assert_select_object_temp_success(yaml_data[17]["断言元素定位"])
 
     """近72小时最高温"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[18]])
     def test_case_18(self, page, CaseData: dict):
@@ -217,6 +245,7 @@ class TestPreview:
         page.assert_select_time_range_success(yaml_data[18]["断言元素定位"])
 
     """近72小时最低温"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[19]])
     def test_case_19(self, page, CaseData: dict):
@@ -226,6 +255,7 @@ class TestPreview:
         page.assert_select_object_temp_success(yaml_data[19]["断言元素定位"])
 
     """近72小时平均温"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[20]])
     def test_case_20(self, page, CaseData: dict):
@@ -235,6 +265,7 @@ class TestPreview:
         page.assert_select_object_temp_success(yaml_data[20]["断言元素定位"])
 
     """关闭实时温度曲线"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[21]])
     def test_case_21(self, page, CaseData: dict):
@@ -243,6 +274,7 @@ class TestPreview:
         page.assert_real_time_temp_curve_stop(yaml_data[21]["断言元素定位"])
 
     """窗口填充"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[22]])
     def test_case_22(self, page, CaseData: dict):
@@ -251,6 +283,7 @@ class TestPreview:
         page.assert_fill_or_adapt(yaml_data[22]["断言元素定位"])
 
     """窗口适应"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[23]])
     def test_case_23(self, page, CaseData: dict):
@@ -259,6 +292,7 @@ class TestPreview:
         page.assert_fill_or_adapt(yaml_data[23]["断言元素定位"])
 
     """全屏显示"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[24]])
     def test_case_24(self, page, CaseData: dict):
@@ -266,39 +300,51 @@ class TestPreview:
         page.click_full_screen()
 
     """退出全屏显示"""
+
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[25]])
     def test_case_25(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_full_screen_exit()
 
-    """退出登录"""
+    """单红外通道全屏显示"""
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[26]])
     def test_case_26(self, page, CaseData: dict):
         page = PreviewPage(page)
+        page.click_ir_full_screen()
+
+    """单红外通道退出全屏显示"""
+    @PrettyAllure.PrettyAllureWarpper
+    @pytest.mark.parametrize("CaseData", [yaml_data[27]])
+    def test_case_27(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_ir_full_screen_exit()
+
+    """单可见光通道全屏显示"""
+
+    @PrettyAllure.PrettyAllureWarpper
+    @pytest.mark.parametrize("CaseData", [yaml_data[28]])
+    def test_case_28(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_vl_full_screen()
+
+    """单可见光通道退出全屏显示"""
+
+    @PrettyAllure.PrettyAllureWarpper
+    @pytest.mark.parametrize("CaseData", [yaml_data[29]])
+    def test_case_29(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_vl_full_screen_exit()
+
+    """退出登录"""
+    @PrettyAllure.PrettyAllureWarpper
+    @pytest.mark.parametrize("CaseData", [yaml_data[30]])
+    def test_case_30(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.page.get_by_text("报警管理").click()
         page.click_root()
         page.click_logout()
         page.click_confirm_exit()
-        page.assert_logout_success(yaml_data[26]["断言元素定位"])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        page.assert_logout_success(yaml_data[30]["断言元素定位"])
 

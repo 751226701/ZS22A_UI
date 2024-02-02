@@ -1,4 +1,15 @@
 {
-  "total" : 26,
-  "items" : [ ]
+  "total" : 1,
+  "items" : [ {
+    "uid" : "27973847c8d252d838687143975d01c1",
+    "name" : "02 实时预览",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 2
+    }
+  } ]
 }

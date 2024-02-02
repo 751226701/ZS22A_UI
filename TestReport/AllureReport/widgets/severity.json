@@ -1,261 +1,51 @@
 [ {
-  "uid" : "7c02413bbf0cefe3",
-  "name" : "test_case_05[CaseData0]",
+  "uid" : "cb203a0e1e2dea86",
+  "name" : "test_case_26_红外全屏显示",
   "time" : {
-    "start" : 1706686842387,
-    "stop" : 1706686842387,
-    "duration" : 0
+    "start" : 1706787190809,
+    "stop" : 1706787194190,
+    "duration" : 3381
   },
-  "status" : "broken",
-  "severity" : "normal"
+  "status" : "passed",
+  "severity" : "critical"
 }, {
-  "uid" : "42d050e74e98c02",
-  "name" : "test_case_25[CaseData0]",
+  "uid" : "4147a0ed2a1fafba",
+  "name" : "test_case_30_退出登录",
   "time" : {
-    "start" : 1706686845275,
-    "stop" : 1706686845275,
-    "duration" : 0
+    "start" : 1706787228186,
+    "stop" : 1706787232740,
+    "duration" : 4554
   },
   "status" : "broken",
-  "severity" : "normal"
+  "severity" : "critical"
 }, {
-  "uid" : "bda440ef322da722",
-  "name" : "test_case_15[CaseData0]",
+  "uid" : "4e0f4cac9e1b402d",
+  "name" : "test_case_28_可见光全屏显示",
   "time" : {
-    "start" : 1706686843854,
-    "stop" : 1706686843854,
-    "duration" : 0
+    "start" : 1706787221523,
+    "stop" : 1706787224362,
+    "duration" : 2839
   },
-  "status" : "broken",
-  "severity" : "normal"
+  "status" : "passed",
+  "severity" : "critical"
 }, {
-  "uid" : "bc028d70985dad21",
-  "name" : "test_case_19[CaseData0]",
+  "uid" : "94d4d858f354acdc",
+  "name" : "test_case_29_退出可见光全屏显示",
   "time" : {
-    "start" : 1706686844391,
-    "stop" : 1706686844391,
-    "duration" : 0
+    "start" : 1706787224436,
+    "stop" : 1706787228005,
+    "duration" : 3569
   },
-  "status" : "broken",
-  "severity" : "normal"
+  "status" : "passed",
+  "severity" : "critical"
 }, {
-  "uid" : "309655e15cd4fc38",
-  "name" : "test_case_21[CaseData0]",
+  "uid" : "656a1b5b8876afbf",
+  "name" : "test_case_27_退出红外全屏显示",
   "time" : {
-    "start" : 1706686844706,
-    "stop" : 1706686844706,
-    "duration" : 0
+    "start" : 1706787194264,
+    "stop" : 1706787221326,
+    "duration" : 27062
   },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "138ed1711b3d50b6",
-  "name" : "test_case_24[CaseData0]",
-  "time" : {
-    "start" : 1706686845123,
-    "stop" : 1706686845123,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "a2f1483dc0cef8ea",
-  "name" : "test_case_22[CaseData0]",
-  "time" : {
-    "start" : 1706686844826,
-    "stop" : 1706686844826,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "7db7d6c1e1957ee5",
-  "name" : "test_case_01[CaseData0]",
-  "time" : {
-    "start" : 1706686829754,
-    "stop" : 1706686829754,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "f4b0647ed4c52840",
-  "name" : "test_case_17[CaseData0]",
-  "time" : {
-    "start" : 1706686844115,
-    "stop" : 1706686844115,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "4ab8473d4d9988e2",
-  "name" : "test_case_23[CaseData0]",
-  "time" : {
-    "start" : 1706686844973,
-    "stop" : 1706686844973,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "1ba700d978bfa0c8",
-  "name" : "test_case_02[CaseData0]",
-  "time" : {
-    "start" : 1706686841908,
-    "stop" : 1706686841908,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "411cd42dd4629fa4",
-  "name" : "test_case_13[CaseData0]",
-  "time" : {
-    "start" : 1706686843528,
-    "stop" : 1706686843528,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "6b26db46deb92d27",
-  "name" : "test_case_26[CaseData0]",
-  "time" : {
-    "start" : 1706686845424,
-    "stop" : 1706686845424,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "97b8b6846144d6dc",
-  "name" : "test_case_20[CaseData0]",
-  "time" : {
-    "start" : 1706686844540,
-    "stop" : 1706686844540,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "13ffe6b7f737090d",
-  "name" : "test_case_03[CaseData0]",
-  "time" : {
-    "start" : 1706686842051,
-    "stop" : 1706686842051,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "2eaa49076d54ad1e",
-  "name" : "test_case_06[CaseData0]",
-  "time" : {
-    "start" : 1706686842520,
-    "stop" : 1706686842520,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "626cbb325ab4d821",
-  "name" : "test_case_04[CaseData0]",
-  "time" : {
-    "start" : 1706686842217,
-    "stop" : 1706686842217,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "c8ba7818fd43e0ae",
-  "name" : "test_case_12[CaseData0]",
-  "time" : {
-    "start" : 1706686843379,
-    "stop" : 1706686843379,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "2357c26a0e321a77",
-  "name" : "test_case_09[CaseData0]",
-  "time" : {
-    "start" : 1706686842966,
-    "stop" : 1706686842966,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "40dd7a691ef8a237",
-  "name" : "test_case_08[CaseData0]",
-  "time" : {
-    "start" : 1706686842823,
-    "stop" : 1706686842823,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "c7c1d89146b97307",
-  "name" : "test_case_10[CaseData0]",
-  "time" : {
-    "start" : 1706686843120,
-    "stop" : 1706686843120,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "91f242190161c65b",
-  "name" : "test_case_11[CaseData0]",
-  "time" : {
-    "start" : 1706686843240,
-    "stop" : 1706686843240,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "c6491ce1d14d370b",
-  "name" : "test_case_18[CaseData0]",
-  "time" : {
-    "start" : 1706686844256,
-    "stop" : 1706686844256,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "f4064ff93443bae4",
-  "name" : "test_case_07[CaseData0]",
-  "time" : {
-    "start" : 1706686842667,
-    "stop" : 1706686842667,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "a24b71816f4afe69",
-  "name" : "test_case_16[CaseData0]",
-  "time" : {
-    "start" : 1706686844005,
-    "stop" : 1706686844005,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "42be3250e86b6fd7",
-  "name" : "test_case_14[CaseData0]",
-  "time" : {
-    "start" : 1706686843708,
-    "stop" : 1706686843708,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
+  "status" : "passed",
+  "severity" : "critical"
 } ]

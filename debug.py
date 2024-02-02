@@ -30,20 +30,19 @@ def run(playwright: Playwright) -> None:
         slow_mo=500)
     context = browser.new_context(no_viewport=True)
     page = context.new_page()
-    page.goto("http://192.168.21.115/#/login")
+    page.goto("http://192.168.21.171/#/login")
 
     page.locator('.el-input__inner[placeholder="请输入用户名"]').fill("root")
     page.locator('input[type="password"].el-input__inner').fill("guide123")
     page.locator('.el-checkbox__input').click()
     sleep(4)
     page.locator('button:has-text("登录")').click()
-    sleep(2)
-    page.get_by_role("list").locator("i").first.click()
-    page.locator(".scale-ir-box").click(position={"x": 152, "y": 209})
-    page.locator(".scale-ir-box").click(position={"x": 255, "y": 338})
 
-    # page.locator(".video-wrap > canvas").dblclick()
-    # expect(page.locator("li:nth-child(5) > .el-tooltip")).to_be_visible()
+    page.get_by_role("list").locator("i").nth(3).click()  # 全屏播放
+    sleep(2)
+
+
+    sleep(5)
 
     # ---------------------
     sleep(3)
@@ -53,6 +52,3 @@ def run(playwright: Playwright) -> None:
 
 with sync_playwright() as playwright:
     run(playwright)
-
-
-
