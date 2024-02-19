@@ -4,10 +4,10 @@
     "uid" : "27973847c8d252d838687143975d01c1",
     "name" : "02 实时预览",
     "statistic" : {
-      "failed" : 0,
+      "failed" : 1,
       "broken" : 0,
       "skipped" : 1,
-      "passed" : 9,
+      "passed" : 8,
       "unknown" : 0,
       "total" : 10
     }

@@ -1,401 +1,401 @@
 [ {
-  "uid" : "483a601e958b1a0",
-  "name" : "test_case_25_退出全屏显示",
-  "time" : {
-    "start" : 1706852137774,
-    "stop" : 1706852138924,
-    "duration" : 1150
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "7d7887ef970d6240",
-  "name" : "test_case_16_近24小时最低温",
-  "time" : {
-    "start" : 1706852100557,
-    "stop" : 1706852106406,
-    "duration" : 5849
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "347c0d084de5dc06",
-  "name" : "test_case_12_开启温度曲线(近4小时最高温)",
-  "time" : {
-    "start" : 1706852077048,
-    "stop" : 1706852078131,
-    "duration" : 1083
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "93098a4ee9c8b468",
-  "name" : "test_case_10_是否为高德质感logo",
-  "time" : {
-    "start" : 1706852038978,
-    "stop" : 1706852040379,
-    "duration" : 1401
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "be0461e6903043ed",
-  "name" : "test_case_10_红外电子变倍",
-  "time" : {
-    "start" : 1706852073318,
-    "stop" : 1706852075845,
-    "duration" : 2527
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "a09b445195a26aa3",
-  "name" : "test_case_03_user用户登录",
-  "time" : {
-    "start" : 1706852016465,
-    "stop" : 1706852027020,
-    "duration" : 10555
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "e3bb80bcc317bc4a",
-  "name" : "test_case_22_窗口填充",
-  "time" : {
-    "start" : 1706852134285,
-    "stop" : 1706852135482,
-    "duration" : 1197
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "7262bbe1d5e9d061",
-  "name" : "test_case_19_近72小时最低温",
-  "time" : {
-    "start" : 1706852118073,
-    "stop" : 1706852126118,
-    "duration" : 8045
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "e55a6a296a3ef59c",
-  "name" : "test_case_06_密码输入框密文显示",
-  "time" : {
-    "start" : 1706852032229,
-    "stop" : 1706852033634,
-    "duration" : 1405
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "4eb37e8bc03e3ca9",
-  "name" : "test_case_05_切换到中文版",
-  "time" : {
-    "start" : 1706852029714,
-    "stop" : 1706852032226,
-    "duration" : 2512
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "209d94299d1044e9",
-  "name" : "test_case_30_退出登录",
-  "time" : {
-    "start" : 1706852141080,
-    "stop" : 1706852143674,
-    "duration" : 2594
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "d5de00ca411e6e6a",
-  "name" : "test_case_29_退出可见光全屏显示",
-  "time" : {
-    "start" : 1706852139847,
-    "stop" : 1706852141076,
-    "duration" : 1229
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "bf4790efad378022",
-  "name" : "test_case_20_近72小时平均温",
-  "time" : {
-    "start" : 1706852126130,
-    "stop" : 1706852133131,
-    "duration" : 7001
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "f33f88af10334b14",
-  "name" : "test_case_03_抓图",
-  "time" : {
-    "start" : 1706852054530,
-    "stop" : 1706852056365,
-    "duration" : 1835
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "50130314b0221e73",
-  "name" : "test_case_07_密码输入框明文显示",
-  "time" : {
-    "start" : 1706852033637,
-    "stop" : 1706852035605,
-    "duration" : 1968
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "54135829b8355ad0",
-  "name" : "test_case_15_近24小时平均温",
-  "time" : {
-    "start" : 1706852095255,
-    "stop" : 1706852100552,
-    "duration" : 5297
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "6d7617e99f7281ee",
-  "name" : "test_case_02_admin用户登录",
-  "time" : {
-    "start" : 1706852005768,
-    "stop" : 1706852016456,
-    "duration" : 10688
-  },
-  "status" : "passed",
-  "severity" : "blocker"
-}, {
-  "uid" : "f9e6c311bd3e6640",
-  "name" : "test_case_04_关闭抓图弹窗",
-  "time" : {
-    "start" : 1706852056380,
-    "stop" : 1706852057698,
-    "duration" : 1318
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "13b302e065f1f7d3",
-  "name" : "test_case_07_连续抓图",
-  "time" : {
-    "start" : 1706852065230,
-    "stop" : 1706852069393,
-    "duration" : 4163
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "ab849af18e88f928",
-  "name" : "test_case_09_可见光电子变倍",
-  "time" : {
-    "start" : 1706852069406,
-    "stop" : 1706852073304,
-    "duration" : 3898
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "91d850aa9a406b49",
-  "name" : "test_case_05_开始录像",
-  "time" : {
-    "start" : 1706852057726,
-    "stop" : 1706852064024,
-    "duration" : 6298
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "cc60948e71b4c5c8",
-  "name" : "test_case_18_近72小时最高温",
-  "time" : {
-    "start" : 1706852112192,
-    "stop" : 1706852118059,
-    "duration" : 5867
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "e72642e0ad425ad",
-  "name" : "test_case_27_退出红外全屏显示",
-  "time" : {
-    "start" : 1706852138929,
-    "stop" : 1706852138929,
-    "duration" : 0
-  },
-  "status" : "skipped",
-  "severity" : "critical"
-}, {
-  "uid" : "8711d1a8628efac9",
-  "name" : "test_case_02_开始视频播放",
-  "time" : {
-    "start" : 1706852053430,
-    "stop" : 1706852054522,
-    "duration" : 1092
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "2e1a64e0aa02b742",
-  "name" : "test_case_26_红外全屏显示",
-  "time" : {
-    "start" : 1706852138927,
-    "stop" : 1706852138927,
-    "duration" : 0
-  },
-  "status" : "skipped",
-  "severity" : "critical"
-}, {
-  "uid" : "7c306dc9802e60e2",
+  "uid" : "e77351d3da1f9374",
   "name" : "test_case_28_可见光全屏显示",
   "time" : {
-    "start" : 1706852138932,
-    "stop" : 1706852139841,
-    "duration" : 909
+    "start" : 1708321288522,
+    "stop" : 1708321289446,
+    "duration" : 924
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "b301f02eef0376b5",
+  "uid" : "4800f3385d202416",
+  "name" : "test_case_02_admin用户登录",
+  "time" : {
+    "start" : 1708321086046,
+    "stop" : 1708321096762,
+    "duration" : 10716
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "95431a35da738306",
+  "name" : "test_case_18_近72小时最高温",
+  "time" : {
+    "start" : 1708321237690,
+    "stop" : 1708321250487,
+    "duration" : 12797
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "60ee822b8e1cdb57",
+  "name" : "test_case_29_退出可见光全屏显示",
+  "time" : {
+    "start" : 1708321289464,
+    "stop" : 1708321290721,
+    "duration" : 1257
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "b5055a9046f90647",
+  "name" : "test_case_05_切换到中文版",
+  "time" : {
+    "start" : 1708321110209,
+    "stop" : 1708321112835,
+    "duration" : 2626
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "ec4b4bb60db18098",
+  "name" : "test_case_08_记住密码未勾选",
+  "time" : {
+    "start" : 1708321116280,
+    "stop" : 1708321117724,
+    "duration" : 1444
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a0bf26fab5c7db94",
+  "name" : "test_case_10_红外电子变倍",
+  "time" : {
+    "start" : 1708321164731,
+    "stop" : 1708321167259,
+    "duration" : 2528
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "41c5ffbc3f446fc",
+  "name" : "test_case_19_近72小时最低温",
+  "time" : {
+    "start" : 1708321250504,
+    "stop" : 1708321261664,
+    "duration" : 11160
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "d454dd9b13a00d2c",
+  "name" : "test_case_15_近24小时平均温",
+  "time" : {
+    "start" : 1708321201311,
+    "stop" : 1708321212794,
+    "duration" : 11483
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "c774ea5aa96c86b7",
+  "name" : "test_case_16_近24小时最低温",
+  "time" : {
+    "start" : 1708321212812,
+    "stop" : 1708321225487,
+    "duration" : 12675
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "e61fb1524c736ae",
   "name" : "test_case_14_近4小时平均温",
   "time" : {
-    "start" : 1706852089998,
-    "stop" : 1706852095236,
-    "duration" : 5238
+    "start" : 1708321189713,
+    "stop" : 1708321201296,
+    "duration" : 11583
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "cbfbd16f24ed556c",
-  "name" : "test_case_13_近4小时最低温",
+  "uid" : "a8e103c0004dfbe3",
+  "name" : "test_case_26_红外全屏显示",
   "time" : {
-    "start" : 1706852078134,
-    "stop" : 1706852089988,
-    "duration" : 11854
+    "start" : 1708321288515,
+    "stop" : 1708321288515,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "93c0305c732f3ee2",
+  "name" : "test_case_11_关闭电子变倍",
+  "time" : {
+    "start" : 1708321167263,
+    "stop" : 1708321168508,
+    "duration" : 1245
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "c67f61687cf69943",
-  "name" : "test_case_23_窗口适应",
+  "uid" : "95603f10bd6d4bcd",
+  "name" : "test_case_03_user用户登录",
   "time" : {
-    "start" : 1706852135490,
-    "stop" : 1706852136658,
+    "start" : 1708321096785,
+    "stop" : 1708321107466,
+    "duration" : 10681
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "d33e4b5a740e194b",
+  "name" : "test_case_24_全屏显示",
+  "time" : {
+    "start" : 1708321285951,
+    "stop" : 1708321287188,
+    "duration" : 1237
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "e1655da091e8ef32",
+  "name" : "test_case_21_关闭实时温度曲线",
+  "time" : {
+    "start" : 1708321273228,
+    "stop" : 1708321274543,
+    "duration" : 1315
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "d23fc08427a5dc66",
+  "name" : "test_case_12_开启温度曲线(近4小时最高温)",
+  "time" : {
+    "start" : 1708321168518,
+    "stop" : 1708321169686,
     "duration" : 1168
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "bd86a750ea155584",
-  "name" : "test_case_08_记住密码未勾选",
+  "uid" : "22fc85a555f34afb",
+  "name" : "test_case_10_是否为高德质感logo",
   "time" : {
-    "start" : 1706852035608,
-    "stop" : 1706852037002,
-    "duration" : 1394
+    "start" : 1708321119727,
+    "stop" : 1708321121188,
+    "duration" : 1461
   },
   "status" : "passed",
-  "severity" : "normal"
+  "severity" : "critical"
 }, {
-  "uid" : "de7bdac44ac25f8",
+  "uid" : "2d9bd1e81e8fa1f2",
+  "name" : "test_case_23_窗口适应",
+  "time" : {
+    "start" : 1708321280254,
+    "stop" : 1708321285921,
+    "duration" : 5667
+  },
+  "status" : "failed",
+  "severity" : "critical"
+}, {
+  "uid" : "53713f5d92b25a9f",
   "name" : "test_case_04_切换到英文版",
   "time" : {
-    "start" : 1706852027032,
-    "stop" : 1706852029711,
-    "duration" : 2679
+    "start" : 1708321107470,
+    "stop" : 1708321110206,
+    "duration" : 2736
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "ffac9417f535bc39",
-  "name" : "test_case_11_关闭电子变倍",
+  "uid" : "3e6b1037992a4cf3",
+  "name" : "test_case_20_近72小时平均温",
   "time" : {
-    "start" : 1706852075854,
-    "stop" : 1706852077045,
-    "duration" : 1191
+    "start" : 1708321261676,
+    "stop" : 1708321273212,
+    "duration" : 11536
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "3522fcb2b60c819d",
+  "uid" : "c00d62b5661c03e0",
   "name" : "test_case_17_近24小时最高温",
   "time" : {
-    "start" : 1706852106414,
-    "stop" : 1706852112188,
-    "duration" : 5774
+    "start" : 1708321225491,
+    "stop" : 1708321237678,
+    "duration" : 12187
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "7434ab1418b7cbf3",
+  "uid" : "e6d953d597817fbe",
+  "name" : "test_case_05_开始录像",
+  "time" : {
+    "start" : 1708321140962,
+    "stop" : 1708321147276,
+    "duration" : 6314
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "c4f35c614cf7c891",
+  "name" : "test_case_01_暂停视频播放",
+  "time" : {
+    "start" : 1708321133254,
+    "stop" : 1708321135571,
+    "duration" : 2317
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "911ee6c8fbef5c02",
+  "name" : "test_case_22_窗口填充",
+  "time" : {
+    "start" : 1708321274549,
+    "stop" : 1708321280218,
+    "duration" : 5669
+  },
+  "status" : "failed",
+  "severity" : "critical"
+}, {
+  "uid" : "6d83b5c0fc8d0206",
+  "name" : "test_case_02_开始视频播放",
+  "time" : {
+    "start" : 1708321135575,
+    "stop" : 1708321136589,
+    "duration" : 1014
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "97ecb584f3486ff1",
+  "name" : "test_case_06_停止录像",
+  "time" : {
+    "start" : 1708321147295,
+    "stop" : 1708321148621,
+    "duration" : 1326
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "ad4615ca1bc68cfd",
   "name" : "test_case_09_记住密码已勾选",
   "time" : {
-    "start" : 1706852037006,
-    "stop" : 1706852038975,
-    "duration" : 1969
+    "start" : 1708321117727,
+    "stop" : 1708321119724,
+    "duration" : 1997
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "7c34765fdd056829",
-  "name" : "test_case_06_停止录像",
+  "uid" : "1f29fa707cb653c",
+  "name" : "test_case_07_密码输入框明文显示",
   "time" : {
-    "start" : 1706852064037,
-    "stop" : 1706852065219,
-    "duration" : 1182
+    "start" : 1708321114274,
+    "stop" : 1708321116277,
+    "duration" : 2003
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "f86bec780c9c8b2",
-  "name" : "test_case_24_全屏显示",
-  "time" : {
-    "start" : 1706852136667,
-    "stop" : 1706852137769,
-    "duration" : 1102
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "928227b9b750aac2",
-  "name" : "test_case_21_关闭实时温度曲线",
-  "time" : {
-    "start" : 1706852133141,
-    "stop" : 1706852134282,
-    "duration" : 1141
-  },
-  "status" : "passed",
-  "severity" : "critical"
-}, {
-  "uid" : "462050ba1f1d2861",
+  "uid" : "17ef66eefc6de740",
   "name" : "test_case_08_自动聚焦",
   "time" : {
-    "start" : 1706852069403,
-    "stop" : 1706852069403,
+    "start" : 1708321160893,
+    "stop" : 1708321160893,
     "duration" : 0
   },
   "status" : "skipped",
   "severity" : "critical"
 }, {
-  "uid" : "d05b591e98d5a189",
-  "name" : "test_case_01_暂停视频播放",
+  "uid" : "d12354f20c34d18a",
+  "name" : "test_case_03_抓图",
   "time" : {
-    "start" : 1706852051319,
-    "stop" : 1706852053426,
-    "duration" : 2107
+    "start" : 1708321136602,
+    "stop" : 1708321139679,
+    "duration" : 3077
   },
   "status" : "passed",
   "severity" : "critical"
 }, {
-  "uid" : "89776f7206f55ccd",
+  "uid" : "b04308cfc0b11330",
+  "name" : "test_case_30_退出登录",
+  "time" : {
+    "start" : 1708321290725,
+    "stop" : 1708321293322,
+    "duration" : 2597
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "b75ca322d5bea296",
+  "name" : "test_case_04_关闭抓图弹窗",
+  "time" : {
+    "start" : 1708321139692,
+    "stop" : 1708321140950,
+    "duration" : 1258
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "c64510e725f21180",
+  "name" : "test_case_13_近4小时最低温",
+  "time" : {
+    "start" : 1708321169692,
+    "stop" : 1708321189707,
+    "duration" : 20015
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "18d266052dfcf67",
+  "name" : "test_case_09_可见光电子变倍",
+  "time" : {
+    "start" : 1708321160901,
+    "stop" : 1708321164726,
+    "duration" : 3825
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "a169ccd39bc28dc5",
+  "name" : "test_case_25_退出全屏显示",
+  "time" : {
+    "start" : 1708321287191,
+    "stop" : 1708321288503,
+    "duration" : 1312
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "e8b123476fa0a2fe",
+  "name" : "test_case_07_连续抓图",
+  "time" : {
+    "start" : 1708321148625,
+    "stop" : 1708321160888,
+    "duration" : 12263
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "405c9bcff851dfc",
   "name" : "test_case_01_root用户登录",
   "time" : {
-    "start" : 1706851994484,
-    "stop" : 1706852005754,
-    "duration" : 11270
+    "start" : 1708321074592,
+    "stop" : 1708321086042,
+    "duration" : 11450
   },
   "status" : "passed",
   "severity" : "blocker"
+}, {
+  "uid" : "15151679c31b291",
+  "name" : "test_case_27_退出红外全屏显示",
+  "time" : {
+    "start" : 1708321288519,
+    "stop" : 1708321288519,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "a55e8a88a2810562",
+  "name" : "test_case_06_密码输入框密文显示",
+  "time" : {
+    "start" : 1708321112838,
+    "stop" : 1708321114270,
+    "duration" : 1432
+  },
+  "status" : "passed",
+  "severity" : "critical"
 } ]

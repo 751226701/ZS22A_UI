@@ -22,3 +22,4 @@ if __name__ == '__main__':
     os.system(f'allure generate {AllureResult} -o {AllureReport} --clean')  # 生成测试报告
     SendEmail(sign=False)  # 发送测试报告邮件
 
+

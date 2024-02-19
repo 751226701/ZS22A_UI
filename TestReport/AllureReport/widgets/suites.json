@@ -4,10 +4,10 @@
     "uid" : "0408d924bc3d43de55080f45620fd22e",
     "name" : "TestCases",
     "statistic" : {
-      "failed" : 0,
+      "failed" : 2,
       "broken" : 0,
       "skipped" : 3,
-      "passed" : 37,
+      "passed" : 35,
       "unknown" : 0,
       "total" : 40
     }

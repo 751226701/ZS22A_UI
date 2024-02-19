@@ -8,7 +8,6 @@
 import os
 import allure
 import pytest
-from time import sleep
 from playwright.sync_api import sync_playwright
 from Pages.PreviewPage.PreviewPage import PreviewPage
 from Common.ReadYaml import ReadYaml
@@ -26,7 +25,7 @@ def login(pageobject, url, user, passwd):
     pageobject.goto(url)
     pageobject.get_by_placeholder("请输入用户名").fill(user)
     pageobject.get_by_placeholder("请输入密码").fill(passwd)
-    sleep(3)
+    pageobject.wait_for_timeout(3000)
     pageobject.get_by_role("button", name="登录").click()
 
 
@@ -113,7 +112,7 @@ class TestPreview:
         page.click_start_record()
         page.assert_start_ir_record(yaml_data[5]["断言元素定位"])
         page.assert_start_vl_record(yaml_data[5]["断言元素定位"])
-        sleep(5)
+        page.page.wait_for_timeout(5000)
 
     """停止录像"""
 
