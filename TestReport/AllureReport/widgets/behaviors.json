@@ -1,26 +1,15 @@
 {
-  "total" : 2,
+  "total" : 1,
   "items" : [ {
-    "uid" : "27973847c8d252d838687143975d01c1",
-    "name" : "02 实时预览",
-    "statistic" : {
-      "failed" : 1,
-      "broken" : 0,
-      "skipped" : 1,
-      "passed" : 8,
-      "unknown" : 0,
-      "total" : 10
-    }
-  }, {
-    "uid" : "3750765cc013100fb66edc796bfb615d",
-    "name" : "01 用户管理",
+    "uid" : "8137ef2c4598f498a42f44dd70610da7",
+    "name" : "03 回放管理",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 5,
+      "passed" : 3,
       "unknown" : 0,
-      "total" : 5
+      "total" : 3
     }
   } ]
 }

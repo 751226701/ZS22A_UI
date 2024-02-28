@@ -1,43 +1,5 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ {
-    "name" : "Product defects",
-    "children" : [ {
-      "name" : "AssertionError: Locator expected to be visible\nActual value: None \nCall log:\nLocatorAssertions.to_be_visible with timeout 5000ms\n  - waiting for get_by_text(\"窗口适应\")",
-      "children" : [ {
-        "name" : "test_case_22_窗口填充",
-        "uid" : "911ee6c8fbef5c02",
-        "parentUid" : "3b4594102d0cea1e5d9ec6b77b1b9e3d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1708321274549,
-          "stop" : 1708321280218,
-          "duration" : 5669
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "{'用例编号': 'test_case_22', '模块': '02 实时预览', '功能': '08 窗口填充适应', '优先级': 'critical', '是否执行': 'Y', '用例标题': '窗口填充', '断言元素定位': '窗口适应'}" ]
-      } ],
-      "uid" : "3b4594102d0cea1e5d9ec6b77b1b9e3d"
-    }, {
-      "name" : "AssertionError: Locator expected to be visible\nActual value: None \nCall log:\nLocatorAssertions.to_be_visible with timeout 5000ms\n  - waiting for get_by_text(\"窗口填充\")",
-      "children" : [ {
-        "name" : "test_case_23_窗口适应",
-        "uid" : "2d9bd1e81e8fa1f2",
-        "parentUid" : "c3e942fa1a3b40f4937c994bfe9046fb",
-        "status" : "failed",
-        "time" : {
-          "start" : 1708321280254,
-          "stop" : 1708321285921,
-          "duration" : 5667
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "{'用例编号': 'test_case_23', '模块': '02 实时预览', '功能': '08 窗口填充适应', '优先级': 'critical', '是否执行': 'Y', '用例标题': '窗口适应', '断言元素定位': '窗口填充'}" ]
-      } ],
-      "uid" : "c3e942fa1a3b40f4937c994bfe9046fb"
-    } ],
-    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
-  } ]
+  "children" : [ ]
 }
