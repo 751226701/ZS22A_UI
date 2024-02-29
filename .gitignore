@@ -1,6 +1,6 @@
 # created by virtualenv automatically
-TestReport
-Logs
+/TestReport
+/Logs
 debug.py
-venv
+/venv
 
