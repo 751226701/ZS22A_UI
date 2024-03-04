@@ -6,8 +6,6 @@
 # @project: ZS22A_UI
 
 import os
-
-
 class Config:
     # 项目地址
     url = "http://192.168.21.171/#/login"
