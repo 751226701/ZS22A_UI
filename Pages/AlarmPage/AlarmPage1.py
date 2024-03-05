@@ -2,12 +2,13 @@
 # -*- coding = utf-8 -*-
 # @Author : 刘涛
 # @Time : 2024/3/4 13:25
-# @File :AlarmPage.py
+# @File :AlarmPage1.py
 # @Project : ZS22A_UI
-import re
+
 
 from PIL import Image
 import io
+import re
 import base64
 import os.path
 import allure
@@ -31,16 +32,16 @@ class AlarmPage(Common):
     __unauthorized = ("menuitem", "非法访问")
 
     # 报警事件子模块元素定位
-    __global_high_temp = ".el-checkbox__inner"
-    __global_high_temp_box = "div:nth-child(6) > .el-checkbox > .el-checkbox__input > .el-checkbox__inner"
+    __global_high_temp_box = ".el-checkbox__inner"
+    __global_high_temp_value = "div:nth-child(4) > .el-input__inner"
     __global_high_temp_select = "请选择"
-    __global_low_temp_value = "div:nth-child(4) > .el-input__inner"
     __global_low_temp_box = "div:nth-child(6) > .el-checkbox > .el-checkbox__input > .el-checkbox__inner"
+    __global_low_temp_value = "div:nth-child(6) > div:nth-child(4) > .el-input__inner"
     __global_low_temp_select = "请选择"
     __select_greater = ("list", ">")
     __select_lower = ("list", "<")
     __debounce = ("div", r"^去抖动 s \(1~10\)$", "textbox")
-    __alarm_interval_time_select = ("div", r"^报警间隔时间$", "请选择")
+    __alarm_interval_time_select = ("div", r"^报警间隔时间30s 60s 5min 10min 15min 30min 60min$|^报警间隔时间$", "请选择")
     __alarm_interval_time_30S = "30s"
     __alarm_interval_time_60S = "60s"
     __alarm_interval_time_5min = "5min"
@@ -132,7 +133,7 @@ class AlarmPage(Common):
 
     @allure.step("设置高温报警阈值")
     def set_global_high_temp_value(self, value):
-        self.page.locator(self.__global_low_temp_value).fill(value)
+        self.page.locator(self.__global_high_temp_value).first.fill(value)
 
     @allure.step("设置低温报警阈值")
     def set_global_low_temp_value(self, value):
@@ -153,7 +154,9 @@ class AlarmPage(Common):
 
     @allure.step("设置报警间隔时间")
     def set_alarm_interval_time(self):
-        self.page.locator("div").filter(has_text=re.compile(r"^报警间隔时间$")).get_by_placeholder("请选择").click()
+        (self.page.locator(self.__alarm_interval_time_select[0]).
+         filter(has_text=re.compile(self.__alarm_interval_time_select[1])).
+         get_by_placeholder(self.__alarm_interval_time_select[2]).click())
 
     @allure.step("选择30s")
     def select_30s(self):

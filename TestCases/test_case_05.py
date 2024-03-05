@@ -6,10 +6,11 @@
 # @Project : ZS22A_UI
 
 import os
+import re
 import allure
 import pytest
 from playwright.sync_api import sync_playwright
-from Pages.AlarmPage.AlarmPage import AlarmPage
+from Pages.AlarmPage.AlarmPage1 import AlarmPage
 from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
@@ -70,11 +71,29 @@ def page():
 """执行统计报表模块测试"""
 class TestAlarm:
 
-    """查看所有分析对象最高温温度曲线"""
+    """设置全局高温报警"""
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = AlarmPage(page)
+        page.select_temp_monitoring()
+        page.select_global()
+        page.click_global_high_temp_box()
+        page.global_high_temp_select()
+        page.select_lower()
+        page.set_global_high_temp_value("42")
+        page.set_debounce("1")
+        page.set_alarm_interval_time()
+        page.select_60s()
+        page.set_alarm_interval_time()
+        page.select_5min()
+        page.click_vl_record_box()
+        page.set_record_time("20")
+        page.click_vl_capture_box()
+        page.click_email_switch()
+        page.click_light_switch()
+        page.set_duration("20")
+        page.page.wait_for_timeout(3000)
 
 
 
