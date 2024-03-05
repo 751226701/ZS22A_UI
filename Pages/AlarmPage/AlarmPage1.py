@@ -19,7 +19,7 @@ from Common.CompareImage import are_images_equal, download_image
 from playwright.sync_api import expect
 
 class AlarmPage(Common):
-    # 子模块元素定位
+    # 报警管理模块元素定位
     __alarm_event = "报警事件"
     __temp_monitoring = "温度监测"
     __global = ("menuitem", "全局温度")
@@ -31,7 +31,7 @@ class AlarmPage(Common):
     __other = "其他事件"
     __unauthorized = ("menuitem", "非法访问")
 
-    # 报警事件子模块元素定位
+    # 全局温度子模块元素定位
     __global_high_temp_box = ".el-checkbox__inner"
     __global_high_temp_value = "div:nth-child(4) > .el-input__inner"
     __global_high_temp_select = "请选择"
@@ -57,20 +57,6 @@ class AlarmPage(Common):
     __email_switch = ("div", r"^邮件通知$", "span")
     __light_switch = "div:nth-child(4) > .el-form-item__content > .el-switch > .el-switch__core"
     __duration = ("form", "录像可见光录像 红外录像 录像时间 s(10~300", "textbox")
-
-    # 全局温度子模块元素定位
-
-
-    # 分析对象子模块元素定位
-
-    # 对象温差子模块元素定位
-
-    # 存储异常子模块元素定位
-
-    # 网络异常子模块元素定位
-
-    # 非法访问子模块元素定位
-
 
     # 子模块方法
     @allure.step("选择报警事件")

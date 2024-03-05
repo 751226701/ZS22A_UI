@@ -68,7 +68,7 @@ def page():
         context.close()
         browser.close()
 
-"""执行统计报表模块测试"""
+"""执行全局温度子模块测试"""
 class TestAlarm:
 
     """设置全局高温报警"""
