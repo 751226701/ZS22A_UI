@@ -64,7 +64,7 @@ def page():
         yield pageobject
         pageobject = None
         if Trace:
-            context.tracing.stop(path="trace3.zip")
+            context.tracing.stop(path="trace5.zip")
         else:
             pass
         context.close()
@@ -96,7 +96,7 @@ class TestAlarm:
         page.click_light_switch()
         page.set_duration("20")
         page.click_ok()
-        page.assert_alarm()
+        page.assert_alarm(CaseData['断言元素定位'])
 
 
 

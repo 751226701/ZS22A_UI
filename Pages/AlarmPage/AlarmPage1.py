@@ -174,9 +174,9 @@ class AlarmPage(Common):
         self.page.get_by_role("button", name=self.__ok).click()
 
     @allure.step("断言是否产生报警")
-    def assert_alarm(self):
-        expect(self.page.locator(".icon-police")).to_be_visible()
-        print("已产生报警")
+    def assert_alarm(self, value):
+        expect(self.page.locator(value)).to_be_visible()
+
 
 
 

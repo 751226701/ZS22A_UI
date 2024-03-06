@@ -38,12 +38,12 @@ class Config:
     # 是否记录trace, trace1对应第一个测试文件，以此类推
     # 开启trace后会以截图的形式记录执行的每一个步骤，但会占用系统资源
     # 浏览器打开网站trace.playwright.dev   将trace.zip文件拖入浏览器即可查看
-    trace1 = False
-    trace2 = False
-    trace3 = False
-    trace4 = False
-    trace5 = False
-    trace6 = False
+    trace1 = False   # 登录模块
+    trace2 = False   # 实时预览
+    trace3 = False   # 回放管理
+    trace4 = False   # 统计报表
+    trace5 = False   # 全局温度
+    trace6 = False   # 分析对象
 
 
 if __name__ == '__main__':

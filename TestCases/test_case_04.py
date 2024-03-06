@@ -61,7 +61,7 @@ def page():
         yield pageobject
         pageobject = None
         if Trace:
-            context.tracing.stop(path="trace3.zip")
+            context.tracing.stop(path="trace4.zip")
         else:
             pass
         context.close()
