@@ -19,17 +19,6 @@ from Common.CompareImage import are_images_equal, download_image
 from playwright.sync_api import expect
 
 class AlarmPage(Common):
-    # 报警管理模块元素定位
-    __alarm_event = "报警事件"
-    __temp_monitoring = "温度监测"
-    __global = ("menuitem", "全局温度")
-    __analysis = ("menuitem", "分析对象")
-    __difference = ("menuitem", "对象温差")
-    __device = "设备异常"
-    __storage = ("menuitem", "存储异常")
-    __network = ("menuitem", "网络异常")
-    __other = "其他事件"
-    __unauthorized = ("menuitem", "非法访问")
 
     # 全局温度子模块元素定位
     __global_high_temp_box = ".el-checkbox__inner"
@@ -57,48 +46,9 @@ class AlarmPage(Common):
     __email_switch = ("div", r"^邮件通知$", "span")
     __light_switch = "div:nth-child(4) > .el-form-item__content > .el-switch > .el-switch__core"
     __duration = ("form", "录像可见光录像 红外录像 录像时间 s(10~300", "textbox")
-
-    # 子模块方法
-    @allure.step("选择报警事件")
-    def select_alarm(self):
-        self.page.get_by_text(self.__alarm_event).click()
-
-    @allure.step("选择温度监测")
-    def select_temp_monitoring(self):
-        self.page.get_by_text(self.__temp_monitoring).click()
-
-    @allure.step("选择全局温度")
-    def select_global(self):
-        self.page.get_by_role("menuitem", name=self.__global[1]).click()
-
-    @allure.step("选择分析对象")
-    def select_analysis(self):
-        self.page.get_by_role("menuitem", name=self.__analysis[1]).click()
-
-    @allure.step("选择对象温差")
-    def select_difference(self):
-        self.page.get_by_role("menuitem", name=self.__difference[1]).click()
-
-    @allure.step("选择设备异常")
-    def select_device(self):
-        self.page.get_by_text(self.__device).click()
-
-    @allure.step("选择存储异常")
-    def select_storage(self):
-        self.page.get_by_role("menuitem", name=self.__storage[1]).click()
-
-    @allure.step("选择网络异常")
-    def select_network(self):
-        self.page.get_by_role("menuitem", name=self.__network[1]).click()
-
-    @allure.step("选择其他事件")
-    def select_other(self):
-        self.page.get_by_text(self.__other).click()
-
-    @allure.step("选择非法访问")
-    def select_unauthorized(self):
-        self.page.get_by_role("menuitem", name=self.__unauthorized[1]).click()
-
+    __default = "默认"
+    __refresh = "刷新"
+    __ok = "确定"
 
     # 全局温度子模块方法
     @allure.step("点击全局最高温复选框")
@@ -211,30 +161,24 @@ class AlarmPage(Common):
         (self.page.locator(self.__duration[0]).filter(has_text=self.__duration[1]).
          get_by_role("textbox").nth(1).fill(value))
 
+    @allure.step("点击默认")
+    def click_default(self):
+        self.page.get_by_role("button", name=self.__default).click()
+
+    @allure.step("点击刷新")
+    def click_refresh(self):
+        self.page.get_by_role("button", name=self.__refresh).click()
+
+    @allure.step("点击确定")
+    def click_ok(self):
+        self.page.get_by_role("button", name=self.__ok).click()
+
+    @allure.step("断言是否产生报警")
+    def assert_alarm(self):
+        expect(self.page.locator(".icon-police")).to_be_visible()
+        print("已产生报警")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # 分析对象子模块方法
-
-    # 对象温差子模块方法
-
-    # 存储异常子模块方法
-
-    # 网络异常子模块方法
-
-    # 非法访问子模块方法
 
 
 

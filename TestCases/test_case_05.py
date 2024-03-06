@@ -29,6 +29,8 @@ def login(pageobject, url, user, passwd):
     pageobject.wait_for_timeout(3000)
     pageobject.get_by_role("button", name="登录").click()
     pageobject.get_by_text("报警管理").click()
+    pageobject.get_by_text("温度监测").click()
+    pageobject.get_by_role("menuitem", name="全局温度").click()
 def on_download(download):
     global DOWNLOAD_FLAG
     DOWNLOAD_FLAG = True
@@ -76,8 +78,8 @@ class TestAlarm:
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = AlarmPage(page)
-        page.select_temp_monitoring()
-        page.select_global()
+        page.click_default()
+        page.click_ok()
         page.click_global_high_temp_box()
         page.global_high_temp_select()
         page.select_lower()
@@ -93,7 +95,10 @@ class TestAlarm:
         page.click_email_switch()
         page.click_light_switch()
         page.set_duration("20")
-        page.page.wait_for_timeout(3000)
+        page.click_ok()
+        page.assert_alarm()
+
+
 
 
 
