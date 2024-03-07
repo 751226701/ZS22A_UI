@@ -1,8 +1,8 @@
 # ！/usr/bin/env python
 # -*- coding = utf-8 -*-
 # @Author : 刘涛
-# @Time : 2024/3/4 13:25
-# @File :test_case_05.py
+# @Time : 2024/3/6 10:02
+# @File :test_case_06.py
 # @Project : ZS22A_UI
 
 import os
@@ -10,14 +10,14 @@ import re
 import allure
 import pytest
 from playwright.sync_api import sync_playwright
-from Pages.AlarmPage.AlarmPage1 import AlarmPage
+from Pages.AlarmPage.AlarmPage2 import AlarmPage
 from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_05.yaml")).read()
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_06.yaml")).read()
 logindata = yaml_data[0]
-Trace = Config.trace5
+Trace = Config.trace6
 pageobject = None
 DOWNLOAD_FLAG = False
 
@@ -30,7 +30,7 @@ def login(pageobject, url, user, passwd):
     pageobject.get_by_role("button", name="登录").click()
     pageobject.get_by_text("报警管理").click()
     pageobject.get_by_text("温度监测").click()
-    pageobject.get_by_role("menuitem", name="全局温度").click()
+    pageobject.get_by_role("menuitem", name="分析对象").click()
 def on_download(download):
     global DOWNLOAD_FLAG
     DOWNLOAD_FLAG = True
@@ -64,39 +64,135 @@ def page():
         yield pageobject
         pageobject = None
         if Trace:
-            context.tracing.stop(path="trace5.zip")
+            context.tracing.stop(path="trace6.zip")
         else:
             pass
         context.close()
         browser.close()
 
-"""执行全局温度子模块测试"""
+"""执行分析对象子模块测试"""
 class TestAlarm:
 
-    """设置全局高温报警"""
+    """设置分析对象报警"""
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = AlarmPage(page)
-        page.click_default()
+        page.draw_object_on()
+        page.select_line_brush()
+        page.draw_object(134, 93)
+        page.draw_object(232, 238)
         page.click_ok()
-        page.click_global_high_temp_box()
-        page.global_high_temp_select()
+        page.alarm_switch()
+        page.alarm_type_select()
+        page.min_temp_alarm()
+        page.select_alarm_condition()
         page.select_less()
-        page.set_global_high_temp_value("42")
-        page.set_debounce("1")
-        page.set_alarm_interval_time()
-        page.select_60s()
-        page.set_alarm_interval_time()
-        page.select_5min()
-        page.click_vl_record_box()
-        page.set_record_time("20")
-        page.click_vl_capture_box()
-        page.click_email_switch()
-        page.click_light_switch()
-        page.set_duration("20")
+        page.set_temp_threshold("42")
+        page.set_debounce_time("1")
         page.click_ok()
-        page.assert_alarm(CaseData['断言元素定位'])
+        page.assert_alarm(CaseData["断言元素定位"],)
+        page.page.wait_for_timeout(5000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -8,7 +8,7 @@
 import os
 class Config:
     # 项目地址
-    url = "http://192.168.21.171/#/login"
+    url = "http://192.168.21.31/#/login"
 
     # 项目根目录
     root_dir = os.path.split(os.path.split(__file__)[0])[0]
@@ -21,7 +21,7 @@ class Config:
     test_download_dir = root_dir + os.path.sep + "TestReport" + os.path.sep + "Download\\"
     logs = root_dir + os.path.sep + "Logs"
 
-    # 使用的浏览器
+    # 使用的浏览器  chrome  msedge
     browser = "chrome"
 
     # 邮件发送参数配置

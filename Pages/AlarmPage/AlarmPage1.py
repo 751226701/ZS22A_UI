@@ -27,8 +27,8 @@ class AlarmPage(Common):
     __global_low_temp_box = "div:nth-child(6) > .el-checkbox > .el-checkbox__input > .el-checkbox__inner"
     __global_low_temp_value = "div:nth-child(6) > div:nth-child(4) > .el-input__inner"
     __global_low_temp_select = "请选择"
-    __select_greater = ("list", ">")
-    __select_lower = ("list", "<")
+    __select_great = ("list", ">")
+    __select_less = ("list", "<")
     __debounce = ("div", r"^去抖动 s \(1~10\)$", "textbox")
     __alarm_interval_time_select = ("div", r"^报警间隔时间30s 60s 5min 10min 15min 30min 60min$|^报警间隔时间$", "请选择")
     __alarm_interval_time_30S = "30s"
@@ -76,12 +76,12 @@ class AlarmPage(Common):
         self.page.locator(self.__global_low_temp_value).fill(value)
 
     @allure.step("选择大于")
-    def select_greater(self):
-        self.page.get_by_role("list").get_by_text(self.__select_greater[1]).click()
+    def select_great(self):
+        self.page.get_by_role("list").get_by_text(self.__select_great[1]).click()
 
     @allure.step("选择小于")
-    def select_lower(self):
-        self.page.get_by_role("list").get_by_text(self.__select_lower[1]).click()
+    def select_less(self):
+        self.page.get_by_role("list").get_by_text(self.__select_less[1]).click()
 
     @allure.step("设置去抖动")
     def set_debounce(self, value):
