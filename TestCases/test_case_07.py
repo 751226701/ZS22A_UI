@@ -70,10 +70,10 @@ def page():
         context.close()
         browser.close()
 
-"""执行分析对象子模块测试"""
+"""执行对象温差子模块测试"""
 class TestAlarm:
 
-    """设置分析对象报警"""
+    """设置对象温差报警"""
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
