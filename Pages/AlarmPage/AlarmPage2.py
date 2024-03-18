@@ -163,15 +163,35 @@ class AlarmPage(Common):
         (self.page.locator(self.__email_switch[0]).filter(has_text=re.compile(self.__email_switch[1])).
          locator(self.__email_switch[2]).click())
 
+    @allure.step("点击音频播放选择框")
+    def click_audio_switch(self):
+        (self.page.get_by_label("报警联动设置").locator("form div").
+         filter(has_text="音频播放 持续时间 s(10~300)").get_by_role("switch").locator("span").click())
+
+    @allure.step("设置音频播放时间")
+    def set_audio_time(self, value):
+        (self.page.get_by_label("报警联动设置").locator("form div").
+         filter(has_text="音频播放 持续时间 s(10~300)").get_by_role("textbox").fill("99"))
+
     @allure.step("点击灯光开关")
     def click_light_switch(self):
         self.page.locator(self.__light_switch).nth(1).click()
 
     @allure.step("设置灯光持续时间")
-    def set_duration(self, value):
+    def set_light_duration(self, value):
         (self.page.get_by_label("报警联动设置").
          locator("form div").filter(has_text="灯光 持续时间 s(10~300)").
          get_by_role("textbox").fill(value))
+
+    @allure.step("点击报警输出复选框")
+    def click_alarm_output_switch(self):
+        (self.page.get_by_label("报警联动设置").locator("form div").
+         filter(has_text="报警输出 持续时间 s(10~300)").get_by_role("switch").locator("span").click())
+
+    @allure.step("设置报警输出时间")
+    def set_alarm_output_time(self, value):
+        (self.page.get_by_label("报警联动设置").locator("form div").
+         filter(has_text="报警输出 持续时间 s(10~300)").get_by_role("textbox").fill(value))
 
     @allure.step("分析对象列表全选框")
     def object_list_all(self):

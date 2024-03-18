@@ -44,6 +44,8 @@ class Config:
     trace4 = False   # 统计报表
     trace5 = False   # 全局温度
     trace6 = False   # 分析对象
+    trace7 = False   #
+    trace8 = False   #
 
 
 if __name__ == '__main__':
