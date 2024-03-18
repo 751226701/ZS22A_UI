@@ -158,12 +158,12 @@ class AlarmPage(Common):
         (self.page.locator(self.__ir_capture_box[0]).filter(has_text=self.__ir_capture_box[1]).
          locator(self.__ir_capture_box[2]).nth(1).click())
 
-    @allure.step("点击邮件通知选择框")
+    @allure.step("点击邮件通知开关")
     def click_email_switch(self):
         (self.page.locator(self.__email_switch[0]).filter(has_text=re.compile(self.__email_switch[1])).
          locator(self.__email_switch[2]).click())
 
-    @allure.step("点击音频播放选择框")
+    @allure.step("点击音频播放开关")
     def click_audio_switch(self):
         (self.page.get_by_label("报警联动设置").locator("form div").
          filter(has_text="音频播放 持续时间 s(10~300)").get_by_role("switch").locator("span").click())
@@ -183,7 +183,7 @@ class AlarmPage(Common):
          locator("form div").filter(has_text="灯光 持续时间 s(10~300)").
          get_by_role("textbox").fill(value))
 
-    @allure.step("点击报警输出复选框")
+    @allure.step("点击报警输出开关")
     def click_alarm_output_switch(self):
         (self.page.get_by_label("报警联动设置").locator("form div").
          filter(has_text="报警输出 持续时间 s(10~300)").get_by_role("switch").locator("span").click())

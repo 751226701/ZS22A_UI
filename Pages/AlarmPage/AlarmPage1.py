@@ -44,7 +44,11 @@ class AlarmPage(Common):
     __vl_capture_box = ("label", "可见光抓图", "span", 1)
     __ir_capture_box = ("label", "红外抓图", "span", 1)
     __email_switch = ("div", r"^邮件通知$", "span")
+    __audio_switch = "div:nth-child(4) > .el-form-item__content > .el-switch > .el-switch__core"
+    __audio_time = "录像可见光录像 红外录像 录像时间 s(10~300"
     __light_switch = "div:nth-child(4) > .el-form-item__content > .el-switch > .el-switch__core"
+    __alarm_output = "div:nth-child(6) > .el-form-item__content > .el-switch > .el-switch__core"
+    __output_time = "录像可见光录像 红外录像 录像时间 s(10~300"
     __duration = ("form", "录像可见光录像 红外录像 录像时间 s(10~300", "textbox")
     __default = "默认"
     __refresh = "刷新"
@@ -147,10 +151,18 @@ class AlarmPage(Common):
         (self.page.locator(self.__ir_capture_box[0]).filter(has_text=self.__ir_capture_box[1]).
          locator(self.__ir_capture_box[2]).nth(1).click())
 
-    @allure.step("点击邮件通知选择框")
+    @allure.step("点击邮件通知开关")
     def click_email_switch(self):
         (self.page.locator(self.__email_switch[0]).filter(has_text=re.compile(self.__email_switch[1])).
          locator(self.__email_switch[2]).click())
+
+    @allure.step("点击音频播放开关")
+    def click_audio_switch(self):
+        self.page.locator(self.__audio_switch).click()
+
+    @allure.step("设置音频播放时间")
+    def set_audio_time(self, value):
+        self.page.locator("form").filter(has_text=self.__audio_time).get_by_role("textbox").nth(1).fill("25")
 
     @allure.step("点击灯光开关")
     def click_light_switch(self):
@@ -160,6 +172,14 @@ class AlarmPage(Common):
     def set_duration(self, value):
         (self.page.locator(self.__duration[0]).filter(has_text=self.__duration[1]).
          get_by_role("textbox").nth(1).fill(value))
+
+    @allure.step("点击报警输出开关")
+    def click_alarm_output_switch(self):
+        self.page.locator(self.__alarm_output).click()
+
+    @allure.step("设置报警输出时间")
+    def set_alarm_output_time(self, value):
+        self.page.locator("form").filter(has_text=self.__output_time).get_by_role("textbox").nth(3).fill("25")
 
     @allure.step("点击默认")
     def click_default(self):

@@ -87,11 +87,11 @@ class AlarmPage(Common):
     def click_ir_capture_box(self):
         self.page.locator("label").filter(has_text="红外抓图").locator("span").nth(1).click()
 
-    @allure.step("点击邮件通知选择框")
+    @allure.step("点击邮件通知开关")
     def click_email_switch(self):
         self.page.locator("div").filter(has_text=re.compile(r"^邮件通知$")).locator("span").click()
 
-    @allure.step("点击音频播放选择框")
+    @allure.step("点击音频播放开关")
     def click_audio_switch(self):
         self.page.locator(self.__audio_switch).click()
 
@@ -109,7 +109,7 @@ class AlarmPage(Common):
         (self.page.locator(self.__light_duration[0]).filter(has_text=self.__light_duration[1]).
          get_by_role("textbox").nth(2).fill(value))
 
-    @allure.step("点击报警输出复选框")
+    @allure.step("点击报警输出开关")
     def click_alarm_output_switch(self):
         self.page.locator(self.__alarm_output).click()
 
@@ -118,3 +118,14 @@ class AlarmPage(Common):
         (self.page.locator("form").filter(has_text="录像可见光录像 红外录像 录像时间 s(10~300").
          get_by_role("textbox").nth(3).fill(value))
 
+    @allure.step("点击默认")
+    def click_default(self):
+        self.page.get_by_role("button", name="默认").click()
+
+    @allure.step("点击刷新")
+    def click_refresh(self):
+        self.page.get_by_role("button", name="刷新").click()
+
+    @allure.step("点击确定")
+    def click_ok(self):
+        self.page.get_by_role("button", name="确定").click()

@@ -44,9 +44,13 @@ class Config:
     trace4 = False   # 统计报表
     trace5 = False   # 全局温度
     trace6 = False   # 分析对象
-    trace7 = False   #
-    trace8 = False   #
-
+    trace7 = False   # 对象温差
+    trace8 = False   # 存储异常
+    trace9 = False   # 网络异常
+    trace10 = False  # 非法访问
+    trace11 = False  # 报警输入
+    trace12 = False  # 报警事件
+    trace13 = False  # 画面设置
 
 if __name__ == '__main__':
     print(Config.root_dir)
