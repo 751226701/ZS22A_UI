@@ -29,8 +29,6 @@ def login(pageobject, url, user, passwd):
     pageobject.wait_for_timeout(3000)
     pageobject.get_by_role("button", name="登录").click()
     pageobject.get_by_text("系统管理").click()
-    pageobject.get_by_text("图像管理").click()
-    pageobject.get_by_role("menuitem", name="画面设置").click()
 def on_download(download):
     global DOWNLOAD_FLAG
     DOWNLOAD_FLAG = True
@@ -78,6 +76,38 @@ class TestAlarm:
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = SystemPage(page)
+        page.set_vl_light("66")
+        page.set_vl_contrast("66")
+        page.set_vl_saturation("66")
+        page.set_vl_sharpness("66")
+        page.set_backlight_compensation()
+        page.select_close()
+        page.set_backlight_compensation()
+        page.select_up()
+        page.set_backlight_compensation()
+        page.select_down()
+        page.set_backlight_compensation()
+        page.select_left()
+        page.set_backlight_compensation()
+        page.select_right()
+        page.set_backlight_compensation()
+        page.select_center()
+        page.set_backlight_compensation()
+        page.select_auto()
+        page.click_lux_compensation()
+        page.vl_rotate()
+        page.set_ir_light("66")
+        page.set_ir_contrast("66")
+        page.set_ir_sharpness("66")
+        page.set_auto_shutter_interval("18")
+        page.click_shutter_compensation()
+        page.ir_rotate()
+        page.click_detail_enhancement()
+        page.set_detail_enhancement("66")
+        page.set_space_noise_reduction("66")
+        page.set_time_noise_reduction("66")
+        page.click_space_noise_reduction()
+        page.click_time_noise_reduction()
 
 
 
