@@ -77,7 +77,31 @@ class TestAlarm:
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = SystemPage(page)
-
+        page.click_global_temp_box()
+        page.select_temp_type()
+        page.max_temp()
+        page.select_temp_type()
+        page.min_temp()
+        page.select_temp_type()
+        page.avg_temp()
+        page.select_temp_type()
+        page.max_min_temp()
+        page.select_temp_type()
+        page.max_avg_temp()
+        page.select_temp_type()
+        page.min_avg_temp()
+        page.select_temp_type()
+        page.max_min_avg_temp()
+        page.click_date_box()
+        page.click_string_box()
+        page.set_string_content("999")
+        page.click_channel_name_box()
+        page.set_channel_name("999")
+        page.click_vl_date_box()
+        page.click_vl_string_box()
+        page.set_vl_string_content("999")
+        page.click_vl_channel_name_box()
+        page.set_vl_channel_name("999")
 
 
 
