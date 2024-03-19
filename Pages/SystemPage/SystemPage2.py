@@ -18,7 +18,7 @@ from Common.CompareImage import are_images_equal, download_image
 from playwright.sync_api import expect
 
 class SystemPage(Common):
-    # 画面设置子模块元素定位
+    # 码流设置子模块元素定位
     __test = ""
 
 

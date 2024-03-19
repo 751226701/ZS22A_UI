@@ -1,8 +1,8 @@
 # ！/usr/bin/env python
 # -*- coding = utf-8 -*-
 # @Author : 刘涛
-# @Time : 2024/3/19 13:11
-# @File :test_case_14
+# @Time : 2024/3/19 14:14
+# @File :test_case_15
 # @Project : ZS22A_UI
 
 import os
@@ -10,14 +10,14 @@ import re
 import allure
 import pytest
 from playwright.sync_api import sync_playwright
-from Pages.SystemPage.SystemPage2 import SystemPage
+from Pages.SystemPage.SystemPage3 import SystemPage
 from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_14.yaml")).read()
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_15.yaml")).read()
 logindata = yaml_data[0]
-Trace = Config.trace14
+Trace = Config.trace15
 pageobject = None
 DOWNLOAD_FLAG = False
 
@@ -29,7 +29,7 @@ def login(pageobject, url, user, passwd):
     pageobject.wait_for_timeout(3000)
     pageobject.get_by_role("button", name="登录").click()
     pageobject.get_by_text("系统管理").click()
-    pageobject.get_by_role("menuitem", name="码流设置").click()
+    pageobject.get_by_role("menuitem", name="OSD设置").click()
 def on_download(download):
     global DOWNLOAD_FLAG
     DOWNLOAD_FLAG = True
@@ -63,42 +63,20 @@ def page():
         yield pageobject
         pageobject = None
         if Trace:
-            context.tracing.stop(path="trace14.zip")
+            context.tracing.stop(path="trace15.zip")
         else:
             pass
         context.close()
         browser.close()
 
-"""执行码流设置子模块测试"""
+"""执行OSD设置子模块测试"""
 class TestAlarm:
 
-    """设置可见光主码流"""
+    """设置全局温度显示"""
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = SystemPage(page)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
