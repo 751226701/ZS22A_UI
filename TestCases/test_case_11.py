@@ -1,8 +1,8 @@
 # ！/usr/bin/env python
 # -*- coding = utf-8 -*-
 # @Author : 刘涛
-# @Time : 2024/3/18 16:16
-# @File :test_case_10.py
+# @Time : 2024/3/18 17:20
+# @File :test_case_11
 # @Project : ZS22A_UI
 
 import os
@@ -10,14 +10,14 @@ import re
 import allure
 import pytest
 from playwright.sync_api import sync_playwright
-from Pages.AlarmPage.AlarmPage6 import AlarmPage
+from Pages.AlarmPage.AlarmPage7 import AlarmPage
 from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_10.yaml")).read()
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_11.yaml")).read()
 logindata = yaml_data[0]
-Trace = Config.trace10
+Trace = Config.trace11
 pageobject = None
 DOWNLOAD_FLAG = False
 
@@ -30,7 +30,7 @@ def login(pageobject, url, user, passwd):
     pageobject.get_by_role("button", name="登录").click()
     pageobject.get_by_text("报警管理").click()
     pageobject.get_by_text("其他事件").click()
-    pageobject.get_by_role("menuitem", name="非法访问").click()
+    pageobject.get_by_role("menuitem", name="报警输入").click()
 def on_download(download):
     global DOWNLOAD_FLAG
     DOWNLOAD_FLAG = True
@@ -64,24 +64,31 @@ def page():
         yield pageobject
         pageobject = None
         if Trace:
-            context.tracing.stop(path="trace10.zip")
+            context.tracing.stop(path="trace11.zip")
         else:
             pass
         context.close()
         browser.close()
 
-"""执行非法访问子模块测试"""
+"""执行报警输入子模块测试"""
 class TestAlarm:
 
-    """设置非法访问报警"""
+    """设置报警输入报警"""
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = AlarmPage(page)
         page.alarm_switch()
-        page.set_lock_threshold("9")
-        page.alarm_interval()
-        page.alarm_interval_60min()
+        page.sensor_type()
+        page.sensor_type_normal()
+        page.set_debounce_time("5")
+        page.set_alarm_interval_time()
+        page.alarm_interval_10min()
+        page.click_vl_record_box()
+        page.click_ir_record_box()
+        page.set_record_time("200")
+        page.click_vl_capture_box()
+        page.click_ir_capture_box()
         page.click_email_switch()
         page.click_audio_switch()
         page.click_light_switch()
@@ -89,12 +96,6 @@ class TestAlarm:
         page.set_audio_time("99")
         page.set_light_time("99")
         page.set_alarm_output_time("99")
-
-
-
-
-
-
 
 
 
