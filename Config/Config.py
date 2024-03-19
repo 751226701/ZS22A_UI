@@ -51,6 +51,30 @@ class Config:
     trace11 = False  # 报警输入
     trace12 = False  # 报警事件
     trace13 = False  # 画面设置
+    trace14 = False  # 码流设置
+    trace15 = False  # OSD设置
+    trace16 = False  # 图像融合
+    trace17 = False  # 全局测温设置
+    trace18 = False  # 屏蔽区域
+    trace19 = False  # 补光灯
+    trace20 = False  # 网络设置
+    trace21 = False  # 存储设置
+    trace22 = False  # 界面设置
+    trace23 = False  # 系统升级
+    trace24 = False  # 定时重启
+    trace25 = False  # 操作日志
+
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     print(Config.root_dir)

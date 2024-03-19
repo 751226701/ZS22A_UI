@@ -1,8 +1,8 @@
 # ！/usr/bin/env python
 # -*- coding = utf-8 -*-
 # @Author : 刘涛
-# @Time : 2024/3/19 10:38
-# @File :test_case_13
+# @Time : 2024/3/19 13:11
+# @File :test_case_14
 # @Project : ZS22A_UI
 
 import os
@@ -10,14 +10,14 @@ import re
 import allure
 import pytest
 from playwright.sync_api import sync_playwright
-from Pages.SystemPage.SystemPage1 import SystemPage
+from Pages.SystemPage.SystemPage2 import SystemPage
 from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_13.yaml")).read()
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_14.yaml")).read()
 logindata = yaml_data[0]
-Trace = Config.trace13
+Trace = Config.trace14
 pageobject = None
 DOWNLOAD_FLAG = False
 
@@ -29,6 +29,7 @@ def login(pageobject, url, user, passwd):
     pageobject.wait_for_timeout(3000)
     pageobject.get_by_role("button", name="登录").click()
     pageobject.get_by_text("系统管理").click()
+    pageobject.get_by_role("menuitem", name="码流设置").click()
 def on_download(download):
     global DOWNLOAD_FLAG
     DOWNLOAD_FLAG = True
@@ -62,73 +63,21 @@ def page():
         yield pageobject
         pageobject = None
         if Trace:
-            context.tracing.stop(path="trace13.zip")
+            context.tracing.stop(path="trace14.zip")
         else:
             pass
         context.close()
         browser.close()
 
-"""执行画面设置子模块测试"""
+"""执行码流设置子模块测试"""
 class TestAlarm:
 
-    """设置可见光亮度"""
+    """设置可见光主码流"""
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = SystemPage(page)
-        page.set_vl_light("66")
-        page.set_vl_contrast("66")
-        page.set_vl_saturation("66")
-        page.set_vl_sharpness("66")
-        page.set_backlight_compensation()
-        page.select_close()
-        page.set_backlight_compensation()
-        page.select_up()
-        page.set_backlight_compensation()
-        page.select_down()
-        page.set_backlight_compensation()
-        page.select_left()
-        page.set_backlight_compensation()
-        page.select_right()
-        page.set_backlight_compensation()
-        page.select_center()
-        page.set_backlight_compensation()
-        page.select_auto()
-        page.click_lux_compensation()
-        page.vl_rotate()
-        page.set_ir_light("66")
-        page.set_ir_contrast("66")
-        page.set_ir_sharpness("66")
-        page.set_auto_shutter_interval("18")
-        page.click_shutter_compensation()
-        page.ir_rotate()
-        page.click_detail_enhancement()
-        page.set_detail_enhancement("66")
-        page.set_space_noise_reduction("66")
-        page.set_time_noise_reduction("66")
-        page.click_space_noise_reduction()
-        page.click_time_noise_reduction()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        page.set_main_stream_resolution()
 
 
 
