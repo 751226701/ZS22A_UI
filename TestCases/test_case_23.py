@@ -1,8 +1,8 @@
 # ！/usr/bin/env python
 # -*- coding = utf-8 -*-
 # @Author : 刘涛
-# @Time : 2024/3/21 9:27
-# @File :test_case_22
+# @Time : 2024/3/21 13:43
+# @File :test_case_23
 # @Project : ZS22A_UI
 
 import os
@@ -10,14 +10,14 @@ import re
 import allure
 import pytest
 from playwright.sync_api import sync_playwright
-from Pages.SystemPage.SystemPage10 import SystemPage
+from Pages.SystemPage.SystemPage11 import SystemPage
 from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_22.yaml")).read()
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_23.yaml")).read()
 logindata = yaml_data[0]
-Trace = Config.trace22
+Trace = Config.trace23
 pageobject = None
 DOWNLOAD_FLAG = False
 
@@ -30,7 +30,7 @@ def login(pageobject, url, user, passwd):
     pageobject.get_by_role("button", name="登录").click()
     pageobject.get_by_text("系统管理").click()
     pageobject.get_by_text("系统配置", exact=True).click()
-    pageobject.get_by_role("menuitem", name="界面设置").click()
+    pageobject.get_by_role("menuitem", name="系统升级").click()
 def on_download(download):
     global DOWNLOAD_FLAG
     DOWNLOAD_FLAG = True
@@ -64,47 +64,27 @@ def page():
         yield pageobject
         pageobject = None
         if Trace:
-            context.tracing.stop(path="trace22.zip")
+            context.tracing.stop(path="trace23.zip")
         else:
             pass
         context.close()
         browser.close()
 
 
-"""执行界面设置子模块测试"""
+"""执行系统升级子模块测试"""
 
 class TestAlarm:
-    """系统语言"""
+    """恢复出厂"""
 
     @PrettyAllure.PrettyAllureWarpper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = SystemPage(page)
-        page.set_en()
-        page.set_cn()
-        page.set_system_name("123")
-        page.set_copyright("123")
-        page.set_24_hour()
-        page.set_12_hour()
-        page.set_timezone("(UTC-10:00)夏威夷")
-        page.set_timezone("(UTC)UTC时间")
-        page.set_time_correct()
-        page.set_fahrenheit()
-        page.set_celsius()
-        page.set_feet()
-        page.set_meter()
-
-
-
-
-
-
-
-
-
-
-
-
+        page.backup_config()
+        page.restore_factory()
+        page.click_cancel()
+        page.restart()
+        page.click_confirm()
 
 
 
