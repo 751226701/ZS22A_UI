@@ -34,7 +34,17 @@ class SystemPage(Common):
         self.page.get_by_placeholder("请选择").click()
         self.page.get_by_text(time).click()
 
+    @allure.step("重启")
+    def restart(self):
+        self.page.get_by_role("button", name="重启").click()
 
+    @allure.step("确定")
+    def click_confirm(self):
+        self.page.get_by_role("button", name="确定").click()
+
+    @allure.step("取消")
+    def click_cancel(self):
+        self.page.get_by_role("button", name="取消").click()
 
 
 
