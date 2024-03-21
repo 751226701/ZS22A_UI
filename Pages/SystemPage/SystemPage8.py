@@ -408,7 +408,17 @@ class SystemPage(Common):
     def click_clear(self):
         self.page.get_by_role("button", name="清空").click()
 
+    @allure.step("点击默认")
+    def click_default(self):
+        self.page.get_by_role("button", name="默认").click()
 
+    @allure.step("点击刷新")
+    def click_refresh(self):
+        self.page.get_by_role("button", name="刷新").click()
+
+    @allure.step("点击确定")
+    def click_ok(self):
+        self.page.get_by_role("button", name="确定").click()
 
 
 
