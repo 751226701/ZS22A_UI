@@ -71,7 +71,7 @@ def page():
 class TestPlayBack:
 
     """搜索全部可见光视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -79,7 +79,7 @@ class TestPlayBack:
         page.assert_num_list(CaseData['断言元素定位'])
 
     """搜索对象温度可见光视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[2]])
     def test_case_02(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -89,7 +89,7 @@ class TestPlayBack:
         page.assert_num_list(CaseData['断言元素定位'])
 
     """搜索全局温度可见光视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[3]])
     def test_case_03(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -99,7 +99,7 @@ class TestPlayBack:
         page.assert_num_list(CaseData['断言元素定位'])
 
     """搜索对象温差可见光视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[4]])
     def test_case_04(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -109,7 +109,7 @@ class TestPlayBack:
         page.assert_num_list(CaseData['断言元素定位'])
 
     """搜索手动录像视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[5]])
     def test_case_05(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -119,7 +119,7 @@ class TestPlayBack:
         page.assert_num_list(CaseData['断言元素定位'])
 
     """搜索全部红外视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[6]])
     def test_case_06(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -130,7 +130,7 @@ class TestPlayBack:
         page.assert_num_list(CaseData['断言元素定位'])
 
     """搜索对象温度红外视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[7]])
     def test_case_07(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -141,7 +141,7 @@ class TestPlayBack:
         page.assert_num_list(CaseData['断言元素定位'])
 
     """搜索全局温度红外视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[8]])
     def test_case_08(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -152,7 +152,7 @@ class TestPlayBack:
         page.assert_num_list(CaseData['断言元素定位'])
 
     """搜索对象温差红外视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[9]])
     def test_case_09(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -163,7 +163,7 @@ class TestPlayBack:
         page.assert_num_list(CaseData['断言元素定位'])
 
     """下载回放视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[10]])
     def test_case_10(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -176,7 +176,7 @@ class TestPlayBack:
         set_download_flag(False)
 
     """搜索全部可见光照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[11]])
     def test_case_11(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -187,7 +187,7 @@ class TestPlayBack:
         page.click_query()
 
     """搜索对象温度可见光照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[12]])
     def test_case_12(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -198,7 +198,7 @@ class TestPlayBack:
         page.click_query()
 
     """搜索全局温度可见光照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[13]])
     def test_case_13(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -209,7 +209,7 @@ class TestPlayBack:
         page.click_query()
 
     """搜索对象温差可见光照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[14]])
     def test_case_14(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -220,7 +220,7 @@ class TestPlayBack:
         page.click_query()
 
     """搜索全部红外照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[15]])
     def test_case_15(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -231,7 +231,7 @@ class TestPlayBack:
         page.click_query()
 
     """搜索对象温度红外照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[16]])
     def test_case_16(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -242,7 +242,7 @@ class TestPlayBack:
         page.click_query()
 
     """搜索全局温度红外照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[17]])
     def test_case_17(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -253,7 +253,7 @@ class TestPlayBack:
         page.click_query()
 
     """搜索对象温差红外照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[18]])
     def test_case_18(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -264,7 +264,7 @@ class TestPlayBack:
         page.click_query()
 
     """下载回放照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[19]])
     def test_case_19(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -278,7 +278,7 @@ class TestPlayBack:
         set_download_flag(False)
 
     """选择第一条视频播放"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[20]])
     def test_case_20(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -292,7 +292,7 @@ class TestPlayBack:
         page.assert_selected_video1(CaseData['断言元素定位'])
 
     """选择下一条视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[21]])
     def test_case_21(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -306,7 +306,7 @@ class TestPlayBack:
         page.assert_selected_video2(CaseData['断言元素定位'])
 
     """选择上一条视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[22]])
     def test_case_22(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -320,7 +320,7 @@ class TestPlayBack:
         page.assert_selected_video1(CaseData['断言元素定位'])
 
     """停止播放视频"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[23]])
     def test_case_23(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -334,7 +334,7 @@ class TestPlayBack:
         page.stop_play_video()
 
     """视频倍速1.2X"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[24]])
     def test_case_24(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -348,7 +348,7 @@ class TestPlayBack:
         page.assert_magnification(CaseData['断言元素定位'])
 
     """视频倍速1.5X"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[25]])
     def test_case_25(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -362,7 +362,7 @@ class TestPlayBack:
         page.assert_magnification(CaseData['断言元素定位'])
 
     """视频倍速2.0X"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[26]])
     def test_case_26(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -376,7 +376,7 @@ class TestPlayBack:
         page.assert_magnification(CaseData['断言元素定位'])
 
     """视频倍速1.0X"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[27]])
     def test_case_27(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -390,7 +390,7 @@ class TestPlayBack:
         page.assert_magnification(CaseData['断言元素定位'])
 
     """全屏播放"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[28]])
     def test_case_28(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -403,7 +403,7 @@ class TestPlayBack:
         page.assert_full_screen_status(CaseData['断言元素定位'])
 
     """退出全屏播放"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[29]])
     def test_case_29(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -411,7 +411,7 @@ class TestPlayBack:
         page.assert_full_screen_status(CaseData['断言元素定位'])
 
     """照片播放后暂停"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[30]])
     def test_case_30(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -426,7 +426,7 @@ class TestPlayBack:
         page.stop_play_photos()
 
     """下一张照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[31]])
     def test_case_31(self, page, CaseData: dict):
         page = PlaybackPage(page)
@@ -434,7 +434,7 @@ class TestPlayBack:
         page.assert_selected_photo(CaseData['断言元素定位'])
 
     """上一张照片"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[32]])
     def test_case_32(self, page, CaseData: dict):
         page = PlaybackPage(page)

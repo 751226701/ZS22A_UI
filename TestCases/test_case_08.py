@@ -74,7 +74,7 @@ def page():
 class TestAlarm:
 
     """设置存储空间不足报警"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = AlarmPage(page)
@@ -90,7 +90,7 @@ class TestAlarm:
         page.set_alarm_output_time("99")
 
     """设置FTP异常报警"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[2]])
     def test_case_02(self, page, CaseData: dict):
         page = AlarmPage(page)
@@ -107,7 +107,7 @@ class TestAlarm:
         page.set_alarm_output_time1("99")
 
     """设置SD卡异常报警"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[3]])
     def test_case_03(self, page, CaseData: dict):
         page = AlarmPage(page)

@@ -28,7 +28,7 @@ class PrettyAllure(object):
         allure.attach.file(source=filename, name=CaseData.get('用例标题'), attachment_type=allure.attachment_type.PNG)
 
     @classmethod
-    def PrettyAllureWarpper(cls, func):
+    def PrettyAllureWrapper(cls, func):
         """装饰器函数"""
 
         @functools.wraps(func)

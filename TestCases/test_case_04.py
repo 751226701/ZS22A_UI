@@ -71,14 +71,14 @@ def page():
 class TestPlayBack:
 
     """查看所有分析对象最高温温度曲线"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = ReportPage(page)
         page.search_temperature_curve()
 
     """查看所有分析对象最低温温度曲线"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[2]])
     def test_case_02(self, page, CaseData: dict):
         page = ReportPage(page)
@@ -87,7 +87,7 @@ class TestPlayBack:
         page.search_temperature_curve()
 
     """查看所有分析对象平均温温度曲线"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[3]])
     def test_case_03(self, page, CaseData: dict):
         page = ReportPage(page)
@@ -96,21 +96,21 @@ class TestPlayBack:
         page.search_temperature_curve()
 
     """取消全选"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[4]])
     def test_case_04(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_all()
 
     """全选"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[5]])
     def test_case_05(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_all()
 
     """下载温度曲线截图"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[6]])
     def test_case_06(self, page, CaseData: dict):
         page = ReportPage(page)
@@ -120,7 +120,7 @@ class TestPlayBack:
         set_download_flag(False)
 
     """导出报表"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[7]])
     def test_case_07(self, page, CaseData: dict):
         page = ReportPage(page)

@@ -73,7 +73,7 @@ def page():
 class TestAlarm:
 
     """设置可见光主码流"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = SystemPage(page)

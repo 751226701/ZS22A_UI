@@ -74,7 +74,7 @@ def page():
 class TestAlarm:
 
     """设置对象温差报警"""
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = AlarmPage(page)

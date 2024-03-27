@@ -20,7 +20,7 @@ class TestLogin:
     """root/admin/user用户登录"""
     yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml")).read()
 
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.smoking
     @pytest.mark.parametrize("CaseData", yaml_data[0:3])
     def test_case_1_3(self, page, CaseData: dict):
@@ -35,7 +35,7 @@ class TestLogin:
 
     """语言切换-英文"""
 
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[3]])
     def test_case_04(self, page, CaseData: dict):
         page = LoginPage(page)
@@ -47,7 +47,7 @@ class TestLogin:
 
     """语言切换-中文"""
 
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[4]])
     def test_case_05(self, page, CaseData: dict):
         page = LoginPage(page)
@@ -59,7 +59,7 @@ class TestLogin:
 
     """密码-密文"""
 
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[5]])
     def test_case_06(self, page, CaseData: dict):
         page = LoginPage(page)
@@ -69,7 +69,7 @@ class TestLogin:
 
     """密码-明文"""
 
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[6]])
     def test_case_07(self, page, CaseData: dict):
         page = LoginPage(page)
@@ -80,7 +80,7 @@ class TestLogin:
 
     """记住密码未勾选"""
 
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[7]])
     def test_case_08(self, page, CaseData: dict):
         page = LoginPage(page)
@@ -90,7 +90,7 @@ class TestLogin:
 
     """记住密码已勾选"""
 
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[8]])
     def test_case_09(self, page, CaseData: dict):
         page = LoginPage(page)
@@ -101,7 +101,7 @@ class TestLogin:
 
     """质感logo"""
 
-    @PrettyAllure.PrettyAllureWarpper
+    @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[9]])
     def test_case_10(self, page, CaseData: dict):
         page = LoginPage(page)
