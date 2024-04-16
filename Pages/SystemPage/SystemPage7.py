@@ -19,7 +19,7 @@ from playwright.sync_api import expect
 
 
 class SystemPage(Common):
-    # 屏蔽区域子模块元素定位
+    # 补光灯子模块元素定位
     __test = ""
 
     @allure.step("补光灯模式选择")

@@ -18,7 +18,7 @@ from Common.CompareImage import are_images_equal, download_image
 from playwright.sync_api import expect
 
 class AlarmPage(Common):
-    # 存储异常子模块元素定位
+    # 网络异常子模块元素定位
     __audio_switch = "form:nth-child(4) > div > .el-form-item__content > .el-switch > .el-switch__core"
     __light_switch = "div:nth-child(2) > .el-form-item__content > .el-switch > .el-switch__core"
     __output_switch = "div:nth-child(3) > .el-form-item__content > .el-switch > .el-switch__core"
