@@ -66,8 +66,6 @@ class Config:
 
 
 
-
-
 if __name__ == '__main__':
     print(Config.root_dir)
     print(Config.test_cases_dir)
