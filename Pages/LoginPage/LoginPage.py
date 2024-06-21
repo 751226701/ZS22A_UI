@@ -13,7 +13,7 @@ import allure
 from time import sleep
 from Common.Common import Common
 from Config.Config import Config
-from Common.CompareImage import are_images_equal, download_image
+from Common.CompareImage import compare_images, download_image
 from playwright.sync_api import expect
 
 
@@ -100,7 +100,7 @@ class LoginPage(Common):
         image_url = style_property.replace('url("', '').replace('")', '')
         save_path = os.path.join(Config.test_files_dir, 'ACTUAL_LOGO.png')
         self.download_image(image_url, save_path)
-        assert are_images_equal(os.path.join(Config.test_files_dir, 'ACTUAL_LOGO.png'),
+        assert compare_images(os.path.join(Config.test_files_dir, 'ACTUAL_LOGO.png'),
                                 os.path.join(Config.test_files_dir, 'EXPECT_LOGO.png'))
 
     def browser_operation(self, reload=True, forward=False, back=False):

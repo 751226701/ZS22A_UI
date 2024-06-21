@@ -12,7 +12,7 @@ import numpy as np
 
 def compare_images(image_path1, image_path2):
     """
-    比较两张图片是否相同
+    比较两张图片是否相同(像素级别比较，比较照片的尺寸格式需要一致)
     :param image_path1: 第一张照片路径
     :param image_path2: 第二张照片路径
     :return:
@@ -31,16 +31,6 @@ def compare_images(image_path1, image_path2):
     return result
 
 
-def are_images_equal(image_path1, image_path2):
-    """
-    比较两张图片是否相同
-    :param image_path1: 第一张照片路径
-    :param image_path2: 第二张照片路径
-    :return:
-    """
-    return compare_images(image_path1, image_path2)
-
-
 def download_image(url, save_path):
     """
     下载图片到指定路径
@@ -56,7 +46,7 @@ def download_image(url, save_path):
 if __name__ == '__main__':
     image_path_actual = r'D:\APP\pycharm\project\ZS22A_UI\TestFiles\ACTUAL_LOGO.png'
     image_path_expected = r'D:\APP\pycharm\project\ZS22A_UI\TestFiles\EXPECT_LOGO.png'
-    if are_images_equal(image_path_actual, image_path_expected):
+    if compare_images(image_path_actual, image_path_expected):
         print("图像相同")
     else:
         print("图像不同")
