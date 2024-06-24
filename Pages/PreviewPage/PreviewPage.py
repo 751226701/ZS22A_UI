@@ -216,6 +216,20 @@ class PreviewPage(Common):
     def click_full_screen(self):
         self._click(self.__full_screen)
 
+    @allure.step("断言已全屏显示")
+    def assert_full_screen(self, value, types):
+        """
+        :param value: 视频窗口元素定位
+        :param types: 比例类型 1大于 2等于
+        :return:
+        """
+        height = self.page.query_selector(value).evaluate("element => element.getBoundingClientRect().height")
+        print(height)
+        if types == 1:
+            assert height > 721
+        if types == 2:
+            assert height == 721
+
     @allure.step("可见光全屏显示")
     def click_vl_full_screen(self):
         self.page.locator(self.__vl_full_screen).first.dblclick(position={"x": 345, "y": 156})

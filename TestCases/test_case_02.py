@@ -272,6 +272,8 @@ class TestPreview:
     def test_case_24(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_full_screen()
+        page.page.wait_for_timeout(2000)
+        page.assert_full_screen(yaml_data[24]["断言元素定位"], 1)
 
     """退出全屏显示"""
     @PrettyAllure.PrettyAllureWrapper
@@ -279,6 +281,8 @@ class TestPreview:
     def test_case_25(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_full_screen_exit()
+        # page.page.wait_for_timeout(2000)
+        # page.assert_full_screen(yaml_data[25]["断言元素定位"], 2)
 
     """单红外通道全屏显示"""
     @PrettyAllure.PrettyAllureWrapper
