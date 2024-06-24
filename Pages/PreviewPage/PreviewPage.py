@@ -6,6 +6,7 @@
 # @project: ZS22A_UI
 
 import os.path
+import re
 import allure
 from time import sleep
 from Common.Common import Common
@@ -119,6 +120,37 @@ class PreviewPage(Common):
     @allure.step("点击电子变倍")
     def click_electronic_amplification(self):
         self.page.get_by_role("list").locator("i").first.click()
+
+    @allure.step("断言电子变倍成功")
+    def assert_electronic_amplification(self, elem, types, value,):
+        """
+        :param elem: 定位元素
+        :param types: 比较类型：1大于 2小于 3等于
+        :param value: 比较阈值
+        :return:
+        """
+        global a
+        video_wrap = self.page.query_selector(elem)
+        transform = video_wrap.evaluate("element => window.getComputedStyle(element).transform")
+        matrix_pattern = r'matrix\(([^)]+)\)'
+        match = re.search(matrix_pattern, transform)
+        if match:
+            matrix_values = match.group(1).split(',')
+            if len(matrix_values) == 6:
+                a = float(matrix_values[0].strip())
+                b = float(matrix_values[1].strip())
+                c = float(matrix_values[2].strip())
+                d = float(matrix_values[3].strip())
+                tx = float(matrix_values[4].strip())
+                ty = float(matrix_values[5].strip())
+        print(a)
+        print(types)
+        if types == 1:
+            assert a > value
+        if types == 2:
+            assert a < value
+        elif types == 3:
+            assert a == value
 
     @allure.step("点击实时温度曲线")
     def click_real_time_temp_curve(self):

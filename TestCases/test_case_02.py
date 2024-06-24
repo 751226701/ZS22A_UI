@@ -137,11 +137,11 @@ class TestPreview:
     def test_case_09(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_electronic_amplification()
-        page.page.mouse.move(x=100, y=400)
         page.page.mouse.move(x=200, y=400)
         page.page.mouse.down()
         page.page.mouse.move(x=400, y=600)
         page.page.mouse.up()
+        page.assert_electronic_amplification(yaml_data[9]["断言元素定位"], 1, 1)
 
     """红外电子变倍"""
     @PrettyAllure.PrettyAllureWrapper
@@ -152,6 +152,7 @@ class TestPreview:
         page.page.mouse.down()
         page.page.mouse.move(x=1400, y=600)
         page.page.mouse.up()
+        page.assert_electronic_amplification(yaml_data[10]["断言元素定位"], 1, 1)
 
     """关闭电子变倍"""
     @PrettyAllure.PrettyAllureWrapper
@@ -159,6 +160,7 @@ class TestPreview:
     def test_case_11(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_electronic_amplification()
+        page.assert_electronic_amplification(yaml_data[11]["断言元素定位"], 3, 1)
 
     """开启温度曲线(近4小时最高温)"""
     @PrettyAllure.PrettyAllureWrapper
