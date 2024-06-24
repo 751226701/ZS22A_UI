@@ -8,7 +8,7 @@
 import os
 class Config:
     # 项目地址
-    url = "http://192.168.22.87/#/login"
+    url = "http://192.168.3.247/#/login"
 
     # 项目根目录
     root_dir = os.path.split(os.path.split(__file__)[0])[0]
@@ -28,7 +28,7 @@ class Config:
     subject = "ZS22A Allure 测试报告"                # 邮件主题，可编辑
     body = "请查收测试报告,系统自动发送，无需回复"        # 邮件内容，可编辑
     sender_email = "liutao@guideir.com"             # 替换为自己的邮箱
-    receiver_emails = ["751226701@qq.com"]          # 替换为需要接受测试报告的邮箱
+    receiver_emails = ["751226701@qq.com", "liutao@guideir.com"]          # 替换为需要接受测试报告的邮箱
     smtp_server = "112.53.42.125"                   # 不变
     smtp_port = 465                                 # 不变
     smtp_username = "liutao@guideir.com"            # 替换为自己的邮箱

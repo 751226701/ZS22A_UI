@@ -14,7 +14,7 @@ import allure
 from time import sleep
 from Common.Common import Common
 from Config.Config import Config
-from Common.CompareImage import are_images_equal, download_image
+from Common.CompareImage import download_image
 from playwright.sync_api import expect
 
 class AlarmPage(Common):

@@ -105,3 +105,5 @@ class LoginPage(Common):
 
     def browser_operation(self, reload=True, forward=False, back=False):
         self._browser_operation(reload=reload, forward=forward, back=back)
+
+

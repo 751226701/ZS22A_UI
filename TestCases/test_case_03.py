@@ -76,6 +76,7 @@ class TestPlayBack:
     def test_case_01(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.click_query()
+        page.click_query()
         page.assert_num_list(CaseData['断言元素定位'])
 
     """搜索对象温度可见光视频"""
@@ -418,7 +419,7 @@ class TestPlayBack:
         page.select_file_type_image()
         page.select_channel_ir()
         page.select_event_type()
-        page.select_global_temp()
+        page.select_all_documents()
         page.click_query()
         page.play_photos()
         page.page.wait_for_timeout(10000)

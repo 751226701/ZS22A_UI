@@ -6,11 +6,12 @@
 # @Project : ZS22A_UI
 
 import os.path
+import re
 import allure
 from time import sleep
 from Common.Common import Common
 from Config.Config import Config
-from Common.CompareImage import are_images_equal, download_image
+from Common.CompareImage import download_image
 from playwright.sync_api import expect
 
 
@@ -19,7 +20,7 @@ class PlaybackPage(Common):
     __file_type_image = "图片"
     __channel_vl = "可见光"
     __channel_ir = "红外"
-    __event_type = ("form", "事件类型", "请选择")
+    __event_type = ("form", r"事件类型.*", "请选择")
     __all_documents = "全部文件"
     __object_temp = ("list", "对象温度")
     __global_temp = "全局温度"
@@ -58,9 +59,8 @@ class PlaybackPage(Common):
 
     @allure.step("事件类型选择")
     def select_event_type(self):
-        (self.page.locator(self.__event_type[0]).
-         filter(has_text=self.__event_type[1]).
-         get_by_placeholder(self.__event_type[2])).click()
+        text_pattern = re.compile(r"事件类型.*")
+        self.page.locator("form").filter(has_text=text_pattern).locator("i").click()
 
     @allure.step("选择全部文件")
     def select_all_documents(self):
@@ -72,7 +72,7 @@ class PlaybackPage(Common):
 
     @allure.step("选择全局温度")
     def select_global_temp(self):
-        self.page.get_by_text(self.__global_temp).click()
+        self.page.locator("li").filter(has_text="全局温度").click()
 
     @allure.step("选择对象温差")
     def select_object_temp_dif(self):
@@ -190,10 +190,10 @@ class PlaybackPage(Common):
     @allure.step("断言当前所选中照片位置")
     def assert_selected_photo(self, value):
         element_list = self.page.query_selector_all(".el-table__row")
-        for i, value in enumerate(element_list):
-            class_value = value.get_attribute("class")
+        for i, values in enumerate(element_list):
+            class_value = values.get_attribute("class")
             if class_value == "el-table__row current-row":
-                assert i != value
+                assert i == value
 
 
 
