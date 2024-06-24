@@ -1,5 +1,26 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError",
+      "children" : [ {
+        "name" : "test_case_25_退出全屏显示",
+        "uid" : "cd183684feff100f",
+        "parentUid" : "a0017ad855102fea08b8682d27fec4ca",
+        "status" : "failed",
+        "time" : {
+          "start" : 1719215997157,
+          "stop" : 1719215999861,
+          "duration" : 2704
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'用例编号': 'test_case_25', '模块': '02 实时预览', '功能': '09 全屏', '优先级': 'critical', '是否执行': 'Y', '用例标题': '退出全屏显示', '断言元素定位': '.show_window_vl'}" ]
+      } ],
+      "uid" : "a0017ad855102fea08b8682d27fec4ca"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
 }
