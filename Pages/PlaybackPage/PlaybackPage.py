@@ -118,6 +118,13 @@ class PlaybackPage(Common):
     def stop_play_video(self):
         self._click(self.__stop_play_video)
 
+    @allure.step("断言已停止播放")   # 不适用
+    def assert_stop_play_video(self, value):
+        target_element = self.page.query_selector('div.opr-box-tool > i:nth-child(2)')
+        if target_element:
+            class_value = target_element.get_attribute('class')
+            print("Class值:", class_value)
+
     @allure.step("倍率选择")
     def select_magnification(self):
         self. page.get_by_placeholder("请选择").nth(1).click()
