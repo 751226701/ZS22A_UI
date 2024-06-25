@@ -56,10 +56,90 @@ class ReportPage(Common):
     def search_temperature_curve(self):
         self._click(self.__search)
 
-    @allure.step("点击全选")
+    @allure.step("断言已选中温度类型")
+    def assert_selected_object_temp(self, value):
+        element = self.page.query_selector('.el-select-dropdown__item.selected.hover')
+        span_text = element.text_content()
+        assert value == span_text
+
+    @allure.step("点分析对象复选框")
+    def select_point(self):
+        self.page.locator(self.__point).first.click()
+
+    @allure.step("断言点分析对象复选框已勾选")
+    def assert_selected_point(self):
+        expect(self.page.locator(self.__point).first).to_be_checked()
+
+    @allure.step("断言点分析对象复选框未勾选")
+    def assert_unselected_point(self):
+        expect(self.page.locator(self.__point).first).not_to_be_checked()
+
+    @allure.step("线分析对象复选框")
+    def select_line(self):
+        self.page.locator(self.__line).first.click()
+
+    @allure.step("断言线分析对象复选框已勾选")
+    def assert_selected_line(self):
+        expect(self.page.locator(self.__line).first).to_be_checked()
+
+    @allure.step("断言线分析对象复选框未勾选")
+    def assert_unselected_line(self):
+        expect(self.page.locator(self.__line).first).not_to_be_checked()
+
+    @allure.step("圆形分析对象复选框")
+    def select_round(self):
+        self.page.locator(self.__round).first.click()
+
+    @allure.step("断言圆分析对象复选框已勾选")
+    def assert_selected_round(self):
+        expect(self.page.locator(self.__round).first).to_be_checked()
+
+    @allure.step("断言圆分析对象复选框未勾选")
+    def assert_unselected_round(self):
+        expect(self.page.locator(self.__round).first).not_to_be_checked()
+
+    @allure.step("矩形分析对象复选框")
+    def select_rectangle(self):
+        self.page.locator(self.__rectangle).click()
+
+    @allure.step("断言矩形分析对象复选框已勾选")
+    def assert_selected_rectangle(self):
+        expect(self.page.locator(self.__rectangle).first).to_be_checked()
+
+    @allure.step("断言矩形分析对象复选框未勾选")
+    def assert_unselected_rectangle(self):
+        expect(self.page.locator(self.__rectangle)).not_to_be_checked()
+
+    @allure.step("多边形分析对象复选框")
+    def select_polygon(self):
+        self.page.locator(self.__polygon).click()
+
+    @allure.step("断言多边形分析对象复选框已勾选")
+    def assert_selected_polygon(self):
+        expect(self.page.locator(self.__polygon).first).to_be_visible()
+
+    @allure.step("断言多边形分析对象复选框未勾选")
+    def assert_unselected_polygon(self):
+        expect(self.page.locator(self.__polygon)).not_to_be_checked()
+
+    @allure.step("断言请选择分析对象！")
+    def assert_select_object(self):
+        expect(self.page.get_by_text("请选择分析对象类型")).to_be_visible()
+
+    @allure.step("全选复选框")
     def select_all(self):
         (self.page.locator(self.__select_all[0]).filter(has_text=self.__select_all[1]).
          locator(self.__select_all[2]).nth(self.__select_all[3]).click())
+
+    @allure.step("断言全选复选已勾选")
+    def assert_selected_all(self):
+        expect(self.page.locator(self.__select_all[0]).filter(has_text=self.__select_all[1]).
+               locator(self.__select_all[2]).nth(self.__select_all[3])).to_be_checked()
+
+    @allure.step("断言全选复选未勾选")
+    def assert_unselected_all(self):
+        expect(self.page.locator(self.__select_all[0]).filter(has_text=self.__select_all[1]).
+               locator(self.__select_all[2]).nth(self.__select_all[3])).not_to_be_checked()
 
     @allure.step("下载温度曲线截图")
     def download_temperature_curve_image(self):
@@ -67,8 +147,8 @@ class ReportPage(Common):
 
     @allure.step("选择时间间隔")
     def select_period(self):
-        (self.page.locator(self.__period[0]).filter(has_text=self.__period[1]).
-         locator(self.__period[2]).click())
+        ht = re.compile("按时间间隔*")
+        self.page.locator("form").filter(has_text=ht).get_by_placeholder("请选择").click()
 
     @allure.step("选择1min")
     def select_period_1min(self):

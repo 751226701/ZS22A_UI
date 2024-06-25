@@ -75,8 +75,11 @@ class TestPlayBack:
     @pytest.mark.parametrize("CaseData", [yaml_data[1]])
     def test_case_01(self, page, CaseData: dict):
         page = ReportPage(page)
+        page.select_object_temp()
+        page.select_object_temp_high()
         page.search_temperature_curve()
-
+        page.page.wait_for_timeout(1000)
+        page.assert_selected_object_temp(CaseData['断言元素定位'])
 
     """查看所有分析对象最低温温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
@@ -86,6 +89,8 @@ class TestPlayBack:
         page.select_object_temp()
         page.select_object_temp_low()
         page.search_temperature_curve()
+        page.page.wait_for_timeout(1000)
+        page.assert_selected_object_temp(CaseData['断言元素定位'])
 
     """查看所有分析对象平均温温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
@@ -95,49 +100,157 @@ class TestPlayBack:
         page.select_object_temp()
         page.select_object_temp_avg()
         page.search_temperature_curve()
+        page.page.wait_for_timeout(1000)
+        page.assert_selected_object_temp(CaseData['断言元素定位'])
 
-    """取消全选"""
+    """取消点分析对象复选框后查询温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[4]])
     def test_case_04(self, page, CaseData: dict):
         page = ReportPage(page)
-        page.select_all()
+        page.select_point()
+        page.search_temperature_curve()
+        page.page.wait_for_timeout(1000)
+        page.assert_unselected_point()
 
-    """全选"""
+    """取消线分析对象复选框后查询温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[5]])
     def test_case_05(self, page, CaseData: dict):
         page = ReportPage(page)
-        page.select_all()
+        page.select_line()
+        page.search_temperature_curve()
+        page.page.wait_for_timeout(1000)
+        page.assert_unselected_line()
 
-    """下载温度曲线截图"""
+    """取消圆分析对象复选框后查询温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[6]])
     def test_case_06(self, page, CaseData: dict):
         page = ReportPage(page)
+        page.select_round()
         page.search_temperature_curve()
-        page.download_temperature_curve_image()
-        assert DOWNLOAD_FLAG == True
-        set_download_flag(False)
+        page.page.wait_for_timeout(1000)
+        page.assert_unselected_round()
 
-    """导出报表"""
+    """取消矩形分析对象复选框后查询温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[7]])
     def test_case_07(self, page, CaseData: dict):
         page = ReportPage(page)
+        page.select_rectangle()
         page.search_temperature_curve()
+        page.page.wait_for_timeout(1000)
+        page.assert_unselected_rectangle()
+
+    """取消多边形分析对象复选框后查询温度曲线"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[8]])
+    def test_case_08(self, page, CaseData: dict):
+        page = ReportPage(page)
+        page.select_polygon()
+        page.search_temperature_curve()
+        page.page.wait_for_timeout(1000)
+        page.assert_select_object()
+
+    """选择所有分析对象复选框后查询温度曲线"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[9]])
+    def test_case_09(self, page, CaseData: dict):
+        page = ReportPage(page)
+        page.select_point()
+        page.select_line()
+        page.select_round()
+        page.select_rectangle()
+        page.select_polygon()
+        page.search_temperature_curve()
+        page.page.wait_for_timeout(1000)
+        page.assert_selected_point()
+        page.assert_selected_line()
+        page.assert_selected_round()
+        page.assert_selected_rectangle()
+        page.assert_selected_polygon()
+
+    """取消全选"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[10]])
+    def test_case_10(self, page, CaseData: dict):
+        page = ReportPage(page)
+        page.select_all()
+        page.search_temperature_curve()
+        page.assert_unselected_all()
+
+    """下载温度曲线截图"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[11]])
+    def test_case_11(self, page, CaseData: dict):
+        page = ReportPage(page)
+        page.select_all()
+        page.search_temperature_curve()
+        page.download_temperature_curve_image()
+        page.page.wait_for_timeout(1000)
+        assert DOWNLOAD_FLAG == True
+        set_download_flag(False)
+
+    """按1min间隔导出报表"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[12]])
+    def test_case_12(self, page, CaseData: dict):
+        page = ReportPage(page)
+        page.select_period()
+        page.select_period_1min()
         page.export_report()
         page.page.wait_for_timeout(5000)
         assert DOWNLOAD_FLAG == True
         set_download_flag(False)
 
+    """按5min间隔导出报表"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[13]])
+    def test_case_13(self, page, CaseData: dict):
+        page = ReportPage(page)
+        page.select_period()
+        page.select_period_5min()
+        page.export_report()
+        page.page.wait_for_timeout(5000)
+        assert DOWNLOAD_FLAG == True
+        set_download_flag(False)
 
+    """按10min间隔导出报表"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[14]])
+    def test_case_14(self, page, CaseData: dict):
+        page = ReportPage(page)
+        page.select_period()
+        page.select_period_10min()
+        page.export_report()
+        page.page.wait_for_timeout(5000)
+        assert DOWNLOAD_FLAG == True
+        set_download_flag(False)
 
+    """按15min间隔导出报表"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[15]])
+    def test_case_15(self, page, CaseData: dict):
+        page = ReportPage(page)
+        page.select_period()
+        page.select_period_15min()
+        page.export_report()
+        page.page.wait_for_timeout(5000)
+        assert DOWNLOAD_FLAG == True
+        set_download_flag(False)
 
-
-
-
-
+    """按60min间隔导出报表"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[16]])
+    def test_case_16(self, page, CaseData: dict):
+        page = ReportPage(page)
+        page.select_period()
+        page.select_period_60min()
+        page.export_report()
+        page.page.wait_for_timeout(5000)
+        assert DOWNLOAD_FLAG == True
+        set_download_flag(False)
 
 
 
