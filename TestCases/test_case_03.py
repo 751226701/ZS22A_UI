@@ -76,6 +76,7 @@ class TestPlayBack:
     def test_case_01(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.click_query()
+        page.page.wait_for_timeout(1000)
         page.click_query()
         page.assert_num_list(CaseData['断言元素定位'])
 

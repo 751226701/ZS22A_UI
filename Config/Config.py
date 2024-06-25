@@ -8,7 +8,7 @@
 import os
 class Config:
     # 项目地址
-    url = "http://192.168.3.247/#/login"
+    url = "http://192.168.23.248:1025/#/login"
 
     # 项目根目录
     root_dir = os.path.split(os.path.split(__file__)[0])[0]

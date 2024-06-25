@@ -77,6 +77,7 @@ class TestPlayBack:
         page = ReportPage(page)
         page.search_temperature_curve()
 
+
     """查看所有分析对象最低温温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[2]])
@@ -126,6 +127,7 @@ class TestPlayBack:
         page = ReportPage(page)
         page.search_temperature_curve()
         page.export_report()
+        page.page.wait_for_timeout(5000)
         assert DOWNLOAD_FLAG == True
         set_download_flag(False)
 
