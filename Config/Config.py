@@ -8,7 +8,7 @@
 import os
 class Config:
     # 项目地址
-    url = "http://192.168.23.248:1025/#/login"
+    url = "http://192.168.21.154:80/#/login"
 
     # 项目根目录
     root_dir = os.path.split(os.path.split(__file__)[0])[0]
@@ -38,8 +38,8 @@ class Config:
     # 是否记录trace, trace1对应第一个测试文件，以此类推
     # 开启trace后会以截图的形式记录执行的每一个步骤，但会占用系统资源
     # 浏览器打开网站trace.playwright.dev   将trace.zip文件拖入浏览器即可查看
-    trace1 = False   # 登录模块
-    trace2 = False   # 实时预览
+    trace1 = True   # 登录模块
+    trace2 = True   # 实时预览
     trace3 = False   # 回放管理
     trace4 = False   # 统计报表
     trace5 = False   # 全局温度
