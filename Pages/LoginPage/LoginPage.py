@@ -175,6 +175,24 @@ class LoginPage(Common):
     def browser_operation(self, reload=True, forward=False, back=False):
         self._browser_operation(reload=reload, forward=forward, back=back)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @allure.step("点击admin用户")
     def click_admin(self):
         self.page.get_by_role("button", name="admin").click()
