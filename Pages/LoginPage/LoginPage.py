@@ -44,9 +44,37 @@ class LoginPage(Common):
     def fill_username(self, value):
         self._fill(self.__username, value)
 
+    @allure.step("清空账号内容")
+    def clear_username(self):
+        self. page.locator("form i").nth(1).click()
+
+    @allure.step("断言账号输入内容")
+    def assert_username(self, value):
+        assert self.page.get_by_placeholder("请输入用户名").input_value() == value
+
     @allure.step("输入密码")
     def fill_password(self, value):
         self._fill(self.__password, value)
+
+    @allure.step("清空密码内容")
+    def clear_password(self):
+        self.page.locator("form i").nth(3).click()
+
+    @allure.step("断言密码输入内容")
+    def assert_password(self, value):
+        assert self.page.get_by_placeholder("请输入密码").input_value() == value
+
+    @allure.step("断言账号输入框提示语")
+    def assert_username_placeholder(self, value):
+        all_inputs = self.page.query_selector_all('input[type="text"]')
+        if all_inputs:
+            placeholder_value = all_inputs[1].get_attribute('placeholder')
+            assert placeholder_value == value
+
+    @allure.step("断言密码输入框提示语")
+    def assert_password_placeholder(self, value):
+        pwd_value = self.page.locator('input[type="password"]').get_attribute('placeholder')
+        assert pwd_value == value
 
     @allure.step("点击密码密文明文显示按钮")
     def click_passwd__visible(self):
@@ -72,6 +100,47 @@ class LoginPage(Common):
     def click_login_button(self):
         sleep(4)
         self._click(self.__login_button)
+
+    @allure.step("断言登录按钮不可点击")
+    def assert_login_button(self, value):
+        elements = self.page.locator(self.__login_button).get_attribute('class')
+        if elements:
+            classes = elements.split()
+            assert value in classes
+
+    @allure.step("断言错误账户登录提示弹窗可见")
+    def assert_username_error(self):
+        expect(self.page.get_by_text("用户名不存在！")).to_be_visible()
+
+    @allure.step("断言错误账户登录提示弹窗不可见")
+    def assert_username_error2(self):
+        expect(self.page.get_by_text("用户名不存在！")).not_to_be_visible()
+
+    @allure.step("断言错误密码登录提示弹窗可见")
+    def assert_password_error(self):
+        expect(self.page.get_by_text("密码不正确！")).to_be_visible()
+
+    @allure.step("断言错误密码登录提示弹窗不可见")
+    def assert_password_error2(self):
+        expect(self.page.get_by_text("密码不正确！")).not_to_be_visible()
+
+    @allure.step("点击警告弹窗确定按钮")
+    def click_warning_confirm(self):
+        self.page.get_by_role("button", name="确定").click()
+
+    @allure.step("断言账户已被锁定")
+    def assert_account_lock(self):
+        expect(self.page.get_by_text("目前该账户已被锁定，请于稍后尝试登录！")).to_be_visible()
+
+    @allure.step("断言系统标题为空格")
+    def assert_system_title(self, value):
+        text = self.page.locator(".title-name").text_content()
+        assert text == value
+
+    @allure.step("断言版权所属为空")
+    def assert_copyright_ownership(self, value):
+        text = self.page.locator(".version-box").text_content()
+        assert text == value
 
     @allure.step("断言登录成功")
     def assert_login_success(self, locator):
@@ -105,5 +174,17 @@ class LoginPage(Common):
 
     def browser_operation(self, reload=True, forward=False, back=False):
         self._browser_operation(reload=reload, forward=forward, back=back)
+
+    @allure.step("点击admin用户")
+    def click_admin(self):
+        self.page.get_by_role("button", name="admin").click()
+
+    @allure.step("点击退出登录")
+    def click_logout(self):
+        self.page.get_by_text("退出登录").click()
+
+    @allure.step("点击确认退出")
+    def click_confirm_exit(self):
+        self.page.get_by_role("button", name="确认退出").click()
 
 

@@ -20,6 +20,6 @@ if __name__ == '__main__':
     os.system(f"del {os.path.join(Download, '*.mp4')}")
     pytest.main(["-v", "-s", f'--alluredir={AllureResult}', "--clean-alluredir"])  # 执行用例生成测试结果
     os.system(f'allure generate {AllureResult} -o {AllureReport} --clean')  # 生成测试报告
-    SendEmail(sign=True)  # 发送测试报告邮件
+    SendEmail(sign=False)  # 发送测试报告邮件
 
 
