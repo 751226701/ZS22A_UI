@@ -64,8 +64,11 @@ class ReadYaml(object):
             return data_dict
 
 if __name__ == '__main__':
-    yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml"))
-    print(yaml_data.readEx(["test_case_01", "test_case_02"]))
+    # yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml"))
+    # print(yaml_data.readEx(["test_case_01", "test_case_02"]))
 
-    yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml"))
-    print(yaml_data.read(["test_case_01", "test_case_02"]))
+    # yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml"))
+    # print(yaml_data.read(["test_case_01", "test_case_02"]))
+
+    yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml")).read()
+    print(yaml_data[54]['断言元素定位'][2])
