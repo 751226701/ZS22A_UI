@@ -8,6 +8,7 @@
 from PIL import Image
 import io
 import base64
+import re
 import os.path
 import allure
 from time import sleep
@@ -175,31 +176,117 @@ class LoginPage(Common):
     def browser_operation(self, reload=True, forward=False, back=False):
         self._browser_operation(reload=reload, forward=forward, back=back)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @allure.step("点击admin用户")
     def click_admin(self):
-        self.page.get_by_role("button", name="admin").click()
+        self.page.locator(".icon-arrow").click()
+        while True:
+            if not self.page.get_by_text("帮助文档").is_visible():
+                self.page.get_by_role("button", name="admin").click()
+            else:
+                break
+
+    @allure.step("点击修改密码")
+    def click_change_password(self):
+        self.page.query_selector(".el-dropdown-menu__item").click()
+
+    @allure.step("关闭修改密码提示窗")
+    def close_change_password_notify(self):
+        self.page.get_by_label("Close").click()
+
+    @allure.step("点击确定")
+    def click_confirm(self):
+        self.page.get_by_role("button", name="确定").click()
+
+    @allure.step("点击取消")
+    def click_cancel(self):
+        self.page.get_by_role("button", name="取消").click()
+
+    @allure.step("输入原始密码")
+    def fill_original_password(self, value):
+        self.page.get_by_placeholder("请输入原始密码").fill(value)
+
+    @allure.step("输入新密码")
+    def fill_new_password(self, value):
+        self.page.get_by_placeholder("请输入6-20位有效字母、数字或字符密码").fill(value)
+
+    @allure.step("输入确认密码")
+    def fill_confirm_password(self, value):
+        self.page.get_by_placeholder("再次输入新密码").fill(value)
+
+    @allure.step("原始密码显示隐藏按钮")
+    def click_original_password_visible(self):
+        self.page.locator("div").filter(has_text=re.compile(r"^原始密码$")).locator("i").first.click()
+
+    @allure.step("新密码显示隐藏按钮")
+    def click_new_password_visible(self):
+        text = re.compile(r"新密码*")
+        self.page.locator("form div").filter(has_text=text).locator("i").first.click()
+
+    @allure.step("确认密码显示隐藏按钮")
+    def click_confirm_password_visible(self):
+        text = re.compile(r"确认密码*")
+        self.page.locator("form div").filter(has_text=text).locator("i").first.click()
+
+    @allure.step("断言密码是否可见")
+    def assert_password_visible(self, pwd_type, value):
+        pwd_value = None
+        if pwd_type == 1:
+            pwd_value = "请输入原始密码"
+        elif pwd_type == 2:
+            pwd_value = "请输入6-20位有效字母、数字或字符密码"
+        else:
+            pwd_value = "再次输入新密码"
+        input_type = self.page.get_by_placeholder(pwd_value).get_attribute('type')
+        assert input_type == value
+
+    @allure.step("输入新密码")
+    def fill_new_password(self, value):
+        self.page.get_by_placeholder("请输入6-20位有效字母、数字或字符密码").fill(value)
+
+    @allure.step("输入确认密码")
+    def fill_confirm_password(self, value):
+        self.page.get_by_placeholder("再次输入新密码").fill(value)
+
+    @allure.step("断言密码输入框错误提示语")
+    def assert_password_error_placeholder(self, n, value):
+        """
+        :param n: 1 原始密码  2 新密码  3 确认密码
+        :param value: 期望值
+        :return:
+        """
+        placeholder_value = self.page.locator('.el-form-item__error').nth(n).text_content()
+        assert value in placeholder_value
+
+    @allure.step("断言输入框提示语可见")
+    def assert_input_placeholder(self, value):
+        expect(self.page.get_by_text(value)).to_be_visible()
+
+    @allure.step("断言输入框提示语不可见")
+    def assert_input_placeholder2(self, value):
+        expect(self.page.get_by_text(value)).not_to_be_visible()
+
+    @allure.step("断言修改密码弹窗可见")
+    def assert_change_password_notify_on(self):
+        expect(self.page.get_by_text("用户名 原始密码 新密码 确认密码")).to_be_visible()
+
+    @allure.step("断言修改密码弹窗不可见")
+    def assert_change_password__notify_off(self):
+        expect(self.page.get_by_text("用户名 原始密码 新密码 确认密码")).not_to_be_visible()
+
+    @allure.step("帮助文档")
+    def click_help(self):
+        with self.page.expect_popup() as page4_info:
+            self.page.get_by_text("帮助文档").click()
+        page4 = page4_info.value
+        page4.close()
 
     @allure.step("点击退出登录")
     def click_logout(self):
         self.page.get_by_text("退出登录").click()
+
+    @allure.step("断言退出登录成功")
+    def assert_logout_success(self):
+        expect(self.page.get_by_placeholder("请输入用户名")).to_be_visible()
 
     @allure.step("点击确认退出")
     def click_confirm_exit(self):
