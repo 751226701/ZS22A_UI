@@ -265,3 +265,55 @@ class PreviewPage(Common):
     @allure.step("断言退出登录成功")
     def assert_logout_success(self, value):
         expect(self.page.get_by_placeholder(value)).to_be_visible()
+
+    @allure.step("播放暂停按钮悬浮")
+    def hover_video_stop(self):
+        self.page.locator(".el-tooltip").first.hover()
+
+    @allure.step("抓图按钮悬浮")
+    def hover_screenshot(self):
+        self.page.locator("i:nth-child(2)").hover()
+
+    @allure.step("开始录像按钮悬浮文字")
+    def hover_start_record(self):
+        self.page.locator(".btn-opr > i:nth-child(3)").hover()
+
+    @allure.step("停止录像按钮悬浮文字")
+    def hover_stop_record(self):
+        self.page.locator(".btn-opr > i:nth-child(3)").hover()
+
+    @allure.step("连续抓图按钮悬浮文字")
+    def hover_continuous_snapshot(self):
+        self.page.locator("i:nth-child(4)").hover()
+
+    @allure.step("局部放大按钮悬浮文字")
+    def hover_electronic_amplification(self):
+        self.page.get_by_role("list").locator("i").first.hover()
+
+    @allure.step("实时温度曲线按钮悬浮文字")
+    def hover_real_time_temp_curve(self):
+        self.page.get_by_role("list").locator("i").nth(1).hover()
+
+    @allure.step("窗口适应按钮悬浮文字")
+    def hover_adapt_screen(self):
+        self.page.get_by_role("list").locator("i").nth(2).hover()
+
+    @allure.step("窗口填充按钮悬浮文字")
+    def hover_fill_screen(self):
+        self.page.get_by_role("list").locator("i").nth(2).hover()
+
+    @allure.step("全屏按钮悬浮文字")
+    def hover_full_screen(self):
+        self.page.get_by_role("list").locator("i").nth(3).hover()
+
+    @allure.step("断言按钮悬浮文字")
+    def assert_float_text(self, value):
+        expect(self.page.get_by_text(value, exact=True)).to_be_visible()
+
+    @allure.step("断言已选中可见光通过")
+    def assert_vl_pass(self, value):
+        ele = self.page.locator(".left-wrap").get_attribute("class")
+        assert value in ele
+
+
+

@@ -8,7 +8,7 @@
 import os
 import allure
 import pytest
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect
 from Pages.PreviewPage.PreviewPage import PreviewPage
 from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
@@ -70,7 +70,7 @@ class TestPreview:
     def test_case_01(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_video_stop()
-        page.assert_video_stop(yaml_data[1]["断言元素定位"])
+        page.assert_video_stop(CaseData["断言元素定位"])
 
     """开始视频播放"""
     @PrettyAllure.PrettyAllureWrapper
@@ -78,7 +78,7 @@ class TestPreview:
     def test_case_02(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_video_start()
-        page.assert_video_start(yaml_data[2]["断言元素定位"])
+        page.assert_video_start(CaseData["断言元素定位"])
 
     """抓图"""
     @PrettyAllure.PrettyAllureWrapper
@@ -86,7 +86,7 @@ class TestPreview:
     def test_case_03(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_screenshot()
-        page.assert_click_screenshot(yaml_data[3]["断言元素定位"])
+        page.assert_click_screenshot(CaseData["断言元素定位"])
 
     """关闭抓图弹窗"""
     @PrettyAllure.PrettyAllureWrapper
@@ -94,7 +94,7 @@ class TestPreview:
     def test_case_04(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_screenshot_close()
-        page.assert_click_screenshot_close(yaml_data[4]["断言元素定位"])
+        page.assert_click_screenshot_close(CaseData["断言元素定位"])
 
     """开始录像"""
     @PrettyAllure.PrettyAllureWrapper
@@ -102,8 +102,8 @@ class TestPreview:
     def test_case_05(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_start_record()
-        page.assert_start_ir_record(yaml_data[5]["断言元素定位"])
-        page.assert_start_vl_record(yaml_data[5]["断言元素定位"])
+        page.assert_start_ir_record(CaseData["断言元素定位"])
+        page.assert_start_vl_record(CaseData["断言元素定位"])
         page.page.wait_for_timeout(5000)
 
     """停止录像"""
@@ -112,8 +112,8 @@ class TestPreview:
     def test_case_06(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_stop_record()
-        page.assert_stop_ir_record(yaml_data[6]["断言元素定位"])
-        page.assert_stop_vl_record(yaml_data[6]["断言元素定位"])
+        page.assert_stop_ir_record(CaseData["断言元素定位"])
+        page.assert_stop_vl_record(CaseData["断言元素定位"])
 
     """连续抓图"""
     @PrettyAllure.PrettyAllureWrapper
@@ -121,7 +121,7 @@ class TestPreview:
     def test_case_07(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_continuous_snapshot()
-        page.assert_continuous_snapshot(yaml_data[7]["断言元素定位"])
+        page.assert_continuous_snapshot(CaseData["断言元素定位"])
 
     """自动聚焦"""
     @PrettyAllure.PrettyAllureWrapper
@@ -129,7 +129,7 @@ class TestPreview:
     def test_case_08(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_auto_focus()
-        page.assert_auto_focus(yaml_data[8]["断言元素定位"])
+        page.assert_auto_focus(CaseData["断言元素定位"])
 
     """可见光电子变倍"""
     @PrettyAllure.PrettyAllureWrapper
@@ -141,7 +141,7 @@ class TestPreview:
         page.page.mouse.down()
         page.page.mouse.move(x=400, y=600)
         page.page.mouse.up()
-        page.assert_electronic_amplification(yaml_data[9]["断言元素定位"], 1, 1)
+        page.assert_electronic_amplification(CaseData["断言元素定位"], 1, 1)
 
     """红外电子变倍"""
     @PrettyAllure.PrettyAllureWrapper
@@ -152,7 +152,7 @@ class TestPreview:
         page.page.mouse.down()
         page.page.mouse.move(x=1400, y=600)
         page.page.mouse.up()
-        page.assert_electronic_amplification(yaml_data[10]["断言元素定位"], 1, 1)
+        page.assert_electronic_amplification(CaseData["断言元素定位"], 1, 1)
 
     """关闭电子变倍"""
     @PrettyAllure.PrettyAllureWrapper
@@ -160,7 +160,7 @@ class TestPreview:
     def test_case_11(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_electronic_amplification()
-        page.assert_electronic_amplification(yaml_data[11]["断言元素定位"], 3, 1)
+        page.assert_electronic_amplification(CaseData["断言元素定位"], 3, 1)
 
     """开启温度曲线(近4小时最高温)"""
     @PrettyAllure.PrettyAllureWrapper
@@ -168,7 +168,7 @@ class TestPreview:
     def test_case_12(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_real_time_temp_curve()
-        page.assert_real_time_temp_curve_start(yaml_data[12]["断言元素定位"])
+        page.assert_real_time_temp_curve_start(CaseData["断言元素定位"])
 
     """近4小时最低温"""
     @PrettyAllure.PrettyAllureWrapper
@@ -177,7 +177,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_object_temp_select()
         page.select_object_temp_mix()
-        page.assert_select_object_temp_success(yaml_data[13]["断言元素定位"])
+        page.assert_select_object_temp_success(CaseData["断言元素定位"])
 
     """近4小时平均温"""
     @PrettyAllure.PrettyAllureWrapper
@@ -186,7 +186,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_object_temp_select()
         page.select_object_temp_avg()
-        page.assert_select_object_temp_success(yaml_data[14]["断言元素定位"])
+        page.assert_select_object_temp_success(CaseData["断言元素定位"])
 
     """近24小时平均温"""
     @PrettyAllure.PrettyAllureWrapper
@@ -195,7 +195,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_time_range_select()
         page.select_time_range_24H()
-        page.assert_select_time_range_success(yaml_data[15]["断言元素定位"])
+        page.assert_select_time_range_success(CaseData["断言元素定位"])
 
     """近24小时最低温"""
     @PrettyAllure.PrettyAllureWrapper
@@ -204,7 +204,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_object_temp_select()
         page.select_object_temp_mix()
-        page.assert_select_object_temp_success(yaml_data[16]["断言元素定位"])
+        page.assert_select_object_temp_success(CaseData["断言元素定位"])
 
     """近24小时最高温"""
     @PrettyAllure.PrettyAllureWrapper
@@ -213,7 +213,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_object_temp_select()
         page.select_object_temp_max()
-        page.assert_select_object_temp_success(yaml_data[17]["断言元素定位"])
+        page.assert_select_object_temp_success(CaseData["断言元素定位"])
 
     """近72小时最高温"""
     @PrettyAllure.PrettyAllureWrapper
@@ -222,7 +222,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_time_range_select()
         page.select_time_range_72H()
-        page.assert_select_time_range_success(yaml_data[18]["断言元素定位"])
+        page.assert_select_time_range_success(CaseData["断言元素定位"])
 
     """近72小时最低温"""
     @PrettyAllure.PrettyAllureWrapper
@@ -231,7 +231,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_object_temp_select()
         page.select_object_temp_mix()
-        page.assert_select_object_temp_success(yaml_data[19]["断言元素定位"])
+        page.assert_select_object_temp_success(CaseData["断言元素定位"])
 
     """近72小时平均温"""
     @PrettyAllure.PrettyAllureWrapper
@@ -240,7 +240,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_object_temp_select()
         page.select_object_temp_avg()
-        page.assert_select_object_temp_success(yaml_data[20]["断言元素定位"])
+        page.assert_select_object_temp_success(CaseData["断言元素定位"])
 
     """关闭实时温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
@@ -248,7 +248,7 @@ class TestPreview:
     def test_case_21(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_real_time_temp_curve()
-        page.assert_real_time_temp_curve_stop(yaml_data[21]["断言元素定位"])
+        page.assert_real_time_temp_curve_stop(CaseData["断言元素定位"])
 
     """窗口填充"""
     @PrettyAllure.PrettyAllureWrapper
@@ -256,7 +256,7 @@ class TestPreview:
     def test_case_22(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_fill_or_adapt()
-        page.assert_fill_or_adapt(yaml_data[22]["断言元素定位"])
+        page.assert_fill_or_adapt(CaseData["断言元素定位"])
 
     """窗口适应"""
     @PrettyAllure.PrettyAllureWrapper
@@ -264,7 +264,7 @@ class TestPreview:
     def test_case_23(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_fill_or_adapt()
-        page.assert_fill_or_adapt(yaml_data[23]["断言元素定位"])
+        page.assert_fill_or_adapt(CaseData["断言元素定位"])
 
     """全屏显示"""
     @PrettyAllure.PrettyAllureWrapper
@@ -273,7 +273,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_full_screen()
         page.page.wait_for_timeout(2000)
-        page.assert_full_screen(yaml_data[24]["断言元素定位"], 1)
+        page.assert_full_screen(CaseData["断言元素定位"], 1)
 
     """退出全屏显示"""
     @PrettyAllure.PrettyAllureWrapper
@@ -282,7 +282,7 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_full_screen_exit()
         # page.page.wait_for_timeout(2000)
-        # page.assert_full_screen(yaml_data[25]["断言元素定位"], 2)
+        # page.assert_full_screen(CaseData["断言元素定位"], 2)
 
     """单红外通道全屏显示"""
     @PrettyAllure.PrettyAllureWrapper
@@ -312,14 +312,158 @@ class TestPreview:
         page = PreviewPage(page)
         page.click_vl_full_screen_exit()
 
-    """退出登录"""
+    """视频暂停按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[30]])
     def test_case_30(self, page, CaseData: dict):
         page = PreviewPage(page)
-        page.page.get_by_text("报警管理").click()
-        page.click_root()
-        page.click_logout()
-        page.click_confirm_exit()
-        page.assert_logout_success(yaml_data[30]["断言元素定位"])
+        page.hover_video_stop()
+        page.assert_float_text(CaseData["断言元素定位"])
+
+    """视频暂停按钮悬浮文字"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[31]])
+    def test_case_31(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_video_stop()
+        page.hover_video_stop()
+        page.assert_float_text(CaseData["断言元素定位"])
+
+    """抓图按钮悬浮文字"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[32]])
+    def test_case_32(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.hover_screenshot()
+        page.assert_float_text(CaseData["断言元素定位"])
+
+    """开始录像按钮悬浮文字"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[33]])
+    def test_case_33(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.hover_start_record()
+        page.assert_float_text(CaseData["断言元素定位"])
+
+    """停止录像按钮悬浮文字"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[34]])
+    def test_case_34(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_start_record()
+        page.hover_start_record()
+        page.assert_float_text(CaseData["断言元素定位"])
+        page.click_stop_record()
+
+    """连续抓图按钮悬浮文字"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[35]])
+    def test_case_35(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.hover_continuous_snapshot()
+        page.assert_float_text(CaseData["断言元素定位"])
+
+    """局部放大按钮悬浮文字"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[36]])
+    def test_case_36(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.hover_electronic_amplification()
+        page.assert_float_text(CaseData["断言元素定位"])
+
+    """实时温度曲线按钮悬浮文字"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[37]])
+    def test_case_37(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.hover_real_time_temp_curve()
+        page.assert_float_text(CaseData["断言元素定位"])
+
+    """窗口适应按钮悬浮文字"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[38]])
+    def test_case_38(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.hover_adapt_screen()
+        page.assert_float_text(CaseData["断言元素定位"])
+
+    """窗口填充按钮悬浮文字"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[39]])
+    def test_case_39(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_fill_or_adapt()
+        page.hover_fill_screen()
+        page.assert_float_text(CaseData["断言元素定位"])
+        page.click_fill_or_adapt()
+
+    """全屏按钮悬浮文字"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[40]])
+    def test_case_40(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.hover_full_screen()
+        page.assert_float_text(CaseData["断言元素定位"])
+
+    """进入到预览界面-默认选中可见光通道界面"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[41]])
+    def test_case_41(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.page.get_by_text("回放管理").click()
+        page.page.get_by_text("实时预览").click()
+        page.assert_vl_pass(CaseData["断言元素定位"])
+
+    """暂停后切换到其它界面"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[42]])
+    def test_case_42(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_video_stop()
+        page.hover_video_stop()
+        page.assert_float_text(CaseData["断言元素定位"][0])
+        page.page.get_by_text("回放管理").click()
+        page.page.get_by_text("实时预览").click()
+        page.hover_video_stop()
+        page.assert_float_text(CaseData["断言元素定位"][1])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
