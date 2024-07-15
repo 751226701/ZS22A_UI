@@ -24,6 +24,7 @@ def login(pageobject, url, user, passwd):
     pageobject.goto(url)
     pageobject.get_by_placeholder("请输入用户名").fill(user)
     pageobject.get_by_placeholder("请输入密码").fill(passwd)
+    pageobject.locator("label span").nth(1).click()
     pageobject.wait_for_timeout(3000)
     pageobject.get_by_role("button", name="登录").click()
 
@@ -96,23 +97,23 @@ class TestPreview:
         page.click_screenshot_close()
         page.assert_click_screenshot_close(CaseData["断言元素定位"])
 
-    """开始录像"""
+    """可见光录像"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[5]])
     def test_case_05(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_start_record()
-        page.assert_start_ir_record(CaseData["断言元素定位"])
+        # page.assert_start_ir_record(CaseData["断言元素定位"])
         page.assert_start_vl_record(CaseData["断言元素定位"])
         page.page.wait_for_timeout(5000)
 
-    """停止录像"""
+    """可见光停止录像"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.parametrize("CaseData", [yaml_data[6]])
     def test_case_06(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_stop_record()
-        page.assert_stop_ir_record(CaseData["断言元素定位"])
+        # page.assert_stop_ir_record(CaseData["断言元素定位"])
         page.assert_stop_vl_record(CaseData["断言元素定位"])
 
     """连续抓图"""
@@ -427,9 +428,72 @@ class TestPreview:
         page.hover_video_stop()
         page.assert_float_text(CaseData["断言元素定位"][1])
 
+    """画面暂停时可抓图"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[43]])
+    def test_case_43(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_video_stop()
+        page.click_screenshot()
+        page.assert_click_screenshot(CaseData["断言元素定位"])
+        page.click_screenshot_close()
 
+    """红外录像"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[44]])
+    def test_case_44(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_ir_window()
+        page.click_start_record()
+        page.assert_start_ir_record(CaseData["断言元素定位"])
+        page.page.wait_for_timeout(5000)
 
+    """红外停止录像"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[45]])
+    def test_case_45(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_stop_record()
+        page.assert_stop_ir_record(CaseData["断言元素定位"])
 
+    """录像过程中切换到其他网页或子菜单"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[46]])
+    def test_case_46(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_start_record()
+        page.goto_playback_management()
+        page.page.wait_for_timeout(1000)
+        page.goto_real_time_preview()
+        page.assert_start_vl_record(CaseData["断言元素定位"])
+        page.page.wait_for_timeout(1000)
+        page.click_stop_record()
+
+    """录像过程中刷新界面不会停止录像"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[47]])
+    def test_case_47(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_start_record()
+        page._browser_operation(reload=True)
+        page.click_login_button()
+        page.page.wait_for_timeout(1000)
+        page.assert_start_vl_record(CaseData["断言元素定位"])
+        page.click_stop_record()
+
+    """录像过程中退出登录不会停止录像"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", [yaml_data[48]])
+    def test_case_48(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_start_record()
+        page.click_admin()
+        page.click_logout()
+        page.click_confirm_exit()
+        page.click_login_button()
+        page.page.wait_for_timeout(1000)
+        page.assert_start_vl_record(CaseData["断言元素定位"])
+        page.click_stop_record()
 
 
 

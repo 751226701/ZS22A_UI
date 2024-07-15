@@ -250,9 +250,9 @@ class PreviewPage(Common):
     def click_ir_full_screen_exit(self):
         self.page.locator(self.__full_screen_exit_ir).first.dblclick()
 
-    @allure.step("点击root用户")
-    def click_root(self):
-        self.page.get_by_role("button", name="root").click()
+    @allure.step("点击admin用户")
+    def click_admin(self):
+        self.page.get_by_role("button", name="admin").click()
 
     @allure.step("退出登录")
     def click_logout(self):
@@ -314,6 +314,31 @@ class PreviewPage(Common):
     def assert_vl_pass(self, value):
         ele = self.page.locator(".left-wrap").get_attribute("class")
         assert value in ele
+
+    @allure.step("点击可见光窗口")
+    def click_vl_window(self):
+        self.page.locator(".video-wrap > canvas").first.click()
+
+    @allure.step("点击红外窗口")
+    def click_ir_window(self):
+        self.page.locator(".show_window_ir > .video-wrap > canvas").click()
+
+    @allure.step("切换至回放管理")
+    def goto_playback_management(self):
+        self.page.get_by_text("回放管理").click()
+
+    @allure.step("切换至实时预览")
+    def goto_real_time_preview(self):
+        self.page.get_by_text("实时预览").click()
+
+    @allure.step("点击登录按钮")
+    def click_login_button(self):
+        sleep(4)
+        self.page.get_by_role("button", name="登录").click()
+
+
+
+
 
 
 

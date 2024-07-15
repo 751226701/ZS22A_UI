@@ -25,6 +25,7 @@ def login(pageobject, url, user, passwd):
     pageobject.goto(url)
     pageobject.get_by_placeholder("请输入用户名").fill(user)
     pageobject.get_by_placeholder("请输入密码").fill(passwd)
+    pageobject.locator("label span").nth(1).click()
     pageobject.wait_for_timeout(3000)
     pageobject.get_by_role("button", name="登录").click()
     pageobject.get_by_text("统计报表").click()
