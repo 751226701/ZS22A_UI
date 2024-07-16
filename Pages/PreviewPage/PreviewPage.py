@@ -143,8 +143,6 @@ class PreviewPage(Common):
                 d = float(matrix_values[3].strip())
                 tx = float(matrix_values[4].strip())
                 ty = float(matrix_values[5].strip())
-        print(a)
-        print(types)
         if types == 1:
             assert a > value
         if types == 2:

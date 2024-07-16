@@ -14,8 +14,8 @@ from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_03.yaml")).read()
-logindata = yaml_data[0]
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_03.yaml"))
+logindata = yaml_data.read()[0]
 Trace = Config.trace3
 pageobject = None
 DOWNLOAD_FLAG = False
@@ -73,7 +73,7 @@ class TestPlayBack:
 
     """搜索全部可见光视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[1]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_01"]))
     def test_case_01(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.click_query()
@@ -83,7 +83,7 @@ class TestPlayBack:
 
     """搜索对象温度可见光视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[2]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_02"]))
     def test_case_02(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_event_type()
@@ -93,7 +93,7 @@ class TestPlayBack:
 
     """搜索全局温度可见光视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[3]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_03"]))
     def test_case_03(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_event_type()
@@ -103,7 +103,7 @@ class TestPlayBack:
 
     """搜索对象温差可见光视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[4]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_04"]))
     def test_case_04(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_event_type()
@@ -113,7 +113,7 @@ class TestPlayBack:
 
     """搜索手动录像视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[5]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_05"]))
     def test_case_05(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_event_type()
@@ -123,7 +123,7 @@ class TestPlayBack:
 
     """搜索全部红外视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[6]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_06"]))
     def test_case_06(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_channel_ir()
@@ -134,7 +134,7 @@ class TestPlayBack:
 
     """搜索对象温度红外视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[7]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_07"]))
     def test_case_07(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_channel_ir()
@@ -145,7 +145,7 @@ class TestPlayBack:
 
     """搜索全局温度红外视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[8]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_08"]))
     def test_case_08(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_channel_ir()
@@ -156,7 +156,7 @@ class TestPlayBack:
 
     """搜索对象温差红外视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[9]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_09"]))
     def test_case_09(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_channel_ir()
@@ -167,7 +167,7 @@ class TestPlayBack:
 
     """下载回放视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[10]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_10"]))
     def test_case_10(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_channel_ir()
@@ -180,7 +180,7 @@ class TestPlayBack:
 
     """搜索全部可见光照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[11]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_11"]))
     def test_case_11(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_image()
@@ -191,7 +191,7 @@ class TestPlayBack:
 
     """搜索对象温度可见光照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[12]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_12"]))
     def test_case_12(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_image()
@@ -202,7 +202,7 @@ class TestPlayBack:
 
     """搜索全局温度可见光照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[13]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_13"]))
     def test_case_13(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_image()
@@ -213,7 +213,7 @@ class TestPlayBack:
 
     """搜索对象温差可见光照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[14]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_14"]))
     def test_case_14(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_image()
@@ -224,7 +224,7 @@ class TestPlayBack:
 
     """搜索全部红外照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[15]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_15"]))
     def test_case_15(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_image()
@@ -235,7 +235,7 @@ class TestPlayBack:
 
     """搜索对象温度红外照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[16]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_16"]))
     def test_case_16(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_image()
@@ -246,7 +246,7 @@ class TestPlayBack:
 
     """搜索全局温度红外照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[17]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_17"]))
     def test_case_17(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_image()
@@ -257,7 +257,7 @@ class TestPlayBack:
 
     """搜索对象温差红外照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[18]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_18"]))
     def test_case_18(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_image()
@@ -268,7 +268,7 @@ class TestPlayBack:
 
     """下载回放照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[19]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_19"]))
     def test_case_19(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_image()
@@ -282,7 +282,7 @@ class TestPlayBack:
 
     """选择第一条视频播放"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[20]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_20"]))
     def test_case_20(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_video()
@@ -296,7 +296,7 @@ class TestPlayBack:
 
     """选择下一条视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[21]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_21"]))
     def test_case_21(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_video()
@@ -310,7 +310,7 @@ class TestPlayBack:
 
     """选择上一条视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[22]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_22"]))
     def test_case_22(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_video()
@@ -324,7 +324,7 @@ class TestPlayBack:
 
     """停止播放视频"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[23]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_23"]))
     def test_case_23(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_video()
@@ -338,7 +338,7 @@ class TestPlayBack:
 
     """视频倍速1.2X"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[24]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_24"]))
     def test_case_24(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_video()
@@ -352,7 +352,7 @@ class TestPlayBack:
 
     """视频倍速1.5X"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[25]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_25"]))
     def test_case_25(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_video()
@@ -366,7 +366,7 @@ class TestPlayBack:
 
     """视频倍速2.0X"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[26]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_26"]))
     def test_case_26(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_video()
@@ -380,7 +380,7 @@ class TestPlayBack:
 
     """视频倍速1.0X"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[27]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_27"]))
     def test_case_27(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_video()
@@ -394,7 +394,7 @@ class TestPlayBack:
 
     """全屏播放"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[28]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_28"]))
     def test_case_28(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_video()
@@ -407,7 +407,7 @@ class TestPlayBack:
 
     """退出全屏播放"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[29]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_29"]))
     def test_case_29(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.stop_full_screen_play()
@@ -415,7 +415,7 @@ class TestPlayBack:
 
     """照片播放后暂停"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[30]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_30"]))
     def test_case_30(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.select_file_type_image()
@@ -430,7 +430,7 @@ class TestPlayBack:
 
     """下一张照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[31]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_31"]))
     def test_case_31(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.next_photo()
@@ -438,7 +438,7 @@ class TestPlayBack:
 
     """上一张照片"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[32]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_32"]))
     def test_case_32(self, page, CaseData: dict):
         page = PlaybackPage(page)
         page.previous_photo()

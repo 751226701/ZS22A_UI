@@ -14,8 +14,8 @@ from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_04.yaml")).read()
-logindata = yaml_data[0]
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_04.yaml"))
+logindata = yaml_data.read()[0]
 Trace = Config.trace4
 pageobject = None
 DOWNLOAD_FLAG = False
@@ -73,7 +73,7 @@ class TestPlayBack:
 
     """查看所有分析对象最高温温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[1]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_01"]))
     def test_case_01(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_object_temp()
@@ -84,7 +84,7 @@ class TestPlayBack:
 
     """查看所有分析对象最低温温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[2]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_02"]))
     def test_case_02(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_object_temp()
@@ -95,7 +95,7 @@ class TestPlayBack:
 
     """查看所有分析对象平均温温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[3]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_03"]))
     def test_case_03(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_object_temp()
@@ -106,7 +106,7 @@ class TestPlayBack:
 
     """取消点分析对象复选框后查询温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[4]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_04"]))
     def test_case_04(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_point()
@@ -116,7 +116,7 @@ class TestPlayBack:
 
     """取消线分析对象复选框后查询温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[5]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_05"]))
     def test_case_05(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_line()
@@ -126,7 +126,7 @@ class TestPlayBack:
 
     """取消圆分析对象复选框后查询温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[6]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_06"]))
     def test_case_06(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_round()
@@ -136,7 +136,7 @@ class TestPlayBack:
 
     """取消矩形分析对象复选框后查询温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[7]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_07"]))
     def test_case_07(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_rectangle()
@@ -146,7 +146,7 @@ class TestPlayBack:
 
     """取消多边形分析对象复选框后查询温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[8]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_08"]))
     def test_case_08(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_polygon()
@@ -156,7 +156,7 @@ class TestPlayBack:
 
     """选择所有分析对象复选框后查询温度曲线"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[9]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_09"]))
     def test_case_09(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_point()
@@ -174,7 +174,7 @@ class TestPlayBack:
 
     """取消全选"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[10]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_10"]))
     def test_case_10(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_all()
@@ -183,7 +183,7 @@ class TestPlayBack:
 
     """下载温度曲线截图"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[11]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_11"]))
     def test_case_11(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_all()
@@ -195,7 +195,7 @@ class TestPlayBack:
 
     """按1min间隔导出报表"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[12]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_12"]))
     def test_case_12(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_period()
@@ -207,7 +207,7 @@ class TestPlayBack:
 
     """按5min间隔导出报表"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[13]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_13"]))
     def test_case_13(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_period()
@@ -219,7 +219,7 @@ class TestPlayBack:
 
     """按10min间隔导出报表"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[14]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_14"]))
     def test_case_14(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_period()
@@ -231,7 +231,7 @@ class TestPlayBack:
 
     """按15min间隔导出报表"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[15]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_15"]))
     def test_case_15(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_period()
@@ -243,7 +243,7 @@ class TestPlayBack:
 
     """按60min间隔导出报表"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[16]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_16"]))
     def test_case_16(self, page, CaseData: dict):
         page = ReportPage(page)
         page.select_period()
