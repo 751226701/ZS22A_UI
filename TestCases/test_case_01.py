@@ -15,14 +15,14 @@ from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 Trace = Config.trace1
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml")).read()
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_01.yaml"))
 
 """执行登录模块测试"""
 class TestLogin:
     """root/admin/user用户登录"""
     @PrettyAllure.PrettyAllureWrapper
     @pytest.mark.smoking
-    @pytest.mark.parametrize("CaseData", yaml_data[0:3])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_01", "TC_ZS10F_1.1_234", "test_case_03"]))
     def test_case_1_3(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -35,27 +35,25 @@ class TestLogin:
 
     """系统标题为空"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[3]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_6"]))
     def test_case_04(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
         page.goto_login(CaseData["url地址"])
-        print(CaseData["断言元素定位"])
         page.assert_system_title(CaseData["断言元素定位"])
 
     """版权所属为空"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[4]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_05"]))
     def test_case_05(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
         page.goto_login(CaseData["url地址"])
-        print(CaseData["断言元素定位"])
         page.assert_copyright_ownership(CaseData["断言元素定位"])
 
     """质感logo"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[5]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_7"]))
     def test_case_06(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -64,7 +62,7 @@ class TestLogin:
 
     """登录时不输入账号密码"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[6]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_8"]))
     def test_case_07(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -74,7 +72,7 @@ class TestLogin:
 
     """账号密码提示内容"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[7]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_9"]))
     def test_case_08(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -84,7 +82,7 @@ class TestLogin:
 
     """账户输入小于32个字符"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[8]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_10"]))
     def test_case_09(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -94,7 +92,7 @@ class TestLogin:
 
     """账户输入大于32个字符"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[9]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_11"]))
     def test_case_10(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -104,7 +102,7 @@ class TestLogin:
 
     """密码输入小于32个字符"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[10]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_12"]))
     def test_case_11(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -114,7 +112,7 @@ class TestLogin:
 
     """密码输入大于32个字符"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[11]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_13"]))
     def test_case_12(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -124,7 +122,7 @@ class TestLogin:
 
     """登录时输入用户名不输入密码"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[12]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_15"]))
     def test_case_13(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -134,7 +132,7 @@ class TestLogin:
 
     """登录时不输入用户名但输入密码"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[13]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_16"]))
     def test_case_14(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -144,7 +142,7 @@ class TestLogin:
 
     """输入错误用户名登录"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[14]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_18"]))
     def test_case_15(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -158,7 +156,7 @@ class TestLogin:
 
     """输入错误密码登录"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[15]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_19"]))
     def test_case_16(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -172,7 +170,7 @@ class TestLogin:
 
     """账户密码输入框中删除按钮功能正常"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[16]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_21"]))
     def test_case_17(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -192,7 +190,7 @@ class TestLogin:
 
     """记住密码未勾选"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[17]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_18"]))
     def test_case_18(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -209,7 +207,7 @@ class TestLogin:
 
     """记住密码已勾选"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[18]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_22"]))
     def test_case_19(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -227,7 +225,7 @@ class TestLogin:
 
     """多次使用错误的密码登录账号被锁定"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[19]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_23"]))
     def test_case_20(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -243,7 +241,7 @@ class TestLogin:
 
     """达到账户锁定时间之后可以正常登录"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[20]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_24"]))
     def test_case_21(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -265,7 +263,7 @@ class TestLogin:
 
     """语言切换-英文"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[21]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_22"]))
     def test_case_22(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -276,7 +274,7 @@ class TestLogin:
 
     """语言切换-中文"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[22]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_23"]))
     def test_case_23(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -287,7 +285,7 @@ class TestLogin:
 
     """密码-密文"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[23]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_24"]))
     def test_case_24(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -296,7 +294,7 @@ class TestLogin:
 
     """密码-明文"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[24]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.1_20"]))
     def test_case_25(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -351,7 +349,7 @@ def page():
                               lambda download: download.save_as(os.path.join(download_dir, download.suggested_filename)))
             except Exception as e:
                 print(f"保存失败：{e}")
-            login(pageobject, yaml_data[1]["url地址"], yaml_data[1]["账号"], yaml_data[1]["密码"])
+            login(pageobject, yaml_data.read()[1]["url地址"], yaml_data.read()[1]["账号"], yaml_data.read()[1]["密码"])
         yield pageobject
         pageobject = None
         if Trace:
@@ -364,7 +362,7 @@ def page():
 class TestLoginEx:
     """进入修改密码页面"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[25]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_001"]))
     def test_case_26(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -374,7 +372,7 @@ class TestLoginEx:
 
     """修改密码-取消"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[26]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_002"]))
     def test_case_27(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -384,7 +382,7 @@ class TestLoginEx:
 
     """修改密码-点击X"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[27]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_003"]))
     def test_case_28(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -394,7 +392,7 @@ class TestLoginEx:
 
     """原始密码不输入"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[28]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_004"]))
     def test_case_29(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -407,7 +405,7 @@ class TestLoginEx:
 
     """原始密码显示/隐藏"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[29]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_005"]))
     def test_case_30(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -420,7 +418,7 @@ class TestLoginEx:
 
     """新密码不输入"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[30]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_006"]))
     def test_case_31(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -433,7 +431,7 @@ class TestLoginEx:
 
     """新密码输入长度刚好满足最小长度要求"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[31]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_007"]))
     def test_case_32(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -445,7 +443,7 @@ class TestLoginEx:
 
     """新密码输入长度小于6"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[32]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_008"]))
     def test_case_33(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -457,7 +455,7 @@ class TestLoginEx:
 
     """新密码输入长度刚好满足最大长度要求"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[33]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_009"]))
     def test_case_34(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -469,7 +467,7 @@ class TestLoginEx:
 
     """新密码输入长度大于20"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[34]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_010"]))
     def test_case_35(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -481,7 +479,7 @@ class TestLoginEx:
 
     """新密码输入特殊符号"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[35]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_011"]))
     def test_case_36(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -493,7 +491,7 @@ class TestLoginEx:
 
     """新密码输入长度正确的纯数字密码"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[36]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_012"]))
     def test_case_37(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -505,7 +503,7 @@ class TestLoginEx:
 
     """新密码输入长度正确的纯字母密码"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[37]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_013"]))
     def test_case_38(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -517,7 +515,7 @@ class TestLoginEx:
 
     """新密码输入长度正确的大小写和数字组合密码"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[38]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_014"]))
     def test_case_39(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -529,7 +527,7 @@ class TestLoginEx:
 
     """新密码输入长度正确的汉字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[39]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_015"]))
     def test_case_40(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -541,7 +539,7 @@ class TestLoginEx:
 
     """新密码显示/隐藏"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[40]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_016"]))
     def test_case_41(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -559,7 +557,7 @@ class TestLoginEx:
 
     """确认密码不输入"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[41]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_017"]))
     def test_case_42(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -572,7 +570,7 @@ class TestLoginEx:
 
     """确认密码输入长度刚好满足最小长度要求"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[42]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_018"]))
     def test_case_43(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -586,7 +584,7 @@ class TestLoginEx:
 
     """确认密码输入长度小于6"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[43]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_019"]))
     def test_case_44(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -600,7 +598,7 @@ class TestLoginEx:
 
     """确认密码输入长度刚好满足最大长度要求"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[44]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_020"]))
     def test_case_45(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -614,7 +612,7 @@ class TestLoginEx:
 
     """确认密码输入长度大于20"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[45]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_021"]))
     def test_case_46(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -628,7 +626,7 @@ class TestLoginEx:
 
     """确认密码输入特殊符号"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[46]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_022"]))
     def test_case_47(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -641,7 +639,7 @@ class TestLoginEx:
 
     """确认密码输入长度正确的纯数字密码"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[47]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_023"]))
     def test_case_48(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -654,7 +652,7 @@ class TestLoginEx:
 
     """确认密码输入长度正确的纯字母密码"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[48]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_024"]))
     def test_case_49(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -667,7 +665,7 @@ class TestLoginEx:
 
     """确认密码输入长度正确的大小写和数字组合密码"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[49]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_025"]))
     def test_case_50(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -680,7 +678,7 @@ class TestLoginEx:
 
     """确认密码输入长度正确的汉字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[50]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_026"]))
     def test_case_51(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -693,7 +691,7 @@ class TestLoginEx:
 
     """确认密码显示/隐藏"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[51]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_027"]))
     def test_case_52(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
@@ -711,7 +709,7 @@ class TestLoginEx:
 
     """确认密码与新密码不一致"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[52]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_028"]))
     def test_case_53(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -724,7 +722,7 @@ class TestLoginEx:
 
     """原始密码与新密码一致"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[53]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_029"]))
     def test_case_54(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -738,7 +736,7 @@ class TestLoginEx:
 
     """原始密码-新密码-确认密码均不满足条件"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[54]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_030"]))
     def test_case_55(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -754,7 +752,7 @@ class TestLoginEx:
 
     """原始密码不对"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[55]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_031"]))
     def test_case_56(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -767,7 +765,7 @@ class TestLoginEx:
 
     """修改密码"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[56]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_032"]))
     def test_case_57(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -793,7 +791,7 @@ class TestLoginEx:
 
     """帮助-中文"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[57]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_034"]))
     def test_case_58(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -801,7 +799,7 @@ class TestLoginEx:
 
     """退出登录"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[58]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_036"]))
     def test_case_59(self, page, CaseData: dict):
         page = LoginPage(page)
         page.click_admin()
@@ -811,7 +809,7 @@ class TestLoginEx:
 
     """退出登录-取消"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[59]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_1.2_037"]))
     def test_case_60(self, page, CaseData: dict):
         page = LoginPage(page)
         page.browser_operation()
