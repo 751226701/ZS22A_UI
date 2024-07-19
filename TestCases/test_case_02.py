@@ -67,7 +67,7 @@ class TestPreview:
 
     """暂停视频播放"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_01"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_013_1"]))
     def test_case_01(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_video_stop()
@@ -75,7 +75,7 @@ class TestPreview:
 
     """开始视频播放"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_02"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_013_2"]))
     def test_case_02(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_video_start()
@@ -83,7 +83,7 @@ class TestPreview:
 
     """抓图"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_03"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_018_1"]))
     def test_case_03(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_screenshot()
@@ -91,7 +91,7 @@ class TestPreview:
 
     """关闭抓图弹窗"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_04"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_018_2"]))
     def test_case_04(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_screenshot_close()
@@ -99,7 +99,7 @@ class TestPreview:
 
     """可见光录像"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_05"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_026_1"]))
     def test_case_05(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_start_record()
@@ -109,7 +109,7 @@ class TestPreview:
 
     """可见光停止录像"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_06"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_026_2"]))
     def test_case_06(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_stop_record()
@@ -118,7 +118,7 @@ class TestPreview:
 
     """连续抓图"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_07"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_041"]))
     def test_case_07(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_continuous_snapshot()
@@ -165,7 +165,7 @@ class TestPreview:
 
     """开启温度曲线(近4小时最高温)"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_12"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_055"]))
     def test_case_12(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_real_time_temp_curve()
@@ -287,43 +287,43 @@ class TestPreview:
 
     """单红外通道全屏显示"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_26"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_008_1"]))
     def test_case_26(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_ir_full_screen()
 
     """单红外通道退出全屏显示"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_27"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_008_2"]))
     def test_case_27(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_ir_full_screen_exit()
 
     """单可见光通道全屏显示"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_28"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_007_1"]))
     def test_case_28(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_vl_full_screen()
 
     """单可见光通道退出全屏显示"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_29"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_007_2"]))
     def test_case_29(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_vl_full_screen_exit()
 
     """视频暂停按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_30"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_1"]))
     def test_case_30(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.hover_video_stop()
         page.assert_float_text(CaseData["断言元素定位"])
 
-    """视频暂停按钮悬浮文字"""
+    """视频播放按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_31"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_2"]))
     def test_case_31(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_video_stop()
@@ -332,7 +332,7 @@ class TestPreview:
 
     """抓图按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_32"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_3"]))
     def test_case_32(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.hover_screenshot()
@@ -340,7 +340,7 @@ class TestPreview:
 
     """开始录像按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_33"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_4"]))
     def test_case_33(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.hover_start_record()
@@ -348,7 +348,7 @@ class TestPreview:
 
     """停止录像按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_34"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_5"]))
     def test_case_34(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_start_record()
@@ -358,7 +358,7 @@ class TestPreview:
 
     """连续抓图按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_35"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_6"]))
     def test_case_35(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.hover_continuous_snapshot()
@@ -366,7 +366,7 @@ class TestPreview:
 
     """局部放大按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_36"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_7"]))
     def test_case_36(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.hover_electronic_amplification()
@@ -374,7 +374,7 @@ class TestPreview:
 
     """实时温度曲线按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_37"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_8"]))
     def test_case_37(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.hover_real_time_temp_curve()
@@ -382,7 +382,7 @@ class TestPreview:
 
     """窗口适应按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_38"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_9"]))
     def test_case_38(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.hover_adapt_screen()
@@ -390,7 +390,7 @@ class TestPreview:
 
     """窗口填充按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_39"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_10"]))
     def test_case_39(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_fill_or_adapt()
@@ -400,7 +400,7 @@ class TestPreview:
 
     """全屏按钮悬浮文字"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_40"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_005_11"]))
     def test_case_40(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.hover_full_screen()
@@ -408,7 +408,7 @@ class TestPreview:
 
     """进入到预览界面-默认选中可见光通道界面"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_41"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_006"]))
     def test_case_41(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.page.get_by_text("回放管理").click()
@@ -417,7 +417,7 @@ class TestPreview:
 
     """暂停后切换到其它界面"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_42"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_014"]))
     def test_case_42(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_video_stop()
@@ -430,7 +430,7 @@ class TestPreview:
 
     """画面暂停时可抓图"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_43"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_024"]))
     def test_case_43(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_video_stop()
@@ -438,9 +438,9 @@ class TestPreview:
         page.assert_click_screenshot(CaseData["断言元素定位"])
         page.click_screenshot_close()
 
-    """红外录像"""
+    """红外开始录像"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_44"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_029_1"]))
     def test_case_44(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_ir_window()
@@ -450,7 +450,7 @@ class TestPreview:
 
     """红外停止录像"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_45"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_029_2"]))
     def test_case_45(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_stop_record()
@@ -458,7 +458,7 @@ class TestPreview:
 
     """录像过程中切换到其他网页或子菜单"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_46"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_035"]))
     def test_case_46(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_start_record()
@@ -471,7 +471,7 @@ class TestPreview:
 
     """录像过程中刷新界面不会停止录像"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_47"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_037"]))
     def test_case_47(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_start_record()
@@ -483,7 +483,7 @@ class TestPreview:
 
     """录像过程中退出登录不会停止录像"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_48"]))
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_038"]))
     def test_case_48(self, page, CaseData: dict):
         page = PreviewPage(page)
         page.click_start_record()
@@ -495,6 +495,45 @@ class TestPreview:
         page.assert_start_vl_record(CaseData["断言元素定位"])
         page.click_stop_record()
 
+    """红外抓图"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_019"]))
+    def test_case_49(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_ir_window()
+        page.click_screenshot()
+        page.assert_click_screenshot(CaseData["断言元素定位"])
+        page.click_screenshot_close()
+
+    """红外连续抓图"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_042"]))
+    def test_case_50(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_ir_window()
+        page.click_continuous_snapshot()
+        page.assert_continuous_snapshot(CaseData["断言元素定位"])
+
+    """连续抓图过程中进行单次抓图"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_043"]))
+    def test_case_51(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_continuous_snapshot()
+        page.click_screenshot()
+        page.assert_continuous_snapshot(CaseData["断言元素定位"][0])
+        page.assert_click_screenshot(CaseData["断言元素定位"][1])
+        page.click_screenshot_close()
+
+    """录像过程中连续抓图功能正常"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["TC_ZS10F_2_046"]))
+    def test_case_52(self, page, CaseData: dict):
+        page = PreviewPage(page)
+        page.click_start_record()
+        page.click_continuous_snapshot()
+        page.assert_continuous_snapshot(CaseData["断言元素定位"])
+        page.click_stop_record()
 
 
 
