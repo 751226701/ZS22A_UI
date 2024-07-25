@@ -59,9 +59,33 @@ class AlarmPage(Common):
     def click_global_high_temp_box(self):
         self.page.locator(self.__global_high_temp_box).first.click()
 
+    @allure.step("断言全局高温复选框是否选中")
+    def assert_global_high_temp_box(self, value):
+        """
+        断言全局高温复选框是否选中
+        :param value: 1 选中 2 未选中
+        """
+        sleep(1)
+        if value == 1:
+            expect(self.page.locator(self.__global_high_temp_box).first).to_be_checked()
+        elif value == 2:
+            expect(self.page.locator(self.__global_high_temp_box).first).not_to_be_checked()
+
     @allure.step("点击全局最低温复选框")
     def click_global_low_temp_box(self):
         self.page.locator(self.__global_low_temp_box).click()
+
+    @allure.step("断言全局低温复选框是否选中")
+    def assert_global_low_temp_box(self, value):
+        """
+        断言全局高温复选框是否选中
+        :param value: 1 选中 2 未选中
+        """
+        sleep(1)
+        if value == 1:
+            expect(self.page.locator(self.__global_low_temp_box).first).to_be_checked()
+        elif value == 2:
+            expect(self.page.locator(self.__global_low_temp_box).first).not_to_be_checked()
 
     @allure.step("全局最高温报警条件选择")
     def global_high_temp_select(self):
@@ -75,9 +99,17 @@ class AlarmPage(Common):
     def set_global_high_temp_value(self, value):
         self.page.locator(self.__global_high_temp_value).first.fill(value)
 
+    @allure.step("断言高温报警阈值")
+    def assert_global_high_temp_value(self, value):
+        expect(self.page.locator(self.__global_high_temp_value).first).to_have_value(value)
+
     @allure.step("设置低温报警阈值")
     def set_global_low_temp_value(self, value):
         self.page.locator(self.__global_low_temp_value).fill(value)
+
+    @allure.step("断言低温报警阈值")
+    def assert_global_low_temp_value(self, value):
+        expect(self.page.locator(self.__global_low_temp_value)).to_have_value(value)
 
     @allure.step("选择大于")
     def select_great(self):
@@ -87,10 +119,23 @@ class AlarmPage(Common):
     def select_less(self):
         self.page.get_by_role("list").get_by_text(self.__select_less[1]).click()
 
+    @allure.step("断言高温报警条件")
+    def assert_high_alarm_condition(self, value):
+        expect(self.page.get_by_placeholder("请选择").first).to_have_value(value)
+
+    @allure.step("断言低温报警条件")
+    def assert_low_alarm_condition(self, value):
+        expect(self.page.get_by_placeholder("请选择").nth(1)).to_have_value(value)
+
     @allure.step("设置去抖动")
-    def set_debounce(self, value):
-        (self.page.locator(self.__debounce[0]).filter(has_text=re.compile(self.__debounce[1])).
+    def set_debounce_value(self, value):
+        (self.page.locator("div").filter(has_text=re.compile(r"^去抖动 s \(0~10\)$")).
          get_by_role("textbox").fill(value))
+
+    @allure.step("断言去抖动值")
+    def assert_debounce_value(self, value):
+        expect(self.page.locator("div").filter(has_text=re.compile(r"^去抖动 s \(0~10\)$")).
+               get_by_role("textbox")).to_have_value(value)
 
     @allure.step("设置报警间隔时间")
     def set_alarm_interval_time(self):
@@ -125,6 +170,12 @@ class AlarmPage(Common):
     @allure.step("选择60min")
     def select_60min(self):
         self.page.get_by_text(self.__alarm_interval_time_60min).click()
+
+    @allure.step("断言报警间隔时间")
+    def assert_alarm_interval_time(self, value):
+        has_text = re.compile(r"^报警间隔时间*")
+        expect(self.page.locator("div").filter(has_text=re.compile(has_text)).
+               get_by_placeholder("请选择")).to_have_value(value)
 
     @allure.step("点击可见光录像复选框")
     def click_vl_record_box(self):
