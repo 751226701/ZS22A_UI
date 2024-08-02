@@ -39,7 +39,6 @@ class AlarmPage(Common):
     __confirm = ("删除", "确定")
     __cancel = "取消"
     __obj_name = ".el-col > .el-form-item > .el-form-item__content > .el-input > .el-input__inner"
-    __select_show = "分析对象详情(123)"
     __show_max_temp = "最高温"
     __show_min_temp = "最低温"
     __show_avg_temp = "平均温"
@@ -131,6 +130,14 @@ class AlarmPage(Common):
         """
         self.page.locator(self.__brush).click(position={"x": x, "y": y})
 
+    @allure.step("断言分析对象添加成功")
+    def assert_draw_object(self, value):
+        expect(self.page.get_by_role("cell", name=value).locator("div")).to_be_visible()
+
+    @allure.step("断言分析对象不存在")
+    def assert_object_nonexistent(self, value):
+        expect(self.page.get_by_role("cell", name=value).locator("div")).not_to_be_visible()
+
     @allure.step("点击可见光录像复选框")
     def click_vl_record_box(self):
         (self.page.locator(self.__vl_record_box[0]).filter(has_text=self.__vl_record_box[1]).
@@ -214,13 +221,27 @@ class AlarmPage(Common):
     def delete_cancel(self):
         self.page.get_by_role("button", name=self.__cancel).click()
 
+    @allure.step("断言提示语可见")
+    def assert_prompt_is_visible(self, value):
+        expect(self.page.get_by_text(value)).to_be_visible()
+
     @allure.step("设置分析对象名称")
     def set_obj_name(self, value):
         self.page.locator(self.__obj_name).first.fill(value)
 
+    @allure.step("断言分析对象名称")
+    def assert_obj_name(self, value):
+        expect(self.page.locator(self.__obj_name).first).to_have_value(value)
+
     @allure.step("选择显示内容")
     def select_show(self):
-        self.page.get_by_label(self.__select_show).locator("i").first.click()
+        text = re.compile("分析对象详情*")
+        self.page.get_by_label(text).locator("i").first.click()
+
+    @allure.step("断言温度显示内容")
+    def assert_temp_show(self, value):
+        text = re.compile("分析对象详情*")
+        expect(self.page.get_by_label(text).get_by_placeholder("请选择").first).to_have_value(value)
 
     @allure.step("选择最高温")
     def select_show_max_temp(self):
@@ -256,7 +277,8 @@ class AlarmPage(Common):
 
     @allure.step("选择显示方位")
     def select_show_position(self):
-        self.page.get_by_label(self.__select_display_pos).locator("i").nth(1).click()
+        text = re.compile("分析对象详情*")
+        self.page.get_by_label(text).get_by_placeholder("请选择").nth(1).click()
 
     @allure.step("选择左方")
     def select_left(self):
@@ -278,25 +300,57 @@ class AlarmPage(Common):
     def select_mid(self):
         self.page.get_by_text(self.__mid).click()
 
+    @allure.step("断言显示方位")
+    def assert_show_position(self, value):
+        text = re.compile("分析对象详情*")
+        expect(self.page.get_by_label(text).get_by_placeholder("请选择").nth(1)).to_have_value(value)
+
     @allure.step("设置发射率")
     def set_emiss(self, value):
         self.page.locator(self.__emiss).first.fill(value)
+
+    @allure.step("选择发射率")
+    def select_emiss(self, value):
+        text = re.compile("分析对象详情*")
+        self.page.get_by_label(text).locator("i").nth(2).click()
+        self.page.get_by_text(value, exact=True).click()
+
+    @allure.step("断言发射率值")
+    def assert_emiss_value(self, value):
+        expect(self.page.locator(self.__emiss).first).to_have_value(value)
 
     @allure.step("设置距离")
     def set_distance(self, value):
         self.page.locator(self.__distance).fill(value)
 
+    @allure.step("断言距离值")
+    def assert_distance_value(self, value):
+        expect(self.page.locator(self.__distance)).to_have_value(value)
+
     @allure.step("设置反射温度")
     def set_reflect_temp(self, value):
         self.page.locator(self.__ref_temp).fill(value)
+
+    @allure.step("断言反射温度值")
+    def assert_reflect_temp_value(self, value):
+        expect(self.page.locator(self.__ref_temp)).to_have_value(value)
 
     @allure.step("报警配置开关")
     def alarm_switch(self):
         self.page.get_by_label("报警参数设置").get_by_role("switch").locator("span").click()
 
+    @allure.step("断言报警配置状态")
+    def assert_alarm_switch_status(self, value):
+        cls_value = self.page.get_by_label("报警参数设置").get_by_role("switch").get_attribute('class')
+        assert cls_value == value
+
     @allure.step("报警类型选择")
     def alarm_type_select(self):
         self.page.get_by_label("报警参数设置").locator("i").first.click()
+
+    @allure.step("断言报警类型")
+    def assert_alarm_type(self, value):
+        expect(self.page.get_by_label("报警参数设置").get_by_placeholder("请选择").first).to_have_value(value)
 
     @allure.step("高温报警")
     def max_temp_alarm(self):
@@ -322,6 +376,10 @@ class AlarmPage(Common):
     def select_alarm_condition(self):
         self.page.get_by_label("报警参数设置").locator("i").nth(1).click()
 
+    @allure.step("断言报警条件")
+    def assert_alarm_condition(self, value):
+        expect(self.page.get_by_label("报警参数设置").get_by_placeholder("请选择").nth(1)).to_have_value(value)
+
     @allure.step("选择大于")
     def select_great(self):
         self.page.locator("li").filter(has_text=">").click()
@@ -333,6 +391,10 @@ class AlarmPage(Common):
     @allure.step("设置温度阈值")
     def set_temp_threshold(self, value):
         self.page.get_by_label("报警参数设置").get_by_role("textbox").nth(2).fill(value)
+
+    @allure.step("断言报警阈值")
+    def assert_alarm_threshold(self, value):
+        expect(self.page.get_by_label("报警参数设置").get_by_role("textbox").nth(2)).to_have_value(value)
 
     @allure.step("设置去抖动时间")
     def set_debounce_time(self, value):
