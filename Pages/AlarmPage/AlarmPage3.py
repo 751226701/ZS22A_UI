@@ -187,3 +187,5 @@ class AlarmPage(Common):
     @allure.step("点击确定")
     def click_ok(self):
         self.page.get_by_role("button", name="确定").click()
+
+    
