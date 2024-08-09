@@ -143,10 +143,37 @@ class AlarmPage(Common):
         (self.page.locator(self.__vl_record_box[0]).filter(has_text=self.__vl_record_box[1]).
          locator(self.__vl_record_box[2]).nth(1).click())
 
+    @allure.step("断言可见光录像是否勾选")
+    def assert_vl_record_box(self, type):
+        """
+        :param type: 1：勾选；2：未勾选
+        :return:
+        """
+        sleep(1)
+        if type == "1":
+            expect(self.page.locator(self.__vl_record_box[0]).filter(has_text=self.__vl_record_box[1]).
+                   locator(self.__vl_record_box[2]).nth(1)).to_be_checked()
+        elif type == "2":
+            expect(self.page.locator(self.__vl_record_box[0]).filter(has_text=self.__vl_record_box[1]).
+                   locator(self.__vl_record_box[2]).nth(1)).not_to_be_checked()
+
     @allure.step("点击红外录像复选框")
     def click_ir_record_box(self):
         (self.page.locator(self.__ir_record_box[0]).filter(has_text=self.__ir_record_box[1]).
          locator(self.__ir_record_box[2]).nth(1).click())
+
+    @allure.step("断言红外录像是否勾选")
+    def assert_ir_record_box(self, type):
+        """
+        :param type: 1：勾选；2：未勾选
+        :return:
+        """
+        if type == 1:
+            expect(self.page.locator(self.__ir_record_box[0]).filter(has_text=self.__ir_record_box[1]).
+                   locator(self.__ir_record_box[2]).nth(1)).to_be_checked()
+        elif type == 2:
+            expect(self.page.locator(self.__ir_record_box[0]).filter(has_text=self.__ir_record_box[1]).
+                   locator(self.__ir_record_box[2]).nth(1)).not_to_be_checked()
 
     @allure.step("设置录像时间")
     def set_record_time(self, value):
@@ -155,20 +182,59 @@ class AlarmPage(Common):
          filter(has_text=self.__record_time[2]).
          get_by_role("textbox").fill(value))
 
+    @allure.step("断言录像时间")
+    def assert_record_time(self, value):
+        expect(self.page.get_by_label(self.__record_time[0]).
+               locator(self.__record_time[1]).
+               filter(has_text=self.__record_time[2]).
+               get_by_role("textbox")).to_have_value(value)
+
     @allure.step("点击可见光抓图复选框")
     def click_vl_capture_box(self):
         (self.page.locator(self.__vl_capture_box[0]).filter(has_text=self.__vl_capture_box[1]).
          locator(self.__vl_capture_box[2]).nth(1).click())
+
+    @allure.step("断言可见光抓图是否勾选")
+    def assert_vl_capture_box(self, type):
+        """
+        :param type: 1：勾选；2：未勾选
+        :return:
+        """
+        if type == "1":
+            expect(self.page.locator(self.__vl_capture_box[0]).filter(has_text=self.__vl_capture_box[1]).
+                   locator(self.__vl_capture_box[2]).nth(1)).to_be_checked()
+        elif type == "2":
+            expect(self.page.locator(self.__vl_capture_box[0]).filter(has_text=self.__vl_capture_box[1]).
+                   locator(self.__vl_capture_box[2]).nth(1)).not_to_be_checked()
 
     @allure.step("点击红外抓图复选框")
     def click_ir_capture_box(self):
         (self.page.locator(self.__ir_capture_box[0]).filter(has_text=self.__ir_capture_box[1]).
          locator(self.__ir_capture_box[2]).nth(1).click())
 
+    @allure.step("断言红外抓图是否勾选")
+    def assert_ir_capture_box(self, type):
+        """
+        :param type: 1：勾选；2：未勾选
+        :return:
+        """
+        if type == "1":
+            expect(self.page.locator(self.__ir_capture_box[0]).filter(has_text=self.__ir_capture_box[1]).
+                   locator(self.__ir_capture_box[2]).nth(1)).to_be_checked()
+        elif type == "2":
+            expect(self.page.locator(self.__ir_capture_box[0]).filter(has_text=self.__ir_capture_box[1]).
+                   locator(self.__ir_capture_box[2]).nth(1)).not_to_be_checked()
+
     @allure.step("点击邮件通知开关")
     def click_email_switch(self):
         (self.page.locator(self.__email_switch[0]).filter(has_text=re.compile(self.__email_switch[1])).
          locator(self.__email_switch[2]).click())
+
+    @allure.step("断言邮件通知是否开启")
+    def assert_email_switch(self, value):
+        ele = (self.page.locator("div").filter(has_text=re.compile(r"^邮件通知$")).
+               get_by_role('switch').get_attribute('class'))
+        assert ele == value
 
     @allure.step("点击音频播放开关")
     def click_audio_switch(self):
@@ -400,9 +466,17 @@ class AlarmPage(Common):
     def set_debounce_time(self, value):
         self.page.get_by_label("报警参数设置").get_by_role("textbox").nth(3).fill(value)
 
+    @allure.step("断言去抖动时间")
+    def assert_debounce_time(self, value):
+        expect(self.page.get_by_label("报警参数设置").get_by_role("textbox").nth(3)).to_have_value(value)
+
     @allure.step("选择报警间隔时间")
     def select_alarm_interval_time(self):
-        self. page.get_by_label("报警参数设置").get_by_placeholder("请选择").nth(2).click()
+        self.page.get_by_label("报警参数设置").get_by_placeholder("请选择").nth(2).click()
+
+    @allure.step("断言报警间隔时间")
+    def assert_alarm_interval_time(self, value):
+        expect(self.page.get_by_label("报警参数设置").get_by_placeholder("请选择").nth(2)).to_have_value(value)
 
     @allure.step("选择30s")
     def select_30s(self):

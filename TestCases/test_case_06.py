@@ -907,73 +907,338 @@ class TestAlarm:
         page.click_refresh()
         page.assert_alarm_threshold(CaseData['断言元素定位'])
 
-    """"""
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    """去抖动默认值"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_82"]))
+    def test_case_82(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.assert_debounce_time(CaseData['断言元素定位'])
+
+    """去抖动设置0"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_83"]))
+    def test_case_83(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.set_debounce_time("0")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_debounce_time(CaseData['断言元素定位'])
+
+    """去抖动设置3"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_84"]))
+    def test_case_84(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.set_debounce_time("3")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_debounce_time(CaseData['断言元素定位'])
+
+    """去抖动设置10"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_85"]))
+    def test_case_85(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.set_debounce_time("10")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_debounce_time(CaseData['断言元素定位'])
+
+    """去抖动设置-1"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_86"]))
+    def test_case_86(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.set_debounce_time("-1")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_debounce_time(CaseData['断言元素定位'])
+
+    """去抖动设置11"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_87"]))
+    def test_case_87(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.set_debounce_time("11")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_debounce_time(CaseData['断言元素定位'])
+
+    """报警间隔时间默认值"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_88"]))
+    def test_case_88(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.assert_alarm_interval_time(CaseData['断言元素定位'])
+
+    """报警间隔时间设置30s"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_89"]))
+    def test_case_89(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.select_alarm_interval_time()
+        page.select_30s()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval_time(CaseData['断言元素定位'])
+
+    """报警间隔时间设置60s"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_90"]))
+    def test_case_90(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.select_alarm_interval_time()
+        page.select_60s()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval_time(CaseData['断言元素定位'])
+
+    """报警间隔时间设置5min"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_91"]))
+    def test_case_91(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.select_alarm_interval_time()
+        page.select_5min()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval_time(CaseData['断言元素定位'])
+
+    """报警间隔时间设置10min"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_92"]))
+    def test_case_92(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.select_alarm_interval_time()
+        page.select_10min()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval_time(CaseData['断言元素定位'])
+
+    """报警间隔时间设置15min"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_93"]))
+    def test_case_93(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.select_alarm_interval_time()
+        page.select_15min()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval_time(CaseData['断言元素定位'])
+
+    """报警间隔时间设置30min"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_94"]))
+    def test_case_94(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.select_alarm_interval_time()
+        page.select_30min()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval_time(CaseData['断言元素定位'])
+
+    """报警间隔时间设置60min"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_95"]))
+    def test_case_95(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.select_alarm_interval_time()
+        page.select_60min()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval_time(CaseData['断言元素定位'])
+
+    """可见光录像默认勾选"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_96"]))
+    def test_case_96(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.assert_vl_record_box(CaseData['断言元素定位'])
+
+    """取消可见光录像"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_97"]))
+    def test_case_97(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_vl_record_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_vl_record_box(CaseData['断言元素定位'])
+
+    """勾选可见光录像"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_98"]))
+    def test_case_98(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_vl_record_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_vl_record_box(CaseData['断言元素定位'])
+
+    """红外录像默认勾选"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_99"]))
+    def test_case_99(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.assert_ir_record_box(CaseData['断言元素定位'])
+
+    """取消红外录像"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_100"]))
+    def test_case_100(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_ir_record_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_ir_record_box(CaseData['断言元素定位'])
+
+    """勾选红外录像"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_101"]))
+    def test_case_101(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_ir_record_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_ir_record_box(CaseData['断言元素定位'])
+
+    """录像时间默认值"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_102"]))
+    def test_case_102(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.assert_record_time(CaseData['断言元素定位'])
+
+    """录像时间设置10"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_103"]))
+    def test_case_103(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.set_record_time("10")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_record_time(CaseData['断言元素定位'])
+
+    """录像时间设置20"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_104"]))
+    def test_case_104(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.set_record_time("20")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_record_time(CaseData['断言元素定位'])
+
+    """录像时间设置300"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_105"]))
+    def test_case_105(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.set_record_time("300")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_record_time(CaseData['断言元素定位'])
+
+    """录像时间设置9"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_106"]))
+    def test_case_106(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.set_record_time("9")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_record_time(CaseData['断言元素定位'])
+
+    """录像时间设置301"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_107"]))
+    def test_case_107(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.set_record_time("301")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_record_time(CaseData['断言元素定位'])
+
+    """可见光抓图默认勾选"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_108"]))
+    def test_case_108(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.assert_vl_capture_box(CaseData['断言元素定位'])
+
+    """取消可见光抓图"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_109"]))
+    def test_case_109(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_vl_capture_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_vl_capture_box(CaseData['断言元素定位'])
+
+    """勾选可见光抓图"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_110"]))
+    def test_case_110(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_vl_capture_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_vl_capture_box(CaseData['断言元素定位'])
+
+    """红外抓图默认勾选"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_111"]))
+    def test_case_111(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.assert_ir_capture_box(CaseData['断言元素定位'])
+
+    """取消红外抓图"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_112"]))
+    def test_case_112(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_ir_capture_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_ir_capture_box(CaseData['断言元素定位'])
+
+    """勾选红外抓图"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_113"]))
+    def test_case_113(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_ir_capture_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_ir_capture_box(CaseData['断言元素定位'])
+
+    """邮件通知默认关闭"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_114"]))
+    def test_case_114(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.assert_email_switch(CaseData['断言元素定位'])
+
+    """开启邮件通知"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_115"]))
+    def test_case_115(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_email_switch()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_email_switch(CaseData['断言元素定位'])
+
+    """关闭邮件通知"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_116"]))
+    def test_case_116(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_email_switch()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_email_switch(CaseData['断言元素定位'])
 
 
 
