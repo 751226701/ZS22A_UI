@@ -27,9 +27,18 @@ class AlarmPage(Common):
     def alarm_switch(self):
         self.page.locator("div").filter(has_text=re.compile(r"^启用状态$")).locator("span").click()
 
+    @allure.step("断言报警启用状态")
+    def assert_alarm_switch(self, value):
+        ele = self.page.locator("div").filter(has_text=re.compile(r"^启用状态$")).get_by_role('switch').get_attribute('class')
+        assert ele == value
+
     @allure.step("报警间隔时间选择")
     def alarm_interval(self):
         self.page.get_by_placeholder("请选择").click()
+
+    @allure.step("断言报警间隔时间")
+    def assert_alarm_interval(self, value):
+        expect(self.page.get_by_placeholder("请选择")).to_have_value(value)
 
     @allure.step("30S")
     def alarm_interval_30s(self):
@@ -62,6 +71,10 @@ class AlarmPage(Common):
     @allure.step("点击邮件通知开关")
     def click_email_switch(self):
         self.page.locator("div").filter(has_text=re.compile(r"^邮件通知$")).locator("span").click()
+
+    @allure.step("断言邮件通知启用状态")
+    def assert_email_switch(self, value):
+        ele = self.page.locator("div").filter(has_text=re.compile(r"^邮件通知$")).get_by_role('switch').get_attribute('class')
 
     @allure.step("点击音频播放开关")
     def click_audio_switch(self):

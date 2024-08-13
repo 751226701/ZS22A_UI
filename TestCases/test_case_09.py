@@ -15,8 +15,8 @@ from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_09.yaml")).read()
-logindata = yaml_data[0]
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_09.yaml"))
+logindata = yaml_data.read()[0]
 Trace = Config.trace9
 pageobject = None
 DOWNLOAD_FLAG = False
@@ -74,20 +74,123 @@ def page():
 """执行网络异常子模块测试"""
 class TestAlarm:
 
-    """设置网络异常报警"""
+    """启用状态默认关"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[1]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_01']))
     def test_case_01(self, page, CaseData: dict):
         page = AlarmPage(page)
+        page.click_default()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_switch(CaseData['断言元素定位'])
+
+    """启用报警"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_02']))
+    def test_case_02(self, page, CaseData: dict):
+        page = AlarmPage(page)
         page.alarm_switch()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_switch(CaseData['断言元素定位'])
+
+    """关闭报警"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_03']))
+    def test_case_03(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.alarm_switch()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_switch(CaseData['断言元素定位'])
+
+    """报警间隔时间默认值"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_04']))
+    def test_case_04(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_default()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval(CaseData['断言元素定位'])
+
+    """报警间隔时间设置30s"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_05']))
+    def test_case_05(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.alarm_interval()
+        page.alarm_interval_30s()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval(CaseData['断言元素定位'])
+
+    """报警间隔时间设置60s"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_06']))
+    def test_case_06(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.alarm_interval()
+        page.alarm_interval_60s()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval(CaseData['断言元素定位'])
+
+    """报警间隔时间设置5min"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_07']))
+    def test_case_07(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.alarm_interval()
+        page.alarm_interval_5min()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval(CaseData['断言元素定位'])
+
+    """报警间隔时间设置10min"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_08']))
+    def test_case_08(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.alarm_interval()
+        page.alarm_interval_10min()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval(CaseData['断言元素定位'])
+
+    """报警间隔时间设置15min"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_09']))
+    def test_case_09(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.alarm_interval()
+        page.alarm_interval_15min()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval(CaseData['断言元素定位'])
+
+    """报警间隔时间设置30min"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_10']))
+    def test_case_10(self, page, CaseData: dict):
+        page = AlarmPage(page)
         page.alarm_interval()
         page.alarm_interval_30min()
-        page.click_audio_switch()
-        page.click_light_switch()
-        page.click_alarm_output_switch()
-        page.set_audio_time("99")
-        page.set_light_time("99")
-        page.set_alarm_output_time("99")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval(CaseData['断言元素定位'])
+
+    """报警间隔时间设置60min"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_11']))
+    def test_case_11(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.alarm_interval()
+        page.alarm_interval_60min()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_alarm_interval(CaseData['断言元素定位'])
+
 
 
 
