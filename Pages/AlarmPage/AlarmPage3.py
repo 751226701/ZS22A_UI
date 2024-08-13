@@ -157,7 +157,7 @@ class AlarmPage(Common):
     def set_audio_time(self, value):
         (self.page.locator(self.__audio_time[0]).filter(has_text=self.__audio_time[1]).
          get_by_role("textbox").nth(1).fill(value))
-
+      
     @allure.step("点击灯光开关")
     def click_light_switch(self):
         self.page.locator(self.__light_switch).click()
