@@ -15,8 +15,8 @@ from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_12.yaml")).read()
-logindata = yaml_data[0]
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_12.yaml"))
+logindata = yaml_data.read()[0]
 Trace = Config.trace12
 pageobject = None
 DOWNLOAD_FLAG = False
@@ -73,71 +73,126 @@ def page():
 """执行报警事件子模块测试"""
 class TestAlarm:
 
-    """查询报警事件"""
+    """报警类型选择全部"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[1]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_01']))
     def test_case_01(self, page, CaseData: dict):
         page = AlarmPage(page)
-        page.query_alarm_event()
-        page.click_mute_button()
-        page.click_recovery_button()
-        page.click_clear_alarm()
-        page.click_cancel_clear_alarm()
         page.alarm_type_select()
+        page.select_all()
+        page.query_alarm_event()
+        page.assert_alarm_type(CaseData['断言元素定位'])
+
+    """报警类型选择全局温度"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_02']))
+    def test_case_02(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.alarm_type_select()
+        page.cancel_all()
         page.select_global_temp()
         page.query_alarm_event()
+        page.assert_alarm_type(CaseData['断言元素定位'])
+
+    """报警类型选择对象温度"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_03']))
+    def test_case_03(self, page, CaseData: dict):
+        page = AlarmPage(page)
         page.alarm_type_select()
         page.cancel_global_temp()
-        page.select_object_temp()
+        page.cancel_object_temp()
         page.query_alarm_event()
+        page.assert_alarm_type(CaseData['断言元素定位'])
+
+    """报警类型选择对象温差"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_04']))
+    def test_case_04(self, page, CaseData: dict):
+        page = AlarmPage(page)
         page.alarm_type_select()
         page.cancel_object_temp()
         page.select_object_temp_diff()
         page.query_alarm_event()
+        page.assert_alarm_type(CaseData['断言元素定位'])
+
+    """报警类型选择存储异常"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_05']))
+    def test_case_05(self, page, CaseData: dict):
+        page = AlarmPage(page)
         page.alarm_type_select()
         page.cancel_object_temp_diff()
         page.select_storage_abnormal()
         page.query_alarm_event()
+        page.assert_alarm_type(CaseData['断言元素定位'])
+
+    """报警类型选择网络异常"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_06']))
+    def test_case_06(self, page, CaseData: dict):
+        page = AlarmPage(page)
         page.alarm_type_select()
         page.cancel_storage_abnormal()
         page.select_network_abnormal()
         page.query_alarm_event()
+        page.assert_alarm_type(CaseData['断言元素定位'])
+
+    """报警类型选择非法访问"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_07']))
+    def test_case_07(self, page, CaseData: dict):
+        page = AlarmPage(page)
         page.alarm_type_select()
         page.cancel_network_abnormal()
         page.select_illegal_access()
         page.query_alarm_event()
+        page.assert_alarm_type(CaseData['断言元素定位'])
+
+    """报警类型选择报警输入"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_08']))
+    def test_case_08(self, page, CaseData: dict):
+        page = AlarmPage(page)
         page.alarm_type_select()
         page.cancel_illegal_access()
         page.select_alarm_input()
         page.query_alarm_event()
-        page.alarm_type_select()
-        page.cancel_alarm_input()
+        page.assert_alarm_type(CaseData['断言元素定位'])
 
+    """静音"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_09']))
+    def test_case_09(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.page.locator(".el-tooltip").click()
+        page.assert_mute_button(CaseData['断言元素定位'])
 
+    """取消静音"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_10']))
+    def test_case_10(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.page.locator(".el-tooltip").click()
+        page.assert_mute_button(CaseData['断言元素定位'])
 
+    """报警复归"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_11']))
+    def test_case_11(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.click_recovery_button()
+        page.assert_alert(CaseData['断言元素定位'])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    """清空报警"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(['test_case_12']))
+    def test_case_12(self, page, CaseData: dict):
+        page = AlarmPage(page)
+        page.page.wait_for_timeout(3000)
+        page.click_clear_alarm()
+        page.click_ok_clear_alarm()
+        page.assert_alert(CaseData['断言元素定位'])
 
 
 

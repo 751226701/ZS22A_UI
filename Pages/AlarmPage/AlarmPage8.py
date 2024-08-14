@@ -33,6 +33,10 @@ class AlarmPage(Common):
     def click_recovery_button(self):
         self.page.get_by_role("button", name="报警复归").click()
 
+    @allure.step("断言提示语")
+    def assert_alert(self, value):
+        expect(self.page.get_by_role("alert")).to_contain_text(value)
+
     @allure.step("点击清空报警")
     def click_clear_alarm(self):
         self.page.get_by_role("button", name="清空报警").click()
@@ -49,9 +53,13 @@ class AlarmPage(Common):
     def alarm_type_select(self):
         self.page.locator(".el-select__caret").click()
 
+    @allure.step("断言报警类型")
+    def assert_alarm_type(self, value):
+        expect(self.page.locator("form")).to_contain_text(value)
+
     @allure.step("选择全部")
     def select_all(self):
-        self.page.get_by_text("全部").click()
+        self.page.locator("li").filter(has_text="全部").locator("span").click()
 
     @allure.step("取消全选")
     def cancel_all(self):
@@ -113,9 +121,14 @@ class AlarmPage(Common):
     def cancel_alarm_input(self):
         self.page.get_by_text("报警输入").nth(2).click()
 
+    @allure.step("点击静音按钮")
+    def click_mute_button(self):
+        self.page.locator("form i").nth(4).click()
 
-
-
+    @allure.step("断言静音按钮状态")
+    def assert_mute_button(self, value):
+        ele = self.page.locator("form i").nth(5).get_attribute('class')
+        assert ele == value
 
 
 
