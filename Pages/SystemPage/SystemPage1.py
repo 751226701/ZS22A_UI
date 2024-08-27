@@ -32,24 +32,48 @@ class SystemPage(Common):
         (self.page.get_by_label("可见光画面设置").locator("form div").
          filter(has_text="亮度 %").get_by_role("textbox").fill(value))
 
+    @allure.step("断言可见光亮度值")
+    def assert_vl_light(self, value):
+        expect(self.page.get_by_label("可见光画面设置").locator("form div").filter(has_text="亮度 %").
+               get_by_role("textbox")).to_have_value(value)
+
     @allure.step("设置可见光对比度")
     def set_vl_contrast(self, value):
         (self.page.get_by_label("可见光画面设置").locator("form div").
          filter(has_text="对比度 %").get_by_role("textbox").fill(value))
+
+    @allure.step("断言可见光对比度值")
+    def assert_vl_contrast(self, value):
+        expect(self.page.get_by_label("可见光画面设置").locator("form div").filter(has_text="对比度 %").
+               get_by_role("textbox")).to_have_value(value)
 
     @allure.step("设置可见光饱和度")
     def set_vl_saturation(self, value):
         (self.page.get_by_label("可见光画面设置").locator("form div").
          filter(has_text="饱和度 %").get_by_role("textbox").fill(value))
 
+    @allure.step("断言可见光饱和度值")
+    def assert_vl_saturation(self, value):
+        expect(self.page.get_by_label("可见光画面设置").locator("form div").filter(has_text="饱和度 %").
+               get_by_role("textbox")).to_have_value(value)
+
     @allure.step("设置可见光锐度")
     def set_vl_sharpness(self, value):
         (self.page.get_by_label("可见光画面设置").locator("form div").
          filter(has_text="锐度 %").get_by_role("textbox").fill(value))
 
+    @allure.step("断言可见光锐度值")
+    def assert_vl_sharpness(self, value):
+        expect(self.page.get_by_label("可见光画面设置").locator("form div").filter(has_text="锐度 %").
+               get_by_role("textbox")).to_have_value(value)
+
     @allure.step("背光补偿选择")
     def set_backlight_compensation(self):
         self.page.get_by_placeholder("请选择").click()
+
+    @allure.step("断言背光补偿状态")
+    def assert_backlight_compensation(self, value):
+        expect(self.page.get_by_placeholder("请选择")).to_have_value(value)
 
     @allure.step("选择关闭")
     def select_close(self):
