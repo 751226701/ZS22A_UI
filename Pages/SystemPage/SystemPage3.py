@@ -25,9 +25,20 @@ class SystemPage(Common):
     def click_global_temp_box(self):
         self.page.locator(".el-checkbox__inner").first.click()
 
+    @allure.step("断言全局温度复选框是否勾选")
+    def assert_global_temp_box(self, value):
+        if value == "1":
+            expect(self.page.locator(".el-checkbox__inner").first).to_be_checked()
+        else:
+            expect(self.page.locator(".el-checkbox__inner").first).not_to_be_checked()
+
     @allure.step("选择温度显示类型")
     def select_temp_type(self):
         self.page.get_by_placeholder("请选择").click()
+
+    @allure.step("断言当前显示的温度类型")
+    def assert_temp_type(self, value):
+        expect(self.page.get_by_placeholder("请选择")).to_have_value(value)
 
     @allure.step("最高温")
     def max_temp(self):
@@ -51,7 +62,8 @@ class SystemPage(Common):
 
     @allure.step("平均温+最低温")
     def min_avg_temp(self):
-        self.page.get_by_text("平均温+最低温", exact=True).click()
+        text = re.compile("平均温+最低温|最低温+平均温")
+        self.page.get_by_text(text, exact=True).click()
 
     @allure.step("最高温+最低温+平均温")
     def max_min_avg_temp(self):
@@ -59,27 +71,62 @@ class SystemPage(Common):
 
     @allure.step("点击日期显示复选框")
     def click_date_box(self):
-        self.page.locator("div").filter(has_text=re.compile(r"^显示$")).locator("span").nth(1).click()
+        self.page.get_by_label("红外字符串叠加").locator("form div").filter(has_text="日期显示显示").locator("span").nth(1).click()
+
+    @allure.step("断言日期复选框是否被勾选")
+    def assert_date_box(self, value):
+        if value == "1":
+            expect(self.page.get_by_label("红外字符串叠加").locator("form div").filter(has_text="日期显示显示").
+                   locator("span").nth(1)).to_be_checked()
+        else:
+            expect(self.page.get_by_label("红外字符串叠加").locator("form div").filter(has_text="日期显示显示").
+                   locator("span").nth(1)).not_to_be_checked()
 
     @allure.step("点击字符串复选框")
     def click_string_box(self):
         (self.page.get_by_label("红外字符串叠加").locator("form div").
          filter(has_text="字符串显示").locator("span").nth(1).click())
 
+    @allure.step("断言字符串复选框是否勾选")
+    def assert_string_box(self, value):
+        if value == "1":
+            expect(self.page.get_by_label("红外字符串叠加").locator("form div").
+                   filter(has_text="字符串显示").locator("span").nth(1)).to_be_checked()
+        else:
+            expect(self.page.get_by_label("红外字符串叠加").locator("form div").
+                   filter(has_text="字符串显示").locator("span").nth(1)).not_to_be_checked()
+
     @allure.step("设置字符串内容")
     def set_string_content(self, value):
-        (self.page.get_by_label("红外字符串叠加").locator("form div").
-         filter(has_text="字符串显示").get_by_role("textbox").fill(value))
+        self.page.locator(".el-input__inner").nth(1).fill(value)
+
+    @allure.step("断言字符串内容")
+    def assert_string_content(self, value):
+        expect(self.page.locator(".el-input__inner").nth(1)).to_have_value(value)
 
     @allure.step("点击通道名称复选框")
     def click_channel_name_box(self):
         (self.page.get_by_label("红外字符串叠加").locator("form div").
          filter(has_text="通道名称显示").locator("span").nth(1).click())
 
+    @allure.step("断言通道名称复选框是否勾选")
+    def assert_channel_name_box(self, value):
+        if value == "1":
+            expect(self.page.get_by_label("红外字符串叠加").locator("form div").
+                   filter(has_text="通道名称显示").locator("span").nth(1)).to_be_checked()
+        else:
+            expect(self.page.get_by_label("红外字符串叠加").locator("form div").
+                   filter(has_text="通道名称显示").locator("span").nth(1)).not_to_be_checked()
+
     @allure.step("设置通道名称")
     def set_channel_name(self, value):
-        (self.page.get_by_label("红外字符串叠加").locator("form div").
-         filter(has_text="通道名称显示").get_by_role("textbox").fill(value))
+        self.page.locator(".el-input__inner").nth(2).fill(value)
+
+    @allure.step("断言通道名称")
+    def assert_channel_name(self, value):
+        expect(self.page.locator(".el-input__inner").nth(2)).to_have_value(value)
+
+
 
     @allure.step("点击可见光日期显示复选框")
     def click_vl_date_box(self):

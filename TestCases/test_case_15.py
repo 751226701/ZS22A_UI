@@ -15,8 +15,8 @@ from Common.ReadYaml import ReadYaml
 from Common.AllurePretty import PrettyAllure
 from Config.Config import Config
 
-yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_15.yaml")).read()
-logindata = yaml_data[0]
+yaml_data = ReadYaml(os.path.join(Config.test_datas_dir, "test_data_15.yaml"))
+logindata = yaml_data.read()[0]
 Trace = Config.trace15
 pageobject = None
 DOWNLOAD_FLAG = False
@@ -73,36 +73,234 @@ def page():
 """执行OSD设置子模块测试"""
 class TestAlarm:
 
-    """设置全局温度显示"""
+    """全局温度显示默认值"""
     @PrettyAllure.PrettyAllureWrapper
-    @pytest.mark.parametrize("CaseData", [yaml_data[1]])
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_01"]))
     def test_case_01(self, page, CaseData: dict):
         page = SystemPage(page)
-        page.click_global_temp_box()
+        page.click_default()
+        page.click_ok()
+        page.assert_temp_type(CaseData["断言元素定位"])
+
+    """全局温度显示默认显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_02"]))
+    def test_case_02(self, page, CaseData: dict):
+        page = SystemPage(page)
+        page.click_default()
+        page.click_ok()
+        page.assert_global_temp_box(CaseData["断言元素定位"])
+
+    """全局温度显示设置最高温"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_03"]))
+    def test_case_03(self, page, CaseData: dict):
+        page = SystemPage(page)
         page.select_temp_type()
         page.max_temp()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_temp_type(CaseData["断言元素定位"])
+
+    """全局温度显示设置最低温"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_04"]))
+    def test_case_04(self, page, CaseData: dict):
+        page = SystemPage(page)
         page.select_temp_type()
         page.min_temp()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_temp_type(CaseData["断言元素定位"])
+
+    """全局温度显示设置平均温"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_05"]))
+    def test_case_05(self, page, CaseData: dict):
+        page = SystemPage(page)
         page.select_temp_type()
         page.avg_temp()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_temp_type(CaseData["断言元素定位"])
+
+    """全局温度显示设置最高温+最低温"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_06"]))
+    def test_case_06(self, page, CaseData: dict):
+        page = SystemPage(page)
         page.select_temp_type()
         page.max_min_temp()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_temp_type(CaseData["断言元素定位"])
+
+    """全局温度显示设置最高温+平均温"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_07"]))
+    def test_case_07(self, page, CaseData: dict):
+        page = SystemPage(page)
         page.select_temp_type()
         page.max_avg_temp()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_temp_type(CaseData["断言元素定位"])
+
+    """全局温度显示设置平均温+最低温"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_08"]))
+    def test_case_08(self, page, CaseData: dict):
+        page = SystemPage(page)
         page.select_temp_type()
         page.min_avg_temp()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_temp_type(CaseData["断言元素定位"])
+
+    """全局温度显示设置最高温+最低温+平均温"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_09"]))
+    def test_case_09(self, page, CaseData: dict):
+        page = SystemPage(page)
         page.select_temp_type()
         page.max_min_avg_temp()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_temp_type(CaseData["断言元素定位"])
+
+    """全局温度显示设置不显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_10"]))
+    def test_case_10(self, page, CaseData: dict):
+        page = SystemPage(page)
+        page.click_global_temp_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_temp_type(CaseData["断言元素定位"])
+
+    """日期显示默认显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_11"]))
+    def test_case_11(self, page, CaseData: dict):
+        page = SystemPage(page)
+        page.click_default()
+        page.click_ok()
+        page.assert_date_box(CaseData["断言元素定位"])
+
+    """日期显示设置不显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_12"]))
+    def test_case_12(self, page, CaseData: dict):
+        page = SystemPage(page)
         page.click_date_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_date_box(CaseData["断言元素定位"])
+
+    """日期显示设置显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_13"]))
+    def test_case_13(self, page, CaseData: dict):
+        page = SystemPage(page)
+        page.click_date_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_date_box(CaseData["断言元素定位"])
+
+    """字符串默认不显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_14"]))
+    def test_case_14(self, page, CaseData: dict):
+        page = SystemPage(page)
+        page.click_default()
+        page.click_ok()
+        page.assert_string_box(CaseData["断言元素定位"])
+
+    """设置字符串内容"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_15"]))
+    def test_case_15(self, page, CaseData: dict):
+        page = SystemPage(page)
+        page.set_string_content(CaseData["断言元素定位"])
+        page.click_ok()
+        page.click_refresh()
+        page.assert_string_content(CaseData["断言元素定位"])
+
+    """设置字符串显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_16"]))
+    def test_case_16(self, page, CaseData: dict):
+        page = SystemPage(page)
         page.click_string_box()
-        page.set_string_content("999")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_string_box(CaseData["断言元素定位"])
+
+    """设置字符串不显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_17"]))
+    def test_case_17(self, page, CaseData: dict):
+        page = SystemPage(page)
+        page.click_string_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_string_box(CaseData["断言元素定位"])
+
+    """通道名称默认不显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_18"]))
+    def test_case_18(self, page, CaseData: dict):
+        page = SystemPage(page)
+        page.click_default()
+        page.click_ok()
+        page.assert_channel_name_box(CaseData["断言元素定位"])
+
+    """设置通道名称内容"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_19"]))
+    def test_case_19(self, page, CaseData: dict):
+        page = SystemPage(page)
+        page.set_channel_name(CaseData["断言元素定位"])
+        page.click_ok()
+        page.click_refresh()
+        page.assert_channel_name(CaseData["断言元素定位"])
+
+    """设置通道名称显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_20"]))
+    def test_case_20(self, page, CaseData: dict):
+        page = SystemPage(page)
         page.click_channel_name_box()
-        page.set_channel_name("999")
-        page.click_vl_date_box()
-        page.click_vl_string_box()
-        page.set_vl_string_content("999")
-        page.click_vl_channel_name_box()
-        page.set_vl_channel_name("999")
+        page.click_ok()
+        page.click_refresh()
+        page.assert_channel_name_box(CaseData["断言元素定位"])
+
+    """设置通道名称不显示"""
+    @PrettyAllure.PrettyAllureWrapper
+    @pytest.mark.parametrize("CaseData", yaml_data.read(["test_case_21"]))
+    def test_case_21(self, page, CaseData: dict):
+        page = SystemPage(page)
+        page.click_channel_name_box()
+        page.click_ok()
+        page.click_refresh()
+        page.assert_channel_name_box(CaseData["断言元素定位"])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
